@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: task-change-azure-vm.html 
+keywords: machine type, virtual machine type, vm instance, change vm type, azure vm type 
+summary: 'Vous pouvez choisir parmi plusieurs types de machines virtuelles lorsque vous lancez Cloud Volumes ONTAP dans Microsoft Azure. Vous pouvez modifier à tout moment le type de machine virtuelle si vous déterminez qu"elle est sous-dimensionnée ou trop dimensionnée pour répondre à vos besoins.' 
+---
+= Modifier le type de machine virtuelle Azure pour Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez choisir parmi plusieurs types de machines virtuelles lorsque vous lancez Cloud Volumes ONTAP dans Microsoft Azure. Vous pouvez modifier à tout moment le type de machine virtuelle si vous déterminez qu'elle est sous-dimensionnée ou trop dimensionnée pour répondre à vos besoins.
+
+.Description de la tâche
+* Le rétablissement automatique doit être activé sur une paire Cloud Volumes ONTAP HA (paramètre par défaut). Si ce n'est pas le cas, l'opération échouera.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html["Documentation ONTAP 9 : commandes pour la configuration du rétablissement automatique"^]
+
+* La modification du type de machine virtuelle peut affecter les frais de service Microsoft Azure.
+* L'opération redémarre Cloud Volumes ONTAP.
++
+Pour les systèmes à nœud unique, les E/S sont interrompues.
+
++
+Pour les paires HA, le changement n'est pas perturbateur. Les paires HA continuent de servir les données.
+
++
+
+TIP: BlueXP change aisément un nœud à la fois en lançant le basculement et en attente de retour. L'équipe d'assurance qualité de NetApp a testé l'écriture et la lecture des fichiers pendant ce processus et n'a rencontré aucun problème côté client. Au fur et à mesure des changements de connexion, nous avons constaté des tentatives d'E/S au niveau des E/S, mais la couche applicative a pu faire face à ces courtes « connexions » NFS/CIFS.
+
+
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *stockage > Canvas*.
+. Dans la zone de travail, sélectionnez l'environnement de travail.
+. Dans le volet de droite, cliquez sur l'icône de menu et sélectionnez *optimiser les coûts et les performances*.
++
+image:screenshot-optimize-cost-performance.png["Capture d'écran de l'option optimiser le coût et les performances disponible sur la toile."]
+
++
+
+TIP: Cette option est également disponible en entrant dans l'environnement de travail, en ouvrant le menu d'action et en sélectionnant *changer VM*.
+
+. Si vous utilisez une licence PAYGO basée sur un nœud, vous pouvez éventuellement choisir une licence différente.
+. Sélectionnez un type de VM, cochez la case pour confirmer que vous comprenez les implications de la modification, puis cliquez sur *OK*.
+
+
+Cloud Volumes ONTAP redémarre avec la nouvelle configuration.

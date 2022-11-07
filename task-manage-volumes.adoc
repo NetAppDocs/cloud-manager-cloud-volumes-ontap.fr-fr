@@ -1,0 +1,347 @@
+---
+sidebar: sidebar 
+permalink: task-manage-volumes.html 
+keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, delete, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, vol move, volume move, move a volume, volume move slow, volume move performance 
+summary: 'BlueXP vous permet de gérer des volumes et des serveurs CIFS. Il vous invite également à déplacer des volumes afin d"éviter les problèmes de capacité.' 
+---
+= Gérer les volumes existants
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP vous permet de gérer des volumes et des serveurs CIFS. Il vous invite également à déplacer des volumes afin d'éviter les problèmes de capacité.
+
+
+
+== Gérer les volumes
+
+Vous pouvez gérer les volumes en fonction de l'évolution des besoins de stockage. Vous pouvez afficher, modifier, cloner, restaurer et supprimer des volumes.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *stockage > Canvas*.
+. Sur la page Canevas, double-cliquez sur l'environnement de travail Cloud Volumes ONTAP sur lequel vous souhaitez gérer les volumes.
+. Gérez vos volumes :
++
+[cols="30,70"]
+|===
+| Tâche | Action 
+
+
+| Afficher des informations sur un volume | Sélectionnez un volume, puis cliquez sur *Info*. 
+
+
+| Modifier un volume (volumes en lecture-écriture uniquement)  a| 
+.. Sélectionnez un volume, puis cliquez sur *Modifier*.
+.. Modifiez la stratégie Snapshot du volume, la version du protocole NFS, la liste de contrôle d'accès NFS (export policy) ou les autorisations de partage, puis cliquez sur *Update*.
+
+
+
+NOTE: Si vous avez besoin de règles Snapshot personnalisées, vous pouvez les créer à l'aide de System Manager.
+
+
+
+| Clonez un volume  a| 
+.. Sélectionnez un volume, puis cliquez sur *Clone*.
+.. Modifiez le nom du clone selon vos besoins, puis cliquez sur *Clone*.
+
+
+Ce processus crée un volume FlexClone. Un volume FlexClone est une copie inscriptible, ponctuelle et efficace dans l'espace, car il utilise une petite quantité d'espace pour les métadonnées, puis ne consomme que de l'espace supplémentaire lorsque les données sont modifiées ou ajoutées.
+
+Pour en savoir plus sur les volumes FlexClone, consultez le http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guide de gestion du stockage logique ONTAP 9"^].
+
+
+
+| Restaurer les données d'une copie Snapshot vers un nouveau volume  a| 
+.. Sélectionnez un volume, puis cliquez sur *Restaurer à partir de la copie Snapshot*.
+.. Sélectionnez une copie Snapshot, indiquez le nom du nouveau volume, puis cliquez sur *Restore*.
+
+
+
+
+| Créez une copie Snapshot à la demande  a| 
+.. Sélectionnez un volume, puis cliquez sur *Créer une copie snapshot*.
+.. Modifiez le nom, si nécessaire, puis cliquez sur *Créer*.
+
+
+
+
+| Obtenez la commande NFS mount  a| 
+.. Sélectionnez un volume, puis cliquez sur *Mount Command*.
+.. Cliquez sur *Copier*.
+
+
+
+
+| Afficher l'IQN cible d'un volume iSCSI  a| 
+.. Sélectionnez un volume, puis cliquez sur *IQN cible*.
+.. Cliquez sur *Copier*.
+.. link:task-connect-lun.html["Utilisez l'IQN pour vous connecter à la LUN à partir de vos hôtes"].
+
+
+
+
+| Modifiez le type de disque sous-jacent  a| 
+.. Sélectionnez un volume, puis cliquez sur *Modifier le type de disque et la stratégie de hiérarchisation*.
+.. Sélectionnez le type de disque, puis cliquez sur *changer*.
+
+
+
+NOTE: BlueXP déplace le volume vers un agrégat existant qui utilise le type de disque sélectionné ou crée un nouvel agrégat pour le volume.
+
+
+
+| Modifiez la stratégie de hiérarchisation  a| 
+.. Sélectionnez un volume, puis cliquez sur *Modifier le type de disque et la stratégie de hiérarchisation*.
+.. Cliquez sur *Modifier la stratégie*.
+.. Sélectionnez une autre stratégie et cliquez sur *Modifier*.
+
+
+
+NOTE: BlueXP déplace le volume vers un agrégat existant qui utilise le type de disque sélectionné avec hiérarchisation, ou crée un nouvel agrégat pour le volume.
+
+
+
+| Supprimer un volume  a| 
+.. Sélectionnez un volume, puis cliquez sur *Supprimer*.
+.. Cliquez à nouveau sur *Supprimer* pour confirmer.
+
+
+|===
+
+
+
+
+== Redimensionner un volume
+
+Par défaut, une taille maximale de volume augmente automatiquement lorsqu'il est à court d'espace. La valeur par défaut est 1,000, ce qui signifie que le volume peut atteindre 11 fois sa taille. Cette valeur peut être configurée dans les paramètres d'un connecteur.
+
+Si vous devez redimensionner le volume, vous pouvez le faire https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html["ONTAP System Manager"^]. Veillez à tenir compte des limites de capacité de votre système lors du redimensionnement des volumes. Accédez au https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Notes de version de Cloud Volumes ONTAP"^] pour en savoir plus.
+
+
+
+== Modifier le serveur CIFS
+
+Si vous modifiez vos serveurs DNS ou votre domaine Active Directory, vous devez modifier le serveur CIFS dans Cloud Volumes ONTAP pour pouvoir continuer à servir le stockage aux clients.
+
+.Étapes
+. Dans l'environnement de travail, cliquez sur l'icône de menu, puis sur *Avancé > Configuration CIFS*.
+. Spécifiez les paramètres du serveur CIFS :
++
+[cols="30,70"]
+|===
+| Tâche | Action 
+
+
+| Adresse IP principale et secondaire DNS | Les adresses IP des serveurs DNS qui fournissent la résolution de noms pour le serveur CIFS. Les serveurs DNS répertoriés doivent contenir les enregistrements d'emplacement de service (SRV) nécessaires à la localisation des serveurs LDAP et des contrôleurs de domaine Active Directory pour le domaine auquel le serveur CIFS se joindra. Ifdef::gcp[] si vous configurez Google Managed Active Directory, AD est accessible par défaut avec l'adresse IP 169.254.169.254. end if::gcp[] 
+
+
+| Domaine Active Directory à rejoindre | Le FQDN du domaine Active Directory (AD) auquel vous souhaitez joindre le serveur CIFS. 
+
+
+| Informations d'identification autorisées à rejoindre le domaine | Nom et mot de passe d'un compte Windows disposant de privilèges suffisants pour ajouter des ordinateurs à l'unité d'organisation spécifiée dans le domaine AD. 
+
+
+| Nom NetBIOS du serveur CIFS | Nom de serveur CIFS unique dans le domaine AD. 
+
+
+| Unité organisationnelle  a| 
+Unité organisationnelle du domaine AD à associer au serveur CIFS. La valeur par défaut est CN=Computers.
+
+ifdef::aws[]
+
+** Pour configurer Microsoft AD géré par AWS en tant que serveur AD pour Cloud Volumes ONTAP, entrez *ou=ordinateurs,ou=corp* dans ce champ.
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+** Pour configurer les services de domaine Azure AD en tant que serveur AD pour Cloud Volumes ONTAP, entrez *ou=ordinateurs ADDC* ou *ou=utilisateurs ADDC* dans ce champ.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentation Azure : créez une unité organisationnelle dans un domaine géré Azure AD Domain Services"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+** Pour configurer Google Managed Microsoft AD en tant que serveur AD pour Cloud Volumes ONTAP, entrez *ou=ordinateurs,ou=Cloud* dans ce champ.https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud Documentation : les unités organisationnelles de Google Managed Microsoft AD"^]
+
+
+endif::gcp[]
+
+
+
+| Domaine DNS | Le domaine DNS de la machine virtuelle de stockage Cloud Volumes ONTAP (SVM). Dans la plupart des cas, le domaine est identique au domaine AD. 
+|===
+. Cliquez sur *Enregistrer*.
+
+
+Cloud Volumes ONTAP met à jour le serveur CIFS avec les modifications.
+
+
+
+== Déplacer un volume
+
+Déplacer les volumes pour optimiser l'utilisation de la capacité et les performances, et satisfaire les contrats de niveau de service.
+
+Vous pouvez déplacer un volume dans System Manager en sélectionnant un volume et l'agrégat de destination, en commençant l'opération de déplacement de volume et, éventuellement, en surveillant la tâche de déplacement de volume. Avec System Manager, une opération de déplacement de volume se termine automatiquement.
+
+.Étapes
+. Utilisez System Manager ou l'interface de ligne de commande pour déplacer les volumes vers l'agrégat.
++
+Dans la plupart des cas, vous pouvez utiliser System Manager pour déplacer des volumes.
+
++
+Pour obtenir des instructions, reportez-vous au http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guide de migration de volumes ONTAP 9 Express"^].
+
+
+
+
+
+== Déplacer un volume lorsque BlueXP affiche un message action requise
+
+BlueXP peut afficher un message action requise indiquant que le déplacement d'un volume est nécessaire pour éviter les problèmes de capacité, mais que vous devez corriger vous-même le problème. Dans ce cas, vous devez identifier comment corriger le problème, puis déplacer un ou plusieurs volumes.
+
+
+TIP: BlueXP affiche ces messages action requise lorsqu'un agrégat a atteint 90 % de capacité utilisée. Si le Tiering des données est activé, les messages s'affichent lorsqu'un agrégat a atteint 80 % de capacité utilisée. Par défaut, 10 % d'espace libre est réservé pour le Tiering des données. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["En savoir plus sur le ratio d'espace libre pour le Tiering des données"].
+
+.Étapes
+.  how to correct capacity issues,Identifier la manière de corriger le problème.
+. En fonction de votre analyse, déplacez les volumes pour éviter les problèmes de capacité :
++
+**  volumes to another system to avoid capacity issues,Déplacement des volumes vers un autre système.
+**  volumes to another aggregate to avoid capacity issues,Déplacement des volumes vers un autre agrégat du même système.
+
+
+
+
+
+
+=== Identifiez la manière de corriger les problèmes de capacité
+
+Si BlueXP ne peut pas fournir de recommandations pour le déplacement d'un volume afin d'éviter tout problème de capacité, vous devez identifier les volumes que vous devez déplacer et si vous devez les déplacer vers un autre agrégat du même système ou vers un autre système.
+
+.Étapes
+. Consultez les informations avancées du message Action requise pour identifier l'agrégat ayant atteint sa limite de capacité.
++
+Par exemple, l'information avancée devrait dire quelque chose de similaire à ce qui suit : aggr1 global a atteint sa limite de capacité.
+
+. Identifiez un ou plusieurs volumes à sortir de l'agrégat :
++
+.. Dans l'environnement de travail, cliquez sur l'icône de menu, puis sur *Avancé > allocation avancée*.
+.. Sélectionnez l'agrégat, puis cliquez sur *Info*.
+.. Développez la liste des volumes.
++
+image:screenshot_aggr_volumes.gif["Capture d'écran : affiche la liste des volumes d'un agrégat dans la boîte de dialogue Informations sur l'agrégat."]
+
+.. Passez en revue la taille de chaque volume et choisissez un ou plusieurs volumes pour sortir de l'agrégat.
++
+Vous devez choisir des volumes suffisamment volumineux pour libérer de l'espace dans l'agrégat afin d'éviter d'autres problèmes de capacité à l'avenir.
+
+
+
+. Si le système n'a pas atteint la limite de disque, vous devez déplacer les volumes vers un agrégat existant ou vers un nouvel agrégat sur le même système.
++
+Pour plus de détails, voir link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues["Déplacement des volumes vers un autre agrégat pour éviter les problèmes de capacité"].
+
+. Si le système a atteint la limite de disque, effectuez l'une des opérations suivantes :
++
+.. Supprimez tous les volumes inutilisés.
+.. Réorganiser les volumes pour libérer de l'espace sur un agrégat.
++
+Pour plus de détails, voir link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues["Déplacement des volumes vers un autre agrégat pour éviter les problèmes de capacité"].
+
+.. Déplacez deux volumes ou plus vers un autre système disposant d'espace.
++
+Pour plus de détails, voir link:task-manage-volumes.html#moving-volumes-to-another-system-to-avoid-capacity-issues["Déplacement des volumes vers un autre système pour éviter les problèmes de capacité"].
+
+
+
+
+
+
+
+=== Déplacement des volumes vers un autre système pour éviter les problèmes de capacité
+
+Vous pouvez déplacer un ou plusieurs volumes vers un autre système Cloud Volumes ONTAP pour éviter les problèmes de capacité. Vous devrez peut-être le faire si le système a atteint sa limite de disque.
+
+Vous pouvez suivre les étapes de cette tâche pour corriger le message Action requise suivant :
+
+ Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit.
+.Étapes
+. Identifiez un système Cloud Volumes ONTAP doté de la capacité disponible ou déployez un nouveau système.
+. Faites glisser et déposez l'environnement de travail source sur l'environnement de travail cible pour effectuer une réplication unique du volume.
++
+Pour plus de détails, voir https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Réplication des données entre les systèmes"^].
+
+. Accédez à la page Etat de la réplication, puis rompez la relation SnapMirror pour convertir le volume répliqué d'un volume de protection des données en volume en lecture/écriture.
++
+Pour plus de détails, voir https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Gestion des planifications et des relations de réplication des données"^].
+
+. Configurez le volume pour l'accès aux données.
++
+Pour plus d'informations sur la configuration d'un volume de destination pour l'accès aux données, reportez-vous à la section http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["Guide rapide de reprise après incident de volumes ONTAP 9"^].
+
+. Supprimez le volume d'origine.
++
+Pour plus de détails, voir link:task-manage-volumes.html#manage-volumes["Gérer les volumes"].
+
+
+
+
+
+=== Déplacez les volumes vers un autre agrégat pour éviter les problèmes de capacité
+
+Vous pouvez déplacer un ou plusieurs volumes vers un autre agrégat pour éviter les problèmes de capacité.
+
+Vous pouvez suivre les étapes de cette tâche pour corriger le message Action requise suivant :
+
+ Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you.
+.Étapes
+. Vérifiez si un agrégat existant a la capacité disponible pour les volumes que vous devez déplacer :
++
+.. Dans l'environnement de travail, cliquez sur l'icône de menu, puis sur *Avancé > allocation avancée*.
+.. Sélectionnez chaque agrégat, cliquez sur *Info*, puis affichez la capacité disponible (capacité d'agrégat moins la capacité d'agrégat utilisée).
++
+image:screenshot_aggr_capacity.gif["Capture d'écran : affiche la capacité totale d'agrégat et la capacité d'agrégat utilisée disponibles dans la boîte de dialogue Informations d'agrégat."]
+
+
+
+. Si nécessaire, ajoutez des disques à un agrégat existant :
++
+.. Sélectionner l'agrégat, puis cliquer sur *Add disks*.
+.. Sélectionnez le nombre de disques à ajouter, puis cliquez sur *Ajouter*.
+
+
+. Si aucun agrégat n'a de capacité disponible, créez un nouvel agrégat.
++
+Pour plus de détails, voir link:task-create-aggregates.html["Création d'agrégats"].
+
+. Utilisez System Manager ou l'interface de ligne de commande pour déplacer les volumes vers l'agrégat.
+. Dans la plupart des cas, vous pouvez utiliser System Manager pour déplacer des volumes.
++
+Pour obtenir des instructions, reportez-vous au http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guide de migration de volumes ONTAP 9 Express"^].
+
+
+
+
+
+== Raisons de la lenteur d'un déplacement de volume
+
+Le déplacement d'un volume peut prendre plus de temps que ce que vous attendez si l'une des conditions suivantes est vraie pour Cloud Volumes ONTAP :
+
+* Le volume est un clone.
+* Le volume est parent d'un clone.
+* L'agrégat source ou de destination dispose d'un seul disque dur (st1) à débit optimisé.
+* L'un des agrégats utilise un ancienne schéma de nommage des objets. Les deux agrégats doivent utiliser le même format de nom.
++
+Une ancienne méthode de nommage est utilisée si le Tiering des données était activé sur un agrégat dans la version 9.4 ou antérieure.
+
+* Les paramètres de chiffrement ne correspondent pas aux agrégats source et de destination, ou une nouvelle clé est en cours.
+* L'option _-Tiering-policy_ a été spécifiée sur le déplacement de volumes pour modifier la règle de Tiering.
+* L'option _-generate-destination-key_ a été spécifiée lors du déplacement du volume.
+

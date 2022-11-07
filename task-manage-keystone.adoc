@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: task-manage-keystone.html 
+keywords: license, licensing, install, keystone, requst capacity, link subscription, add keystone subscription, keystone subscription 
+summary: 'La page Portefeuille numérique vous permet de gérer les licences pour Cloud Volumes ONTAP à partir d"un seul emplacement. Vous pouvez ajouter de nouvelles licences et mettre à jour des licences existantes.' 
+---
+= Gérez les abonnements Keystone Flex
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gérez vos abonnements Keystone Flex à partir du portefeuille digital en activant les abonnements pour une utilisation avec Cloud Volumes ONTAP. Vous pouvez également demander des modifications à la capacité engagée et annuler la liaison des abonnements.
+
+Un _Keystone Flex Subscription_ est un service de stockage NetApp qui offre un modèle de paiement à l'utilisation.
+
+Le _Portefeuille numérique_ vous permet de gérer les licences de Cloud Volumes ONTAP à partir d'un seul emplacement. Vous pouvez ajouter de nouvelles licences et mettre à jour des licences existantes.
+
+link:concept-licensing.html["En savoir plus sur les licences Cloud Volumes ONTAP"].
+
+
+
+== Autoriser votre compte
+
+Avant de pouvoir utiliser et gérer les abonnements Keystone Flex dans BlueXP, vous devez contacter NetApp pour autoriser votre compte utilisateur BlueXP avec vos abonnements Keystone Flex.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Portefeuille numérique*.
+. Cliquez sur *abonnement Keystone Flex*.
+. Si vous voyez la page *Bienvenue dans NetApp Keystone*, envoyez un e-mail à l'adresse indiquée sur la page.
++
+Un représentant NetApp traitera votre demande en autorisant votre compte utilisateur à accéder aux abonnements.
+
+. Revenez à l'abonnement *Keystone Flex* pour afficher vos abonnements.
++
+image:screenshot-keystone-overview.png["Capture d'écran affichant la liste des abonnements Keystone Flex."]
+
+
+
+Associez les abonnements que vous souhaitez utiliser avec Cloud Volumes ONTAP.
+
+
+
+== Associer un abonnement
+
+Après avoir autorisé votre compte, vous devez lier des abonnements Keystone Flex à utiliser avec Cloud Volumes ONTAP. Cette action permet aux utilisateurs de sélectionner l'abonnement comme méthode de facturation pour les nouveaux systèmes Cloud Volumes ONTAP.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Portefeuille numérique*.
+. Cliquez sur *abonnement Keystone Flex*.
+. Pour l'abonnement que vous souhaitez lier, cliquez sur image:icon-action.png["Icône représentant trois points côte à côte"] Et sélectionnez *Link*.
++
+image:screenshot-keystone-link.png["Capture d'écran affichant l'option de lien pour un abonnement."]
+
+
+
+L'abonnement est désormais lié à votre compte BlueXP et disponible pour la création d'un environnement de travail Cloud Volumes ONTAP.
+
+
+
+== Demandez plus ou moins de capacité dédiée
+
+Si vous devez ajuster la capacité engagée pour un abonnement, vous pouvez envoyer une demande directement à partir de l'interface BlueXP.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Portefeuille numérique*.
+. Cliquez sur *abonnement Keystone Flex*.
+. Pour l'abonnement pour lequel vous souhaitez ajuster la capacité, cliquez sur image:icon-action.png["Icône représentant trois points côte à côte"] Et sélectionnez *Afficher le détail et modifier*.
+. Saisissez la capacité d'engagement requise pour un ou plusieurs abonnements.
++
+image:screenshot-keystone-request.png["Capture d'écran indiquant la possibilité de demander une modification de la capacité demandée pour un abonnement."]
+
+. Faites défiler vers le bas, saisissez les détails supplémentaires de la demande, puis cliquez sur *Envoyer*.
+
+
+Votre demande crée un ticket dans le système NetApp.
+
+
+
+== Dissocier un abonnement
+
+Si vous ne souhaitez plus utiliser un abonnement Keystone Flex avec de nouveaux systèmes Cloud Volumes ONTAP, vous pouvez annuler la liaison de l'abonnement. Notez que vous ne pouvez dissocier qu'un abonnement qui n'est pas associé à un abonnement Cloud Volumes ONTAP existant.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Portefeuille numérique*.
+. Cliquez sur *abonnement Keystone Flex*.
+. Pour l'abonnement que vous souhaitez dissocier, cliquez sur image:icon-action.png["Icône représentant trois points côte à côte"] Et sélectionnez *Unlink*.
+
+
+L'abonnement n'est plus lié à votre compte BlueXP et ne peut plus être sélectionné lors de la création d'un environnement de travail Cloud Volumes ONTAP.

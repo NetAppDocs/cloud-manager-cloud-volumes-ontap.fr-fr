@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: concept-worm.html 
+keywords: worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage 
+summary: 'Vous pouvez activer le stockage WORM (écriture unique) en lecture seule sur un système Cloud Volumes ONTAP pour conserver les fichiers sous forme non modifiée pendant une période de conservation spécifiée. Le stockage WORM dans le cloud est optimisé par la technologie SnapLock, ce qui signifie que les fichiers WORM sont protégés au niveau des fichiers.' 
+---
+= Stockage WORM
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez activer le stockage WORM (écriture unique) en lecture seule sur un système Cloud Volumes ONTAP pour conserver les fichiers sous forme non modifiée pendant une période de conservation spécifiée. Le stockage WORM dans le cloud est optimisé par la technologie SnapLock, ce qui signifie que les fichiers WORM sont protégés au niveau des fichiers.
+
+
+
+== Fonctionnement du stockage WORM
+
+Une fois qu'un fichier a été alloué au stockage WORM, il ne peut pas être modifié, même après l'expiration de la période de conservation. Une horloge inviolable détermine le moment où la période de conservation d'un fichier WORM s'est écoulée.
+
+Une fois la période de conservation écoulée, vous êtes responsable de la suppression des fichiers dont vous n'avez plus besoin.
+
+
+
+== Chargement
+
+La charge du stockage WORM est horaire, selon la capacité totale provisionnée des volumes WORM.
+
+https://cloud.netapp.com/pricing["En savoir plus sur la tarification pour le stockage WORM"^].
+
+
+
+== Activation du stockage WORM
+
+Vous pouvez activer le stockage WORM sur un système Cloud Volumes ONTAP lorsque vous créez un nouvel environnement de travail. Cela inclut la définition de la période de conservation par défaut pour les fichiers.
+
+
+NOTE: Vous ne pouvez pas activer le stockage WORM sur des volumes individuels :-WORM doit être activé au niveau du système.
+
+L'image suivante montre comment activer le stockage WORM lors de la création d'un environnement de travail :
+
+image:screenshot_enable_worm.png["Affiche l'option WORM disponible lors de la création d'un nouvel environnement de travail."]
+
+
+
+== Validation de fichiers sur WORM
+
+Vous pouvez utiliser une application pour valider des fichiers sur WORM via NFS ou CIFS, ou utiliser l'interface de ligne de commande ONTAP pour auto-valider des fichiers sur WORM automatiquement. Vous pouvez également utiliser un fichier WORM inscriptible pour conserver les données écrites de façon incrémentielle, comme les informations de journal.
+
+Après avoir activé le stockage WORM sur un système Cloud Volumes ONTAP, vous devez utiliser l'interface de ligne de commande ONTAP pour toute la gestion du stockage WORM. Pour obtenir des instructions, reportez-vous à la section http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html["Documentation ONTAP"^].
+
+
+
+== Limites
+
+* Le stockage WORM dans Cloud Volumes ONTAP fonctionne selon un modèle « administrateur de stockage de confiance ». Les fichiers WORM sont protégés contre les modifications ou modifications, mais un administrateur du cluster peut supprimer des volumes, même si ces volumes contiennent des données WORM non expirées.
+* En plus du modèle d'administrateur de stockage de confiance, le stockage WORM dans Cloud Volumes ONTAP fonctionne aussi implicitement sous un modèle d'administrateur cloud reconnu. Un administrateur cloud peut supprimer des données WORM avant leur date d'expiration en supprimant ou en modifiant directement le stockage cloud du fournisseur cloud.
+* Lorsque le stockage WORM est activé, le Tiering des données vers le stockage objet ne peut pas être activé.
+

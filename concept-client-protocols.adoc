@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: concept-client-protocols.html 
+keywords: client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs 
+summary: Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB et S3. 
+---
+= Protocoles clients
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB et S3.
+
+
+
+== ISCSI
+
+ISCSI est un protocole de bloc capable de s'exécuter sur les réseaux Ethernet standard. La plupart des systèmes d'exploitation clients proposent un initiateur logiciel qui fonctionne sur un port Ethernet standard.
+
+
+
+== NFS
+
+NFS est le protocole d'accès classique aux fichiers pour les systèmes UNIX et LINUX. Les clients peuvent accéder aux fichiers des volumes ONTAP à l'aide des protocoles NFS v3, NFS V4 et NFS v4.1. Vous pouvez contrôler l'accès aux fichiers à l'aide d'autorisations de style UNIX, d'autorisations de style NTFS ou d'une combinaison des deux.
+
+Les clients peuvent accéder aux mêmes fichiers à l'aide des protocoles NFS et SMB.
+
+
+
+== PME
+
+SMB est le protocole d'accès aux fichiers traditionnel pour les systèmes Windows. Les clients peuvent accéder aux fichiers des volumes ONTAP à l'aide des protocoles SMB 2.0, SMB 2.1, SMB 3.0 et SMB 3.1.1. Tout comme avec NFS, plusieurs styles d'autorisation sont pris en charge.
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]

@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task-registering.html 
+keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support 
+summary: 'Le support de NetApp est inclus avec les systèmes de facturation Cloud Volumes ONTAP, mais vous devez d"abord activer le support en enregistrant les systèmes NetApp.' 
+---
+= Enregistrement des systèmes de paiement à l'utilisation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le support de NetApp est inclus avec les systèmes de facturation Cloud Volumes ONTAP, mais vous devez d'abord activer le support en enregistrant les systèmes NetApp.
+
+L'enregistrement d'un système PAYGO avec NetApp est requis pour mettre à niveau le logiciel ONTAP à l'aide des méthodes indiquées link:task-updating-ontap-cloud.html["décrit sur cette page"].
+
+
+TIP: Un système qui n'est pas enregistré pour le support recevra toujours les notifications de mise à jour de logiciel qui apparaissent dans BlueXP lorsqu'une nouvelle version est disponible. Mais vous devrez enregistrer le système avant de pouvoir mettre à niveau le logiciel.
+
+.Étapes
+. Si vous n'avez pas encore ajouté votre compte sur le site de support NetApp à BlueXP, accédez à *Paramètres du compte* et ajoutez-le maintenant.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Découvrez comment ajouter des comptes au site de support NetApp"^].
+
+. Dans le menu de navigation de gauche, sélectionnez *stockage > Canvas*
+. Sur la page Canevas, double-cliquez sur le nom du système que vous souhaitez enregistrer.
+. Cliquez sur l'icône du menu, puis sur *support Registration* :
++
+image:screenshot_menu_registration.gif["Capture d'écran : affiche l'option d'enregistrement Support sélectionnée dans l'icône de menu d'un système Cloud Volumes ONTAP."]
+
+. Sélectionnez un compte sur le site de support NetApp et cliquez sur *Register*.
+
+
+BlueXP enregistre le système avec NetApp.

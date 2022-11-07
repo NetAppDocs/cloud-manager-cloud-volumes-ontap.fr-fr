@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-monitoring-costs.html 
+keywords: cost, costs, storage, compute, savings, aws, aws costs, billing 
+summary: 'BlueXP vous permet de consulter les coûts associés à l"exécution de Cloud Volumes ONTAP dans AWS. Vous pouvez également voir les économies réalisées grâce aux fonctionnalités NetApp qui permettent de réduire les coûts de stockage.' 
+---
+= Contrôle des coûts des ressources AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP vous permet de consulter les coûts des ressources associés à l'exécution de Cloud Volumes ONTAP dans AWS. Vous pouvez également voir les économies réalisées grâce aux fonctionnalités NetApp qui permettent de réduire les coûts de stockage.
+
+BlueXP met à jour les coûts lorsque vous actualisez la page. Vous devez vous référer à AWS pour plus de détails sur le coût final.
+
+.Étape
+. Vérifiez que BlueXP peut obtenir des informations de coût depuis AWS :
++
+.. Assurez-vous que la stratégie IAM qui fournit des autorisations à BlueXP inclut les autorisations requises.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Afficher les autorisations requises"^]
+
+.. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html["Activer la balise *WorkingEnvironnement*"^].
++
+Pour suivre vos coûts AWS, BlueXP attribue une balise d'allocation des coûts aux instances Cloud Volumes ONTAP. Après avoir créé votre premier environnement de travail, activez la balise *WorkingEnvironment,Id*. Les balises définies par l'utilisateur n'apparaissent pas dans les rapports de facturation AWS tant que vous ne les activez pas dans la console de facturation et de gestion des coûts.
+
+
+
+. Dans le menu de navigation de gauche, sélectionnez *stockage > Canvas*.
+. Sur la page Canevas, sélectionnez un environnement de travail Cloud Volumes ONTAP, puis cliquez sur *coût*.
++
+La page coûts affiche les coûts des mois actuels et précédents et présente vos économies annuelles sur les produits NetApp, si vous avez activé les fonctions d'économies de volumes offertes par NetApp.
+
++
+L'image suivante montre un exemple de page de coût :
+
++
+image:screenshot_cost.gif["Capture d'écran : affiche les coûts par mois d'une instance Cloud Volumes ONTAP."]
+
+

@@ -111,9 +111,6 @@ Comme indiqué ci-dessus, le choix de la taille de disque n'est pas pris en char
 --
 
 
-Pour plus d'informations sur le dimensionnement de votre système Cloud Volumes ONTAP dans AWS, visionnez la vidéo suivante :
-
-video::GELcXmOuYPw[youtube,width=848,height=480]
 
 
 == Afficher les disques système par défaut

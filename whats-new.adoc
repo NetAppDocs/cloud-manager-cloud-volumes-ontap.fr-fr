@@ -20,6 +20,24 @@ Les améliorations décrites sur cette page sont spécifiques aux fonctions Blue
 
 
 
+== 4 décembre 2022
+
+Les modifications suivantes ont été introduites avec la version 3.9.24 du connecteur.
+
+
+
+=== WORM + sauvegarde dans le cloud désormais disponible lors de la création de Cloud Volumes ONTAP
+
+La possibilité d'activer les fonctionnalités WORM (Write Once, Read Many) et Cloud Backup est désormais disponible lors du processus de création de Cloud Volumes ONTAP.
+
+
+
+=== La région Israël est désormais prise en charge dans Google Cloud
+
+La région Israël est désormais prise en charge dans Google Cloud pour Cloud Volumes ONTAP et le connecteur pour Cloud Volumes ONTAP 9.11.1 P3 ou version ultérieure.
+
+
+
 == 6 novembre 2022
 
 Les modifications suivantes ont été introduites avec la version 3.9.23 du connecteur.

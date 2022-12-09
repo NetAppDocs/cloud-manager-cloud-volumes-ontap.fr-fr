@@ -36,13 +36,13 @@ Les clients peuvent accéder aux mêmes fichiers à l'aide des protocoles NFS et
 
 SMB est le protocole d'accès aux fichiers traditionnel pour les systèmes Windows. Les clients peuvent accéder aux fichiers des volumes ONTAP à l'aide des protocoles SMB 2.0, SMB 2.1, SMB 3.0 et SMB 3.1.1. Tout comme avec NFS, plusieurs styles d'autorisation sont pris en charge.
 
-ifdef::aws[]
 
-endif::aws[]
 
-ifdef::azure[]
+== S3
 
-endif::azure[]
+Cloud Volumes ONTAP prend en charge S3 en option pour le stockage scale-out. La prise en charge du protocole S3 permet de configurer l'accès des clients S3 aux objets contenus dans un compartiment d'une machine virtuelle de stockage (SVM).
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Découvrez comment configurer et gérer les services de stockage objet S3 dans ONTAP"^].
 
 
 

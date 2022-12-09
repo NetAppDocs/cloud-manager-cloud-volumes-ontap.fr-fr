@@ -4571,4 +4571,9 @@
   <block id="26107ad7eb2db3c2d4b832701061add4" category="list-text">Type de disque Azure avec des systèmes à un seul nœud</block>
   <block id="7a91b2f49a589947c7854acf66d0f91a" category="list-text">Type de disque Azure avec paires haute disponibilité</block>
   <block id="a75a698e7d0ed400565763b148a6d0db" category="list-text">Les systèmes HAUTE DISPONIBILITÉ utilisent des disques gérés partagés Premium SSD, qui offrent à la fois des performances élevées pour les charges de travail exigeantes en E/S, à un coût plus élevé. Les déploiements HAUTE DISPONIBILITÉ créés avant la version 9.12.1 utilisent des objets blob de pages Premium.</block>
+  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="section-title">S3</block>
+  <block id="cc5f50b3903dc30a3a3545bb58fcdd14" category="paragraph">Cloud Volumes ONTAP prend en charge S3 en option pour le stockage scale-out. La prise en charge du protocole S3 permet de configurer l'accès des clients S3 aux objets contenus dans un compartiment d'une machine virtuelle de stockage (SVM).</block>
+  <block id="75081fb4982f7b843e702079b35f0ed4" category="paragraph"><block ref="3fe75f10a35597997861eca633c30fa7" category="inline-link-rx"></block>.</block>
+  <block id="eba1f3287bdc33dfa25c084b5e15a4c5" category="cell">9.12.1</block>
+  <block id="708ffc372ba6f36174a7930961b956ab" category="section-title">8 décembre 2022</block>
 </blocks>

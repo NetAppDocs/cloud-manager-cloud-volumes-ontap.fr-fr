@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:57:18 +0000">12/09/2022</time>
     
   
 
@@ -2048,7 +2048,7 @@
 <h2 id="composants-de-haute-disponibilité">Composants DE HAUTE DISPONIBILITÉ</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="configuration-dobjets-blob-de-page-haute-disponibilité">Configuration d&#8217;objets blob de page HAUTE DISPONIBILITÉ</h3>
+<h3 id="configuration-de-zone-de-disponibilité-unique-haute-disponibilité-avec-objets-blob-de-pages">Configuration de zone de disponibilité unique HAUTE DISPONIBILITÉ avec objets blob de pages</h3>
 <div class="paragraph">
 <p>La configuration d&#8217;objets blob de pages Cloud Volumes ONTAP HA dans Azure comprend les composants suivants :</p>
 </div>
@@ -2105,6 +2105,38 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="configuration-à-zone-de-disponibilité-unique-haute-disponibilité-avec-disques-gérés-partagés">Configuration à zone de disponibilité unique HAUTE DISPONIBILITÉ avec disques gérés partagés</h3>
+<div class="paragraph">
+<p>Une configuration à zone de disponibilité unique de Cloud Volumes ONTAP HA s&#8217;exécutant sur le disque géré partagé comprend les composants suivants :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_ha_azure_saz_lrs.png" alt="Image conceptuelle qui montre un équilibreur de charge gérant le trafic entrant depuis BlueXP et les clients, deux nœuds Cloud Volumes ONTAP dans un ensemble de disponibilité, des disques SSD pour les données de démarrage et des disques gérés LRS pour les données client."></span></p>
+</div>
+<div class="paragraph">
+<p>Notez les éléments suivants concernant les composants Azure que BlueXP déploie pour vous :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Équilibreur de la charge Azure Standard</dt>
+<dd>
+<p>Le répartiteur de charge gère le trafic entrant vers la paire haute disponibilité Cloud Volumes ONTAP.</p>
+</dd>
+<dt class="hdlist1">Ensemble de disponibilité</dt>
+<dd>
+<p>Le jeu de disponibilité Azure est un regroupement logique des nœuds Cloud Volumes ONTAP. L&#8217;ensemble de disponibilité garantit que les nœuds se trouvent dans des domaines de défaillance et de mise à jour différents pour assurer la redondance et la disponibilité. <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview" target="_blank" rel="noopener">"Pour en savoir plus sur les ensembles de disponibilité, consultez la documentation Azure"</a>.</p>
+</dd>
+<dt class="hdlist1">Disques</dt>
+<dd>
+<p>Les données client résident sur des disques gérés LRS (stockage redondant local). Chaque nœud a accès au stockage de l&#8217;autre nœud. Du stockage supplémentaire est également requis pour <a href="reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap">"Données d&#8217;amorçage, racine, racine du partenaire, cœur et données NVRAM"</a>.</p>
+</dd>
+<dt class="hdlist1">Comptes de stockage</dt>
+<dd>
+<p>Les comptes de stockage sont utilisés pour les déploiements sur disques gérés pour la gestion des journaux de diagnostic et le Tiering sur le stockage d&#8217;objets blob.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
 <h3 id="configuration-haute-disponibilité-de-plusieurs-zones-de-disponibilité">Configuration HAUTE DISPONIBILITÉ de plusieurs zones de disponibilité</h3>
 <div class="paragraph">
 <p>Une configuration de plusieurs zones de disponibilité Cloud Volumes ONTAP HA dans Azure inclut les composants suivants :</p>
@@ -2131,20 +2163,7 @@
 </dd>
 <dt class="hdlist1">Comptes de stockage</dt>
 <dd>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Un seul compte de stockage est nécessaire pour les disques gérés. Les comptes de stockage créés par BlueXP pour les paires haute disponibilité sont des comptes de stockage v2 à usage général.</p>
-</li>
-<li>
-<p>Vous pouvez activer une connexion HTTPS à partir d&#8217;une paire haute disponibilité Cloud Volumes ONTAP 9.7 vers des comptes de stockage Azure lors de la création d&#8217;un environnement de travail. Notez que l&#8217;activation de cette option peut avoir un impact sur les performances d&#8217;écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l&#8217;environnement de travail.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<p>Les comptes de stockage sont utilisés pour les déploiements sur disques gérés pour la gestion des journaux de diagnostic et le Tiering sur le stockage d&#8217;objets blob.</p>
 </dd>
 </dl>
 </div>

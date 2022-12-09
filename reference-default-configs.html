@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:57:18 +0000">12/09/2022</time>
     
   
 
@@ -2207,7 +2207,7 @@ L&#8217;administrateur du compte peut modifier cette valeur à partir de la page
 </table>
 <div class="paragraph">
 <p>+<br>
-Pour plus d&#8217;informations sur ces attributs, reportez-vous à la page <em>volume create</em> man.</p>
+Voir la <a href="https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html">"ONTAP <em>volume create</em> man page"</a> pour plus d&#8217;informations sur ces attributs.</p>
 </div>
 </li>
 </ul>
@@ -2294,7 +2294,7 @@ Dans AWS, la mémoire NVRAM est sur le disque de démarrage.
 <p>Un snapshot Azure pour chaque disque d&#8217;initialisation et disque racine</p>
 </li>
 <li>
-<p>Les disques de démarrage et racine sont chiffrés par défaut.</p>
+<p>Par défaut, chaque disque dans Azure est chiffré au repos.</p>
 </li>
 </ul>
 </div>
@@ -2302,6 +2302,7 @@ Dans AWS, la mémoire NVRAM est sur le disque de démarrage.
 <div class="sect2">
 <h3 id="azure-paire-ha">Azure (paire HA)</h3>
 <div class="ulist">
+<div class="title">Paires HA avec un blob de pages</div>
 <ul>
 <li>
 <p>Deux disques SSD Premium de 10 Gio pour le volume de démarrage (un par nœud)</p>
@@ -2319,7 +2320,30 @@ Dans AWS, la mémoire NVRAM est sur le disque de démarrage.
 <p>Un snapshot Azure pour chaque disque d&#8217;initialisation et disque racine</p>
 </li>
 <li>
-<p>Les disques de démarrage et racine sont chiffrés par défaut.</p>
+<p>Par défaut, chaque disque dans Azure est chiffré au repos.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Paires HAUTE DISPONIBILITÉ dans plusieurs zones de disponibilité</div>
+<ul>
+<li>
+<p>Deux disques SSD Premium de 10 Gio pour le volume de démarrage (un par nœud)</p>
+</li>
+<li>
+<p>Deux blobs de page Premium de stockage de 512 Gio pour le volume racine (un par nœud)</p>
+</li>
+<li>
+<p>Deux disques durs standard de 1024 Gio pour les cœurs économiques (un par nœud)</p>
+</li>
+<li>
+<p>Deux disques SSD Premium de 512 Gio pour la NVRAM (un par nœud)</p>
+</li>
+<li>
+<p>Un snapshot Azure pour chaque disque d&#8217;initialisation et disque racine</p>
+</li>
+<li>
+<p>Par défaut, chaque disque dans Azure est chiffré au repos.</p>
 </li>
 </ul>
 </div>

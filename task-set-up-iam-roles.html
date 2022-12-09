@@ -9,14 +9,14 @@
   <meta property="og:title" content="Configurer les rôles IAM pour Cloud Volumes ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" />
-	<meta property="og:description" content="Chaque nœud Cloud Volumes ONTAP doit disposer d"un rôle IAM associé qui fournit les autorisations requises. Il en va de même pour le médiateur HA. Il est plu..." />
+	<meta property="og:description" content="Les rôles IAM avec les autorisations requises doivent être associés à chaque nœud Cloud Volumes ONTAP. Il en va de même pour le médiateur HA. Il est plus fac..." />
   <meta property="og:image" content="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Chaque nœud Cloud Volumes ONTAP doit disposer d"un rôle IAM associé qui fournit les autorisations requises. Il en va de même pour le médiateur HA. Il est plu...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Les rôles IAM avec les autorisations requises doivent être associés à chaque nœud Cloud Volumes ONTAP. Il en va de même pour le médiateur HA. Il est plus fac...">
   <meta name="keywords" content=" iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions"><!-- Icons -->
   <link rel="icon" href="/fr-fr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:57:18 +0000">12/09/2022</time>
     
   
 
@@ -2038,10 +2038,10 @@
 </p>
 
 <div class="paragraph lead">
-<p>Un rôle IAM avec les autorisations requises doit être associé à chaque nœud Cloud Volumes ONTAP. Il en va de même pour le médiateur HA. Il est plus facile de laisser BlueXP créer les rôles IAM pour vous, mais vous pouvez utiliser vos propres rôles.</p>
+<p>Les rôles IAM avec les autorisations requises doivent être associés à chaque nœud Cloud Volumes ONTAP. Il en va de même pour le médiateur HA. Il est plus facile de laisser BlueXP créer les rôles IAM pour vous, mais vous pouvez utiliser vos propres rôles.</p>
 </div>
 <div class="paragraph">
-<p>Cette tâche est facultative. Lorsque vous créez un environnement de travail Cloud Volumes ONTAP, l&#8217;option par défaut est de laisser BlueXP créer les rôles IAM pour vous. Si les politiques de sécurité de votre entreprise exigent que vous créiez vous-même le rôle IAM, suivez les étapes ci-dessous.</p>
+<p>Cette tâche est facultative. Lorsque vous créez un environnement de travail Cloud Volumes ONTAP, l&#8217;option par défaut est de laisser BlueXP créer les rôles IAM pour vous. Si les politiques de sécurité de votre entreprise exigent que vous créiez vous-même les rôles IAM, suivez les étapes ci-dessous.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2062,11 +2062,11 @@ La fourniture de votre propre rôle IAM est requise dans l&#8217;environnement d
 <p>Accédez à la console IAM AWS.</p>
 </li>
 <li>
-<p>Créez une politique IAM qui inclut les autorisations suivantes :</p>
+<p>Créez des règles IAM qui incluent les autorisations suivantes :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Nœuds Cloud Volumes ONTAP</p>
+<p>Règle de base pour les nœuds Cloud Volumes ONTAP</p>
 <div class="exampleblock tabbed-block">
 <div class="content">
 <div class="openblock">
@@ -2170,6 +2170,137 @@ La fourniture de votre propre rôle IAM est requise dans l&#8217;environnement d
 </div>
 </li>
 <li>
+<p>Règle de sauvegarde pour les nœuds Cloud Volumes ONTAP</p>
+<div class="paragraph">
+<p>Si vous prévoyez d&#8217;utiliser Cloud Backup avec vos systèmes Cloud Volumes ONTAP, le rôle IAM pour les nœuds doit inclure la seconde règle indiquée ci-dessous.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Régions standard</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">GovCloud (USA)</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws-us-gov:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws-us-gov:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Environnement C2S</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws-iso:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws-iso:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p>Ha médiateur</p>
 <div class="listingblock">
 <div class="content">
@@ -2198,7 +2329,7 @@ La fourniture de votre propre rôle IAM est requise dans l&#8217;environnement d
 </div>
 </li>
 <li>
-<p>Créez un rôle IAM et associez la règle que vous avez créée à l&#8217;étape précédente.</p>
+<p>Créez un rôle IAM et associez les règles que vous avez créées au rôle.</p>
 </li>
 </ol>
 </div>

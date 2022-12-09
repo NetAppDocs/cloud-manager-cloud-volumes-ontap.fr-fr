@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:41:30 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
     
   
 
@@ -2096,7 +2096,7 @@
 </div>
 </div>
 </dd>
-<dt class="hdlist1">Un seul nœud</dt>
+<dt class="hdlist1">Un seul nœud ou des paires haute disponibilité sur plusieurs zones</dt>
 <dd>
 <div class="openblock">
 <div class="content">
@@ -2162,7 +2162,7 @@
 <p><strong>Protection de purge</strong></p>
 </li>
 <li>
-<p><strong>Chiffrement de disque Azure pour chiffrement de volume</strong></p>
+<p><strong>Chiffrement de disque Azure pour chiffrement de volume</strong> (pour les systèmes à un seul nœud ou les paires HA dans plusieurs zones)</p>
 </li>
 </ul>
 </div>
@@ -2197,6 +2197,7 @@
 <p>Après avoir créé le coffre-fort de clés et généré une clé de cryptage, vous pouvez créer un nouveau système Cloud Volumes ONTAP configuré pour utiliser la clé. Ces étapes sont prises en charge à l&#8217;aide de l&#8217;API BlueXP.</p>
 </div>
 <div class="paragraph">
+<div class="title">Autorisations requises</div>
 <p>Si vous souhaitez utiliser une clé gérée par le client avec un système Cloud Volumes ONTAP à un seul nœud, assurez-vous que le connecteur BlueXP dispose des autorisations suivantes :</p>
 </div>
 <div class="listingblock">
@@ -2220,7 +2221,7 @@
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Les trois premières autorisations ne sont pas nécessaires pour les paires haute disponibilité.
+Les autorisations ne sont pas nécessaires pour les paires haute disponibilité dans une seule zone.
 </td>
 </tr>
 </table>
@@ -2311,6 +2312,7 @@ Les trois premières autorisations ne sont pas nécessaires pour les paires haut
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Un nouveau système Cloud Volumes ONTAP est configuré pour utiliser la clé gérée par le client pour le chiffrement des données.</p>
 </div>
 </div>

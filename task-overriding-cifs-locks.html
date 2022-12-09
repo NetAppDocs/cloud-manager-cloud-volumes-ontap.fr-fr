@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:41:30 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
     
   
 
@@ -2041,6 +2041,7 @@
 <p>L&#8217;administrateur du compte peut activer un paramètre dans BlueXP qui empêche tout problème lié au rétablissement du stockage Cloud Volumes ONTAP lors des événements de maintenance Azure. Lorsque vous activez ce paramètre, Cloud Volumes ONTAP vetoes les verrous CIFS et réinitialise les sessions CIFS actives.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Microsoft Azure planifie des événements de maintenance périodiques sur ses machines virtuelles. Lorsqu&#8217;un événement de maintenance se produit sur une paire haute disponibilité Cloud Volumes ONTAP, la paire haute disponibilité déclenche le basculement du stockage. Si des sessions CIFS sont actives au cours de cet événement de maintenance, les verrous sur les fichiers CIFS peuvent empêcher tout rétablissement du stockage.</p>
 </div>
 <div class="paragraph">
@@ -2059,6 +2060,7 @@ Ce processus peut entraîner des perturbations pour les clients CIFS. Les donné
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Ce dont vous avez besoin</div>
 <p>Vous devez créer un connecteur avant de pouvoir modifier les paramètres BlueXP. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#how-to-create-a-connector" target="_blank" rel="noopener">"Découvrez comment"</a>.</p>
 </div>
 <div class="olist arabic">

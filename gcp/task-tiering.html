@@ -1770,7 +1770,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:41:30 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
     
   
 
@@ -1789,22 +1789,26 @@
 <p>Pour configurer le Tiering des données, vous devez procéder comme suit :</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Une seule"></span> Choisissez une configuration prise en charge</div>
 <p>La plupart des configurations sont prises en charge. Si vous avez un système Cloud Volumes ONTAP exécutant la version la plus récente, vous devriez avoir un bon choix. <a href="task-tiering.html#configurations-that-support-data-tiering">"En savoir plus &gt;&gt;"</a>.</p>
 </div>
 <div class="ulist quick-margin-list">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Deux"></span> Assurez la connectivité entre le Cloud Volumes ONTAP et le stockage objet</div>
 <ul>
 <li>
-<p>Pour Google Cloud, vous devez configurer le sous-réseau pour Private Google Access et configurer un compte de service.  to tier cold data to a Google Cloud Storage bucket,En savoir plus &gt;&gt;.</p>
+<p>Pour Google Cloud, vous devez configurer le sous-réseau pour Private Google Access et configurer un compte de service. <a href="#il-est-donc-nécessaire-de-transférer-les-données-inactives-vers-un-compartiment-google-cloud-storage">En savoir plus </a>&gt;&gt;.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Le Tiering des données doit être activé sur un agrégat pour que le Tiering des données puisse être activé sur un volume. Vous devez connaître les exigences relatives aux nouveaux volumes et aux volumes existants.  that tiering is enabled on aggregates,En savoir plus &gt;&gt;.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Trois"></span> Assurez-vous que vous disposez d&#8217;un agrégat sur lequel le Tiering est activé</div>
+<p>Le Tiering des données doit être activé sur un agrégat pour que le Tiering des données puisse être activé sur un volume. Vous devez connaître les exigences relatives aux nouveaux volumes et aux volumes existants. <a href="S&.html#8217;assurer que le Tiering est activé sur les agrégats">En savoir plus </a>&gt;&gt;.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quatre"></span> Choisissez une règle de Tiering lors de la création, de la modification ou de la réplication d&#8217;un volume</div>
 <p>BlueXP vous invite à choisir une stratégie de hiérarchisation lorsque vous créez, modifiez ou répliquez un volume.</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p><a href="task-tiering.html#tiering-data-from-read-write-volumes">"Hiérarchisation des données sur les volumes en lecture-écriture"</a></p>
@@ -1833,7 +1837,7 @@
 <li>
 <p>Inutile d&#8217;activer le Tiering des données au niveau du système.</p>
 <div class="paragraph">
-<p>BlueXP crée un magasin d&#8217;objets pour les données inactives lorsque le système est créé,  data tiering after implementing the requirements,tant qu&#8217;il n&#8217;y a aucun problème de connectivité ou d&#8217;autorisation. Après cela, il vous suffit d&#8217;activer le Tiering des données sur les volumes (et dans certains cas,  that tiering is enabled on aggregates,sur les agrégats).</p>
+<p>BlueXP crée un magasin d&#8217;objets pour les données inactives lorsque le système est créé, <a href="#activation-du-tiering-des-données-après-la-mise-en-œuvre-des-exigences">tant qu&#8217;il n&#8217;y a aucun problème de connectivité ou d&#8217;autorisation</a>. Après cela, il vous suffit d&#8217;activer le Tiering des données sur les volumes (et dans certains cas, <a href="S&.html#8217;assurer que le Tiering est activé sur les agrégats">sur les agrégats</a>).</p>
 </div>
 </li>
 </ul>
@@ -1921,7 +1925,7 @@
 <div class="title">Étapes</div>
 <ol class="arabic">
 <li>
-<p>,Assurez-vous que vous avez satisfait à toutes les exigences.</p>
+<p><a href="#de-formation">Assurez-vous que vous avez satisfait à toutes les exigences</a>.</p>
 </li>
 <li>
 <p>Dans le menu de navigation de gauche, sélectionnez <strong>stockage &gt; Canvas</strong>.</p>
@@ -1938,7 +1942,7 @@
 <p>Cette option ne s&#8217;affiche que si le Tiering des données n&#8217;a pas pu être activé lorsque BlueXP a créé le système.</p>
 </div>
 <div class="paragraph">
-<p>Dans Google Cloud, un compte de service doit être joint à Cloud Volumes ONTAP avant que cette option ne s&#8217;affiche. ,Assurez-vous que vous avez satisfait à toutes les exigences.</p>
+<p>Dans Google Cloud, un compte de service doit être joint à Cloud Volumes ONTAP avant que cette option ne s&#8217;affiche. <a href="#de-formation">Assurez-vous que vous avez satisfait à toutes les exigences</a>.</p>
 </div>
 </li>
 <li>
@@ -2003,6 +2007,7 @@
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Et la suite ?</div>
 <p>Vous pouvez désormais activer le Tiering des données sur les volumes, nouveaux ou existants, comme expliqué dans la section suivante.</p>
 </div>
 </div>

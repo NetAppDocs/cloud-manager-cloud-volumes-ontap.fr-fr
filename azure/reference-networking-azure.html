@@ -1784,7 +1784,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:41:30 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:40:16 +0000">12/09/2022</time>
     
   
 
@@ -1841,32 +1841,163 @@
 <div class="sect2">
 <h3 id="adresses-ip">Adresses IP</h3>
 <div class="paragraph">
-<p>BlueXP alloue le nombre d&#8217;adresses IP suivant à Cloud Volumes ONTAP dans Azure :</p>
+<p>BlueXP alloue automatiquement le nombre requis d&#8217;adresses IP privées à Cloud Volumes ONTAP dans Azure. Vous devez vous assurer que votre réseau dispose de suffisamment d&#8217;adresses IP privées.</p>
+</div>
+<div class="paragraph">
+<p>Le nombre de LIF attribué par Cloud Manager pour Cloud Volumes ONTAP dépend du déploiement d&#8217;un système à un seul nœud ou d&#8217;une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Une LIF iSCSI fournit un accès client via le protocole iSCSI et est utilisée par le système pour d&#8217;autres flux de travail réseau importants. Ces LIFs sont requises et ne doivent pas être supprimées.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="adresses-ip-dun-système-à-un-seul-nœud">Adresses IP d&#8217;un système à un seul nœud</h4>
+<div class="paragraph">
+<p>BlueXP alloue 5 ou 6 adresses IP à un système à un seul nœud :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Un seul nœud : 5 adresses IP</p>
+<p>IP de gestion du cluster</p>
 </li>
 <li>
-<p>Paire HA : 16 adresses IP</p>
+<p>IP de gestion de nœuds</p>
+</li>
+<li>
+<p>IP intercluster pour SnapMirror</p>
+</li>
+<li>
+<p>NFS/CIFS IP</p>
+</li>
+<li>
+<p>IP iSCSI</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+L&#8217;IP iSCSI fournit un accès client via le protocole iSCSI. Il est également utilisé par le système pour d&#8217;autres flux de travail réseau importants. Cette LIF est requise et ne doit pas être supprimée.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Gestion des SVM (facultatif - non configuré par défaut)</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adresses-ip-des-paires-haute-disponibilité">Adresses IP des paires haute disponibilité</h4>
+<div class="paragraph">
+<p>BlueXP alloue des adresses IP à 4 NIC (par nœud) pendant le déploiement.</p>
 </div>
 <div class="paragraph">
 <p>Notez que BlueXP crée une LIF de gestion SVM sur des paires haute disponibilité, mais pas sur des systèmes à un seul nœud dans Azure.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p><strong>NIC0</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP de gestion de nœuds</p>
+</li>
+<li>
+<p>IP intercluster</p>
+</li>
+<li>
+<p>IP iSCSI</p>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Astuce">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.
+L&#8217;IP iSCSI fournit un accès client via le protocole iSCSI. Il est également utilisé par le système pour d&#8217;autres flux de travail réseau importants. Cette LIF est requise et ne doit pas être supprimée.
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC1</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP du réseau de cluster</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC2</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP d&#8217;interconnexion de cluster (ci haute disponibilité)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC3</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP de la carte réseau Pageblob (accès au disque)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+NIC3 ne s&#8217;applique qu&#8217;aux déploiements haute disponibilité avec des systèmes d&#8217;objets blob de pages.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Les adresses IP ci-dessus ne migrent pas lors des événements de basculement.</p>
+</div>
+<div class="paragraph">
+<p>En outre, 4 adresses IP front-end (FIPS) sont configurées pour migrer lors des événements de basculement. Ces IP frontales résident dans l&#8217;équilibreur de charge.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP de gestion du cluster</p>
+</li>
+<li>
+<p>IP de données NODEA (NFS/CIFS)</p>
+</li>
+<li>
+<p>IP de données du nœud B (NFS/CIFS)</p>
+</li>
+<li>
+<p>IP de gestion SVM</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">

@@ -35,14 +35,14 @@ Lorsque vous utilisez AKV, notez que par défaut une LIF de SVM de données perm
 
 == Processus de configuration
 
-La procédure décrite ci-dessus décrit comment enregistrer votre configuration Cloud Volumes ONTAP avec Azure et comment créer un coffre-fort de clés Azure et des clés. Si vous avez déjà effectué ces étapes, vérifiez que vous disposez des paramètres de configuration corrects, notamment dans , puis passer à .
+La procédure décrite ci-dessus décrit comment enregistrer votre configuration Cloud Volumes ONTAP avec Azure et comment créer un coffre-fort de clés Azure et des clés. Si vous avez déjà effectué ces étapes, vérifiez que vous disposez des paramètres de configuration corrects, notamment dans <<create-akv>>, puis passer à <<ontap>>.
 
-* 
-* 
-* 
-* 
-* 
-* 
+* <<azure-app>>
+* <<secret>>
+* <<create-akv>>
+* <<key>>
+* <<AAD>>
+* <<ontap>>
 
 
 [[azure-app]]

@@ -16,6 +16,7 @@ summary: 'L"interface de ligne de commandes Cloud Volumes ONTAP vous permet d"ex
 [role="lead"]
 L'interface de ligne de commandes Cloud Volumes ONTAP vous permet d'exécuter toutes les commandes d'administration et de choisir les tâches avancées ou si vous vous sentez plus à l'aide de l'interface de ligne de commandes. Vous pouvez vous connecter à l'interface de ligne de commande à l'aide de Secure Shell (SSH).
 
+.Avant de commencer
 L'hôte à partir duquel vous utilisez SSH pour vous connecter à Cloud Volumes ONTAP doit disposer d'une connexion réseau à Cloud Volumes ONTAP. Par exemple, vous devrez peut-être utiliser SSH d'un hôte sauter qui se trouve sur le réseau de votre fournisseur de cloud.
 
 ifdef::aws[]

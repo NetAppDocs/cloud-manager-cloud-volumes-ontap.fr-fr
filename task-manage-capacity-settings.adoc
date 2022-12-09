@@ -18,6 +18,7 @@ Chaque connecteur dispose de paramètres qui déterminent la façon dont il gèr
 
 Ces paramètres affectent tous les systèmes Cloud Volumes ONTAP gérés par un connecteur. Si vous avez un autre connecteur, il peut être configuré différemment.
 
+.Autorisations requises
 Des privilèges d'administrateur de compte sont requis pour modifier les paramètres de connecteur.
 
 .Étapes

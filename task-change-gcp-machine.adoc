@@ -49,4 +49,5 @@ TIP: Cette option est également disponible en entrant dans l'environnement de t
 . Sélectionnez un type de machine, cochez la case pour confirmer que vous comprenez les implications du changement, puis cliquez sur *OK*.
 
 
+.Résultat
 Cloud Volumes ONTAP redémarre avec la nouvelle configuration.

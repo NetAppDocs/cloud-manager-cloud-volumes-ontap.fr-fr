@@ -220,6 +220,7 @@ ifdef::gcp[]
 * Deux disques persistants SSD de 500 Gio pour la NVRAM
 * Deux disques persistants standard de 315 Gio pour économiser les cœurs
 * Un disque persistant standard de 10 Gio pour les données médiateurs
+* Un disque persistant standard de 10 Gio pour les données de démarrage médiateur
 * Snapshots pour les données de démarrage et racines
 * Les disques de démarrage et racine sont chiffrés par défaut.
 

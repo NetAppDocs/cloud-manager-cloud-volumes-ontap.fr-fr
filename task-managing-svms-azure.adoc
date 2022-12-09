@@ -59,6 +59,7 @@ Il est préférable d'utiliser une adresse IP statique car une adresse IP statiq
 
 Pour créer une LIF de management du SVM, répétez la procédure ci-dessous afin de créer une adresse IP supplémentaire.
 
+.Une fois que vous avez terminé
 Copiez les adresses IP privées que vous venez de créer. Vous devrez spécifier ces adresses IP lorsque vous créez des LIF pour la nouvelle machine virtuelle de stockage.
 
 
@@ -242,6 +243,7 @@ image:screenshot_azure_lb_rule.gif["Capture d'écran de l'ajout d'une règle d'�
 
 --
 ====
+.Une fois que vous avez terminé
 Copiez les adresses IP privées que vous venez de créer. Vous devrez spécifier ces adresses IP lorsque vous créez des LIF pour la nouvelle machine virtuelle de stockage.
 
 
@@ -632,4 +634,5 @@ network interface service-policy add-service -vserver <svm-name> -policy default
 
 --
 ====
+.Et la suite ?
 Après avoir créé un serveur virtuel de stockage sur une paire haute disponibilité, il est préférable d'attendre 12 heures avant de provisionner le stockage sur ce SVM. Depuis la version Cloud Volumes ONTAP 9.10.1, BlueXP analyse les paramètres de l'équilibreur de charge d'une paire HA à un intervalle de 12 heures. S'il existe de nouveaux SVM, BlueXP activation d'un paramètre qui permet un basculement non planifié plus court.

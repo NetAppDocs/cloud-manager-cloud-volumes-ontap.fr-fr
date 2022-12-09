@@ -375,7 +375,7 @@ Notez les éléments suivants lors de la configuration de l'instance :
 
 Vous pouvez lancer des instances Cloud Volumes ONTAP dans l'environnement AWS commercial Cloud Services en créant de nouveaux environnements de travail dans BlueXP.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Si vous avez acheté une licence, vous devez disposer du fichier de licence que vous avez reçu de NetApp. Le fichier de licence est un fichier .NLF au format JSON.
 * Une paire de clés est requise pour activer l'authentification SSH basée sur des clés au médiateur HA.
 
@@ -418,6 +418,7 @@ NOTE: Si vous avez besoin d'une taille différente par la suite, vous pouvez uti
 
 
 
+.Résultat
 BlueXP lance l'instance Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.
 
 

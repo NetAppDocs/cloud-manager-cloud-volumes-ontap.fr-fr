@@ -18,37 +18,42 @@ Vous pouvez réduire les coûts de stockage pour Cloud Volumes ONTAP en combinan
 
 Pour configurer le Tiering des données, vous devez procéder comme suit :
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Choisissez une configuration prise en charge
 [role="quick-margin-para"]
 La plupart des configurations sont prises en charge. Si vous avez un système Cloud Volumes ONTAP exécutant la version la plus récente, vous devriez avoir un bon choix. link:task-tiering.html#configurations-that-support-data-tiering["En savoir plus >>"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Assurez la connectivité entre le Cloud Volumes ONTAP et le stockage objet
 [role="quick-margin-list"]
 ifdef::aws[]
 
-* Pour AWS, vous avez besoin d'un terminal VPC vers S3.  to tier cold data to AWS S3,En savoir plus >>.
+* Pour AWS, vous avez besoin d'un terminal VPC vers S3. <<Conditions requises pour le Tiering des données inactives vers AWS S3,En savoir plus >>>>.
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Pour Azure, vous n'aurez rien à faire tant que BlueXP dispose des autorisations requises.  to tier cold data to Azure Blob storage,En savoir plus >>.
+* Pour Azure, vous n'aurez rien à faire tant que BlueXP dispose des autorisations requises. <<Il est nécessaire de déplacer les données inactives vers le stockage Azure Blob,En savoir plus >>>>.
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Pour Google Cloud, vous devez configurer le sous-réseau pour Private Google Access et configurer un compte de service.  to tier cold data to a Google Cloud Storage bucket,En savoir plus >>.
+* Pour Google Cloud, vous devez configurer le sous-réseau pour Private Google Access et configurer un compte de service. <<Il est donc nécessaire de transférer les données inactives vers un compartiment Google Cloud Storage,En savoir plus >>>>.
 
 
 endif::gcp[]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Assurez-vous que vous disposez d'un agrégat sur lequel le Tiering est activé
 [role="quick-margin-para"]
-Le Tiering des données doit être activé sur un agrégat pour que le Tiering des données puisse être activé sur un volume. Vous devez connaître les exigences relatives aux nouveaux volumes et aux volumes existants.  that tiering is enabled on aggregates,En savoir plus >>.
+Le Tiering des données doit être activé sur un agrégat pour que le Tiering des données puisse être activé sur un volume. Vous devez connaître les exigences relatives aux nouveaux volumes et aux volumes existants. <<S'assurer que le Tiering est activé sur les agrégats,En savoir plus >>>>.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Choisissez une règle de Tiering lors de la création, de la modification ou de la réplication d'un volume
 [role="quick-margin-para"]
 BlueXP vous invite à choisir une stratégie de hiérarchisation lorsque vous créez, modifiez ou répliquez un volume.
 
+[role="quick-margin-list"]
 * link:task-tiering.html#tiering-data-from-read-write-volumes["Hiérarchisation des données sur les volumes en lecture-écriture"]
 * link:task-tiering.html#tiering-data-from-data-protection-volumes["Hiérarchisation des données sur les volumes de protection des données"]
 
@@ -60,7 +65,7 @@ BlueXP vous invite à choisir une stratégie de hiérarchisation lorsque vous cr
 * Il n'est pas nécessaire de créer un magasin d'objets pour le Tier de capacité. BlueXP le fait pour vous.
 * Inutile d'activer le Tiering des données au niveau du système.
 +
-BlueXP crée un magasin d'objets pour les données inactives lorsque le système est créé,  data tiering after implementing the requirements,tant qu'il n'y a aucun problème de connectivité ou d'autorisation. Après cela, il vous suffit d'activer le Tiering des données sur les volumes (et dans certains cas,  that tiering is enabled on aggregates,sur les agrégats).
+BlueXP crée un magasin d'objets pour les données inactives lorsque le système est créé, <<Activation du Tiering des données après la mise en œuvre des exigences,tant qu'il n'y a aucun problème de connectivité ou d'autorisation>>. Après cela, il vous suffit d'activer le Tiering des données sur les volumes (et dans certains cas, <<S'assurer que le Tiering est activé sur les agrégats,sur les agrégats>>).
 
 
 
@@ -193,7 +198,7 @@ endif::gcp[]
 BlueXP crée un magasin d'objets pour les données inactives lorsque le système est créé, tant qu'il n'y a aucun problème de connectivité ou d'autorisation. Si vous n'avez pas mis en œuvre les exigences énumérées ci-dessus jusqu'à ce que vous ayez créé le système, vous devrez activer manuellement le Tiering, qui crée le magasin d'objets.
 
 .Étapes
-. ,Assurez-vous que vous avez satisfait à toutes les exigences.
+. <<De formation,Assurez-vous que vous avez satisfait à toutes les exigences>>.
 . Dans le menu de navigation de gauche, sélectionnez *stockage > Canvas*.
 . Sur la page Canevas, double-cliquez sur le nom de l'instance Cloud Volumes ONTAP.
 . Cliquez sur l'icône de menu et sélectionnez *Activer la hiérarchisation de capacité*.
@@ -204,7 +209,7 @@ image:screenshot_enable_capacity_tiering.gif["Capture d'écran de l'option Activ
 Cette option ne s'affiche que si le Tiering des données n'a pas pu être activé lorsque BlueXP a créé le système.
 
 +
-Dans Google Cloud, un compte de service doit être joint à Cloud Volumes ONTAP avant que cette option ne s'affiche. ,Assurez-vous que vous avez satisfait à toutes les exigences.
+Dans Google Cloud, un compte de service doit être joint à Cloud Volumes ONTAP avant que cette option ne s'affiche. <<De formation,Assurez-vous que vous avez satisfait à toutes les exigences>>.
 
 . Cliquez sur *Activer* pour que BlueXP puisse créer le magasin d'objets que ce système Cloud Volumes ONTAP utilisera pour les données hiérarchisées.
 
@@ -240,6 +245,7 @@ image:screenshot_aggr_tiering.gif["Capture d'écran affichant des informations s
 . Sélectionnez le Tier de cloud à attacher et cliquez sur *Enregistrer*.
 
 
+.Et la suite ?
 Vous pouvez désormais activer le Tiering des données sur les volumes, nouveaux ou existants, comme expliqué dans la section suivante.
 
 

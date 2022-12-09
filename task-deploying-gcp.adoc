@@ -254,6 +254,7 @@ Pour plus d'informations, voir link:task-planning-your-config-gcp.html#choosing-
 
 
 
+.Résultat
 BlueXP déploie le système Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.
 
 Si vous rencontrez des problèmes lors du déploiement du système Cloud Volumes ONTAP, consultez le message d'échec. Vous pouvez également sélectionner l'environnement de travail et cliquer sur *recréer l'environnement*.
@@ -466,6 +467,7 @@ Pour plus d'informations, voir link:task-planning-your-config-gcp.html#choosing-
 
 
 
+.Résultat
 BlueXP déploie le système Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.
 
 Si vous rencontrez des problèmes lors du déploiement du système Cloud Volumes ONTAP, consultez le message d'échec. Vous pouvez également sélectionner l'environnement de travail et cliquer sur *recréer l'environnement*.

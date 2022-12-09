@@ -20,7 +20,11 @@ Une paire haute disponibilité Cloud Volumes ONTAP offre une fiabilité exceptio
 
 == Composants DE HAUTE DISPONIBILITÉ
 
-Une configuration Cloud Volumes ONTAP HA dans Azure inclut les composants suivants :
+
+
+=== Configuration d'objets blob de page HAUTE DISPONIBILITÉ
+
+La configuration d'objets blob de pages Cloud Volumes ONTAP HA dans Azure comprend les composants suivants :
 
 image:diagram_ha_azure.png["Image conceptuelle qui affiche un équilibreur de charge gérant le trafic entrant depuis BlueXP et les clients, deux nœuds Cloud Volumes ONTAP dans un jeu de disponibilité, des disques SSD pour les données de démarrage et des blobs de page pour les données client."]
 
@@ -39,6 +43,29 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 * Un seul compte de stockage est nécessaire pour le Tiering des données vers le stockage Azure Blob.
 * Depuis Cloud Volumes ONTAP 9.7, les comptes de stockage créés par BlueXP pour les paires haute disponibilité sont des comptes de stockage v2 à usage général.
+* Vous pouvez activer une connexion HTTPS à partir d'une paire haute disponibilité Cloud Volumes ONTAP 9.7 vers des comptes de stockage Azure lors de la création d'un environnement de travail. Notez que l'activation de cette option peut avoir un impact sur les performances d'écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l'environnement de travail.
+
+
+--
+
+
+
+
+=== Configuration HAUTE DISPONIBILITÉ de plusieurs zones de disponibilité
+
+Une configuration de plusieurs zones de disponibilité Cloud Volumes ONTAP HA dans Azure inclut les composants suivants :
+
+image:diagram_ha_azure_maz.png["Image conceptuelle qui affiche un équilibreur de charge gérant le trafic entrant de BlueXP et de clients, deux nœuds Cloud Volumes ONTAP dans deux zones de disponibilité, des disques SSD pour les données de démarrage et des disques gérés pour les données client."]
+
+Notez les éléments suivants concernant les composants Azure que BlueXP déploie pour vous :
+
+Équilibreur de la charge Azure Standard:: Le répartiteur de charge gère le trafic entrant vers la paire haute disponibilité Cloud Volumes ONTAP.
+Zones de disponibilité:: Deux nœuds Cloud Volumes ONTAP sont déployés sur différentes zones de disponibilité. Les zones de disponibilité garantissent que les nœuds se trouvent dans différents domaines de défaillance. https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy["En savoir plus sur la redondance du stockage Azure dans les documents Azure"^].
+Disques:: Les données clients résident sur des disques gérés ZRS (zone-redondant Storage). Chaque nœud a accès au stockage de l'autre nœud. Du stockage supplémentaire est également requis pour link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap["données de démarrage, racine, racine partenaire et données principales"].
+Comptes de stockage::
++
+--
+* Un seul compte de stockage est nécessaire pour les disques gérés. Les comptes de stockage créés par BlueXP pour les paires haute disponibilité sont des comptes de stockage v2 à usage général.
 * Vous pouvez activer une connexion HTTPS à partir d'une paire haute disponibilité Cloud Volumes ONTAP 9.7 vers des comptes de stockage Azure lors de la création d'un environnement de travail. Notez que l'activation de cette option peut avoir un impact sur les performances d'écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l'environnement de travail.
 
 

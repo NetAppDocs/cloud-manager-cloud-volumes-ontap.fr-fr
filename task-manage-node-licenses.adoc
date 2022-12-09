@@ -67,6 +67,7 @@ Si vous n'avez pas encore le fichier de licence, reportez-vous à la section ci-
 . Cliquez sur *Ajouter une licence*.
 
 
+.Résultat
 BlueXP ajoute la licence au porte-monnaie numérique. La licence sera identifiée comme non affectée jusqu'à ce que vous l'associez à un nouveau système Cloud Volumes ONTAP. Ensuite, la licence passe à l'onglet *BYOL* du porte-monnaie numérique.
 
 
@@ -96,6 +97,7 @@ image:screenshot-exchange-license.png["Capture d'écran de l'option de licence E
 . Lisez le consentement légal et cliquez sur *J'accepte*.
 
 
+.Résultat
 BlueXP convertit la licence non attribuée au service que vous avez sélectionné. Vous pouvez afficher la nouvelle licence dans l'onglet *Data Services Licenses*.
 
 
@@ -133,6 +135,7 @@ Si BlueXP ne parvient pas à accéder au fichier de licence via la connexion Int
 . Cliquez sur *mettre à jour la licence*.
 
 
+.Résultat
 BlueXP met à jour la licence sur le système Cloud Volumes ONTAP.
 
 
@@ -208,6 +211,7 @@ Lorsque vous convertissez une licence d'évaluation en licence BYOL, BlueXP red�
 . Cliquez sur *convertir la licence*.
 
 
+.Résultat
 BlueXP démarre le processus de conversion. Cloud Volumes ONTAP redémarre automatiquement dans le cadre de ce processus. Lors de la sauvegarde, les informations de licence reflètent la nouvelle licence.
 
 

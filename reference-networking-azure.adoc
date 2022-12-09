@@ -46,16 +46,77 @@ Si BlueXP vous informe que les messages AutoSupport ne peuvent pas être envoyé
 
 === Adresses IP
 
-BlueXP alloue le nombre d'adresses IP suivant à Cloud Volumes ONTAP dans Azure :
+BlueXP alloue automatiquement le nombre requis d'adresses IP privées à Cloud Volumes ONTAP dans Azure. Vous devez vous assurer que votre réseau dispose de suffisamment d'adresses IP privées.
 
-* Un seul nœud : 5 adresses IP
-* Paire HA : 16 adresses IP
+Le nombre de LIF attribué par Cloud Manager pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.
 
+
+NOTE: Une LIF iSCSI fournit un accès client via le protocole iSCSI et est utilisée par le système pour d'autres flux de travail réseau importants. Ces LIFs sont requises et ne doivent pas être supprimées.
+
+
+
+==== Adresses IP d'un système à un seul nœud
+
+BlueXP alloue 5 ou 6 adresses IP à un système à un seul nœud :
+
+* IP de gestion du cluster
+* IP de gestion de nœuds
+* IP intercluster pour SnapMirror
+* NFS/CIFS IP
+* IP iSCSI
++
+
+NOTE: L'IP iSCSI fournit un accès client via le protocole iSCSI. Il est également utilisé par le système pour d'autres flux de travail réseau importants. Cette LIF est requise et ne doit pas être supprimée.
+
+* Gestion des SVM (facultatif - non configuré par défaut)
+
+
+
+
+==== Adresses IP des paires haute disponibilité
+
+BlueXP alloue des adresses IP à 4 NIC (par nœud) pendant le déploiement.
 
 Notez que BlueXP crée une LIF de gestion SVM sur des paires haute disponibilité, mais pas sur des systèmes à un seul nœud dans Azure.
 
+*NIC0*
 
-TIP: Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.
+* IP de gestion de nœuds
+* IP intercluster
+* IP iSCSI
++
+
+NOTE: L'IP iSCSI fournit un accès client via le protocole iSCSI. Il est également utilisé par le système pour d'autres flux de travail réseau importants. Cette LIF est requise et ne doit pas être supprimée.
+
+
+
+*NIC1*
+
+* IP du réseau de cluster
+
+
+*NIC2*
+
+* IP d'interconnexion de cluster (ci haute disponibilité)
+
+
+*NIC3*
+
+* IP de la carte réseau Pageblob (accès au disque)
+
+
+
+NOTE: NIC3 ne s'applique qu'aux déploiements haute disponibilité avec des systèmes d'objets blob de pages.
+
+Les adresses IP ci-dessus ne migrent pas lors des événements de basculement.
+
+En outre, 4 adresses IP front-end (FIPS) sont configurées pour migrer lors des événements de basculement. Ces IP frontales résident dans l'équilibreur de charge.
+
+* IP de gestion du cluster
+* IP de données NODEA (NFS/CIFS)
+* IP de données du nœud B (NFS/CIFS)
+* IP de gestion SVM
+
 
 
 

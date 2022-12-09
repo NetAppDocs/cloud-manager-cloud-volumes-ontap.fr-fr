@@ -106,7 +106,7 @@ Si vous créez un volume qui utilise des disques gp3 ou io1, BlueXP crée le vol
 Bien que ce scénario soit peu probable, il est possible dans deux cas :
 
 ** La fonctionnalité Elastic volumes est explicitement désactivée lors de la création d'un agrégat à partir de l'API.
-** Vous avez créé un nouveau système Cloud Volumes ONTAP depuis l'interface utilisateur. Dans ce cas, la fonctionnalité Elastic volumes est désactivée sur l'agrégat initial. Révision  ci-dessous pour en savoir plus.
+** Vous avez créé un nouveau système Cloud Volumes ONTAP depuis l'interface utilisateur. Dans ce cas, la fonctionnalité Elastic volumes est désactivée sur l'agrégat initial. Révision <<Limites>> ci-dessous pour en savoir plus.
 
 
 ====
@@ -146,7 +146,7 @@ link:task-deploying-otc-aws.html["Découvrez comment créer un système Cloud Vo
 
 * Créez un nouveau volume sur un agrégat sur lequel Elastic volumes est activé
 +
-Si vous créez un volume qui utilise des disques gp3 ou io1, BlueXP crée automatiquement le volume sur un agrégat sur lequel Elastic volumes est activé. Pour plus de détails, reportez-vous à  happens when you create a volume.
+Si vous créez un volume qui utilise des disques gp3 ou io1, BlueXP crée automatiquement le volume sur un agrégat sur lequel Elastic volumes est activé. Pour plus de détails, reportez-vous à <<Que se passe-t-il lorsque vous créez un volume>>.
 
 +
 link:task-create-volumes.html["Découvrez comment créer des volumes"].

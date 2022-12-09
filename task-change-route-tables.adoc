@@ -22,4 +22,5 @@ Vous pouvez modifier les tables de routage AWS qui incluent des routes vers les 
 . Modifiez la liste des tables de routage sélectionnées, puis cliquez sur *Enregistrer*.
 
 
+.Résultat
 BlueXP envoie une demande AWS pour modifier les tables de routage.

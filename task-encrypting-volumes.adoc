@@ -33,6 +33,7 @@ NAE est activé sur les nouveaux agrégats par défaut après avoir configuré u
 
 Cloud Volumes ONTAP ne prend pas en charge la gestion intégrée des clés.
 
+.Ce dont vous avez besoin
 Votre système Cloud Volumes ONTAP doit être enregistré auprès du support NetApp. Une licence NetApp Volume Encryption est automatiquement installée sur chaque système Cloud Volumes ONTAP enregistré auprès du support NetApp.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Ajout de comptes du site de support NetApp à BlueXP"^]

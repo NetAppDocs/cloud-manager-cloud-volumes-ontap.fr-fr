@@ -146,6 +146,7 @@ NOTE: La fourniture de votre propre rôle IAM est requise dans l'environnement d
 . Créez un rôle IAM et associez la règle que vous avez créée à l'étape précédente.
 
 
+.Résultat
 Vous disposez désormais de rôles IAM que vous pouvez sélectionner lorsque vous créez un nouvel environnement de travail Cloud Volumes ONTAP.
 
 .Plus d'informations

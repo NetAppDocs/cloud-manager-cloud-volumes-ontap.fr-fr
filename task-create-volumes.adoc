@@ -18,10 +18,10 @@ Si vous avez besoin de plus de stockage après le lancement de votre système Cl
 
 BlueXP offre plusieurs façons de créer un nouveau volume :
 
-* Spécifiez les détails d'un nouveau volume et laissez BlueXP gérer pour vous les agrégats de données sous-jacents.  a volume,En savoir plus >>.
-* Créez un volume sur un agrégat de données de votre choix.  a volume,En savoir plus >>.
-* Créer un volume à partir d'un modèle afin d'optimiser le volume en fonction des besoins de workloads pour certaines applications, telles que les bases de données ou les services de streaming.  a volume from a template,En savoir plus >>.
-* Créer un volume sur le second nœud dans une configuration HA.  a volume on the second node in an HA configuration,En savoir plus >>.
+* Spécifiez les détails d'un nouveau volume et laissez BlueXP gérer pour vous les agrégats de données sous-jacents. <<Créer un volume,En savoir plus >>>>.
+* Créez un volume sur un agrégat de données de votre choix. <<Créer un volume,En savoir plus >>>>.
+* Créer un volume à partir d'un modèle afin d'optimiser le volume en fonction des besoins de workloads pour certaines applications, telles que les bases de données ou les services de streaming. <<Créer un volume à partir d'un modèle,En savoir plus >>>>.
+* Créer un volume sur le second nœud dans une configuration HA. <<Créer un volume sur le second nœud dans une configuration HA,En savoir plus >>>>.
 
 
 
@@ -30,7 +30,7 @@ BlueXP offre plusieurs façons de créer un nouveau volume :
 
 Remarques sur le provisionnement des volumes :
 
-* Lorsque vous créez un volume iSCSI, BlueXP crée automatiquement un LUN pour vous. Nous avons simplifié la gestion en créant un seul LUN par volume, donc aucune gestion n'est nécessaire. Une fois le volume créé,  a LUN to a host,Utilisez l'IQN pour vous connecter à la LUN à partir de vos hôtes.
+* Lorsque vous créez un volume iSCSI, BlueXP crée automatiquement un LUN pour vous. Nous avons simplifié la gestion en créant un seul LUN par volume, donc aucune gestion n'est nécessaire. Une fois le volume créé, <<Connectez une LUN à un hôte,Utilisez l'IQN pour vous connecter à la LUN à partir de vos hôtes>>.
 * Vous pouvez créer des LUN supplémentaires depuis System Manager ou l'interface de ligne de commandes.
 
 
@@ -214,6 +214,7 @@ Compression:: Réduit la capacité physique requise pour stocker les données en
 . *Revue* : consultez les détails du volume, puis cliquez sur *Ajouter*.
 
 
+.Résultat
 BlueXP crée le volume sur le système Cloud Volumes ONTAP.
 
 
@@ -249,7 +250,7 @@ image:screenshot_define_cvo_vol_from_template.png["Capture d'écran montrant un 
 NOTE: Vous pouvez cliquer sur la case à cocher *Afficher les paramètres en lecture seule* pour afficher tous les champs qui ont été verrouillés par le modèle si vous souhaitez voir les valeurs de ces paramètres. Par défaut, ces champs prédéfinis sont masqués et seuls les champs à compléter sont affichés.
 
 . Dans la zone _context_, l'environnement de travail est rempli avec le nom de l'environnement de travail avec lequel vous avez commencé. Vous devez sélectionner la *VM de stockage* où le volume sera créé.
-. Ajoutez des valeurs pour tous les paramètres qui ne sont pas codés en dur à partir du modèle. Voir  a volume,Créer un volume Pour déployer un volume Cloud Volumes ONTAP, consultez la section relative aux paramètres à respecter.
+. Ajoutez des valeurs pour tous les paramètres qui ne sont pas codés en dur à partir du modèle. Voir <<create a volume,Créer un volume>> Pour déployer un volume Cloud Volumes ONTAP, consultez la section relative aux paramètres à respecter.
 . S'il n'y a pas d'autres actions à définir (par exemple, configuration de Cloud Backup), cliquez sur *Exécuter le modèle*.
 +
 S'il existe d'autres actions, cliquez sur l'action dans le volet gauche pour afficher les paramètres à compléter.
@@ -263,6 +264,7 @@ Par exemple, si l'action Activer la sauvegarde dans le cloud requiert que vous s
 . Cliquez sur *Exécuter le modèle*.
 
 
+.Résultat
 Cloud Volumes ONTAP provisionne le volume et affiche une page afin que vous puissiez voir sa progression.
 
 image:screenshot_template_creating_resource_cvo.png["Capture d'écran indiquant la progression de la création de votre nouveau volume à partir du modèle."]
@@ -285,6 +287,7 @@ Par défaut, BlueXP crée des volumes sur le premier nœud d'une configuration H
 . Entrez les détails du nouveau volume, puis cliquez sur *Créer*.
 
 
+.Résultat
 BlueXP crée le volume sur le second nœud de la paire haute disponibilité.
 
 ifdef::aws[]

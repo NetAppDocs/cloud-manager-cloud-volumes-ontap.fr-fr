@@ -19,8 +19,10 @@ Gérez vous-même les agrégats en ajoutant des disques, en affichant les inform
 
 CAUTION: Tous les disques et agrégats doivent être créés et supprimés directement depuis BlueXP. Vous ne devez pas effectuer ces actions à partir d'un autre outil de gestion. Cela peut avoir un impact sur la stabilité du système, entraver la possibilité d'ajouter des disques à l'avenir et générer potentiellement des frais de fournisseur de cloud redondant.
 
+.Avant de commencer
 Si vous souhaitez supprimer un agrégat, vous devez d'abord supprimer les volumes de l'agrégat.
 
+.Description de la tâche
 Si un agrégat manque d'espace de stockage, il est possible de déplacer des volumes vers un autre agrégat via System Manager.
 
 .Étapes

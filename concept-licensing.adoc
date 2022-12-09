@@ -58,7 +58,7 @@ Fournit toutes les fonctionnalités Cloud Volumes ONTAP gratuitement auprès de 
 * Vous pouvez utiliser jusqu'à 10 systèmes Cloud Volumes ONTAP avec l'offre « Freemium » par compte NetApp, quel que soit le fournisseur de cloud.
 * Si la capacité provisionnée d'un système Cloud Volumes ONTAP dépasse 500 Gio, BlueXP convertit le système en package Essentials.
 +
-Dès qu'un système est converti au package Essentials, le  about charging,charge minimale s'applique.
+Dès qu'un système est converti au package Essentials, le <<Remarques sur le chargement,charge minimale>> s'applique.
 
 +
 Tous les autres systèmes dont la capacité provisionnée est inférieure à 500 Gio restent sur « Freemium » (tant qu'ils ont été déployés à l'aide de l'offre Freemium).

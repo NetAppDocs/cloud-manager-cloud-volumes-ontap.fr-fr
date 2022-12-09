@@ -49,7 +49,7 @@ Zone de disponibilité unique d'Azure HA::
 
 
 --
-Un seul nœud::
+Un seul nœud ou des paires haute disponibilité sur plusieurs zones::
 +
 --
 * Tous les comptes de stockage Azure pour Cloud Volumes ONTAP sont chiffrés à l'aide d'une clé gérée par le client. ^1^
@@ -82,7 +82,7 @@ Notez les exigences suivantes pour le coffre-fort de clés :
 +
 *** *Soft-delete* (cette option est activée par défaut, mais doit _not_ être désactivée)
 *** *Protection de purge*
-*** *Chiffrement de disque Azure pour chiffrement de volume*
+*** *Chiffrement de disque Azure pour chiffrement de volume* (pour les systèmes à un seul nœud ou les paires HA dans plusieurs zones)
 
 
 
@@ -104,6 +104,7 @@ Notez les exigences suivantes pour la clé :
 
 Après avoir créé le coffre-fort de clés et généré une clé de cryptage, vous pouvez créer un nouveau système Cloud Volumes ONTAP configuré pour utiliser la clé. Ces étapes sont prises en charge à l'aide de l'API BlueXP.
 
+.Autorisations requises
 Si vous souhaitez utiliser une clé gérée par le client avec un système Cloud Volumes ONTAP à un seul nœud, assurez-vous que le connecteur BlueXP dispose des autorisations suivantes :
 
 [source, json]
@@ -119,7 +120,7 @@ Si vous souhaitez utiliser une clé gérée par le client avec un système Cloud
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["Affichez la liste des autorisations les plus récentes"^]
 
 
-NOTE: Les trois premières autorisations ne sont pas nécessaires pour les paires haute disponibilité.
+NOTE: Les autorisations ne sont pas nécessaires pour les paires haute disponibilité dans une seule zone.
 
 .Étapes
 . Obtenez la liste des coffres-forts de clés dans votre abonnement Azure en utilisant l'appel d'API BlueXP suivant.
@@ -192,4 +193,5 @@ https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html
 
 
 
+.Résultat
 Un nouveau système Cloud Volumes ONTAP est configuré pour utiliser la clé gérée par le client pour le chiffrement des données.

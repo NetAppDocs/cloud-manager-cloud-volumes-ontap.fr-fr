@@ -41,6 +41,7 @@ image:screenshot-keystone-overview.png["Capture d'écran affichant la liste des 
 
 
 
+.Et la suite ?
 Associez les abonnements que vous souhaitez utiliser avec Cloud Volumes ONTAP.
 
 
@@ -58,6 +59,7 @@ image:screenshot-keystone-link.png["Capture d'écran affichant l'option de lien 
 
 
 
+.Résultat
 L'abonnement est désormais lié à votre compte BlueXP et disponible pour la création d'un environnement de travail Cloud Volumes ONTAP.
 
 
@@ -77,6 +79,7 @@ image:screenshot-keystone-request.png["Capture d'écran indiquant la possibilit�
 . Faites défiler vers le bas, saisissez les détails supplémentaires de la demande, puis cliquez sur *Envoyer*.
 
 
+.Résultat
 Votre demande crée un ticket dans le système NetApp.
 
 
@@ -91,4 +94,5 @@ Si vous ne souhaitez plus utiliser un abonnement Keystone Flex avec de nouveaux 
 . Pour l'abonnement que vous souhaitez dissocier, cliquez sur image:icon-action.png["Icône représentant trois points côte à côte"] Et sélectionnez *Unlink*.
 
 
+.Résultat
 L'abonnement n'est plus lié à votre compte BlueXP et ne peut plus être sélectionné lors de la création d'un environnement de travail Cloud Volumes ONTAP.

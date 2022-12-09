@@ -238,7 +238,6 @@
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">En savoir plus &gt;&gt;</block>
   <block id="0c29cb137ebcfb10c1b30edf702322ea" category="paragraph">BlueXP offre des packages préconfigurés qui répondent à vos exigences de charge de travail, ou vous pouvez créer votre propre configuration. Dans ce dernier cas, il est important de connaître les options dont vous disposez. <block ref="786d547ede2f0e723e26aaa12a2cb737" category="inline-link-macro-rx"></block>.</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
-  <block id="96f771366585d23c8ba0a0a05fb1d2d8" category="list-title">&lt;span class=« image »&gt;&lt;img src=<block ref="ddd753dc2858fe3a5582f20b300a0541" category="inline-link-rx"></block> alt=« trois »&gt;&lt;/span&gt; configurez votre réseau</block>
   <block id="c5a74d045a159ee12555da1d786bd27c" category="list-text">Vérifiez que votre VPC et vos sous-réseaux prennent en charge la connectivité entre le connecteur et Cloud Volumes ONTAP.</block>
   <block id="9a3287fcb26e5124ab289087c07c9388" category="list-text">Activez l'accès Internet sortant à partir du VPC cible de sorte que le connecteur et le Cloud Volumes ONTAP puissent contacter plusieurs terminaux.</block>
   <block id="19c8e498334c0ca06860eccd287db869" category="inline-link-macro">Le connecteur et le Cloud Volumes ONTAP</block>
@@ -287,7 +286,6 @@
   <block id="2f2289dc4d144dd69a1fd73eaab183e0" category="summary">Certaines configurations Cloud Volumes ONTAP incluent le stockage NVMe local, que Cloud Volumes ONTAP utilise comme Flash cache pour améliorer les performances.</block>
   <block id="5fbc523d8d2ad241522a15100f23bef2" category="doc">Flash cache</block>
   <block id="712cc6bb6749aa390ea026f9c60a15ec" category="paragraph">Certaines configurations Cloud Volumes ONTAP incluent le stockage NVMe local, que Cloud Volumes ONTAP utilise _Flash cache_ pour de meilleures performances.</block>
-  <block id="e0c8b3ee252e2f32575e8c863dbc2dd2" category="section-title">Qu'est-ce que Flash cache ?</block>
   <block id="3a36e6b466e0265c25d241c486f64e02" category="paragraph">Flash cache accélère l'accès aux données grâce à la mise en cache intelligente en temps réel des données utilisateur et des métadonnées NetApp lues récemment. Elle est efficace pour les charges de travail exigeant une capacité de lecture aléatoire maximale, dont les bases de données, la messagerie et les services de fichiers.</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">Configurations compatibles</block>
   <block id="b208585c8517e02e2edf44f36a9bbb44" category="paragraph">Flash cache est pris en charge avec des configurations Cloud Volumes ONTAP spécifiques. Affichez les configurations prises en charge dans le<block ref="7a96f232274f5a7cebcb1f6a52cc095f" category="inline-link-rx"></block></block>
@@ -368,14 +366,11 @@
   <block id="482723983a4f2af954e36ff41e567451" category="doc">Limites connues</block>
   <block id="06c86f2b2f40c7b5ae916f820dace6f3" category="inline-link">Accédez aux notes de version de Cloud Volumes ONTAP</block>
   <block id="970e80f52bfaf06fb0516cbd1132f19b" category="paragraph">Ces limitations sont spécifiques à la gestion de Cloud Volumes ONTAP dans BlueXP (anciennement Cloud Manager). Pour afficher les limites avec le logiciel Cloud Volumes ONTAP lui-même,<block ref="70a3d165b5204ef94ef3f2d7b3d098d2" category="inline-link-rx"></block></block>
-  <block id="fca01bb76e6cdd32f96b30ff94efac21" category="section-title">BlueXP ne prend pas en charge les volumes FlexGroup</block>
   <block id="cc536ef595b8b8d98efa4ac1fce2305e" category="paragraph">Bien que Cloud Volumes ONTAP prenne en charge les volumes FlexGroup, BlueXP ne le fait pas. Si vous créez un volume FlexGroup à partir de System Manager ou de l'interface de ligne de commande, définissez le mode gestion de la capacité de BlueXP sur Manuel. Le mode automatique peut ne pas fonctionner correctement avec les volumes FlexGroup.</block>
-  <block id="5075dd4fea27a60dae46435a226722e7" category="section-title">BlueXP ne prend pas en charge S3 avec Cloud Volumes ONTAP</block>
   <block id="53a519b7a61b6af057f2717112606b16" category="inline-link">Guide de l'alimentation de la configuration S3</block>
   <block id="a719d497acfd7c92ff4bf9224e1de3d0" category="paragraph">Dans certains fournisseurs cloud, Cloud Volumes ONTAP prend en charge S3 en tant qu'option de stockage scale-out, mais BlueXP n'offre pas de fonctionnalités de gestion pour cette fonctionnalité. Il est recommandé d'utiliser l'interface de ligne de commandes pour configurer l'accès des clients S3 à partir d'Cloud Volumes ONTAP. Pour plus de détails, reportez-vous à la<block ref="49e8fee748cd4c8d6f01bdb03113fc2a" category="inline-link-rx"></block>.</block>
   <block id="aa73f4eb582c3e0e9bca433f741e8a12" category="inline-link-macro">En savoir plus sur la prise en charge de Cloud Volumes ONTAP pour S3 et d'autres protocoles client</block>
   <block id="b19dcb5d79169da5722547be25d81a05" category="paragraph"><block ref="2b5ab7e81cd6465f0e4fd342fda67520" category="inline-link-macro-rx"></block>.</block>
-  <block id="14ed37106a0272d00de0eeb0d9a650de" category="section-title">BlueXP ne prend pas en charge la reprise après incident pour les machines virtuelles de stockage</block>
   <block id="397f1667d1f282be3b879b4e92a63aad" category="paragraph">BlueXP ne propose pas de prise en charge de la configuration ou de l'orchestration pour la reprise après incident des machines virtuelles de stockage. Vous devez utiliser System Manager ou l'interface de ligne de commandes.</block>
   <block id="412af2a2404a4e920b18be59197204b0" category="inline-link">Guide de préparation rapide pour la reprise après incident du SVM</block>
   <block id="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="list-text"><block ref="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="inline-link-rx"></block></block>
@@ -577,7 +572,6 @@
   <block id="6cac0d9b831de69a95553112d1d854dc" category="list-text">Si vous n'avez pas enregistré de compte NSS dans BlueXP,<block ref="bc2c9d3f2e75cd48cb0b55d3477b90f9" category="inline-link-rx"></block> Puis l'interface du conseiller numérique Active IQ s'affiche.</block>
   <block id="48c7c08bdc82dde24c342aee125d0f2f" category="inline-link">Consultez cette FAQ pour plus de détails</block>
   <block id="c0f65045a034bd8451814ab893994b7b" category="admonition">Depuis le 3 décembre 2021, NetApp a adopté une nouvelle méthodologie d'enregistrement des identifiants pour les comptes NSS.<block ref="aa125d01c1b555d9e118821165394c02" category="inline-link-rx"></block>. Si votre compte NSS utilise l'ancien ensemble d'informations d'identification, vous devez mettre à jour le compte pour les nouvelles informations d'identification.</block>
-  <block id="0a20c90d5270bed19fcaf851778c663b" category="section-title">Et la suite</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="inline-link">Documentation du conseiller digital Active IQ</block>
   <block id="e778b936b44de5bd4765be37fb61b14b" category="paragraph">Voir la<block ref="6b8a787f5f28cd8a65ef0852e940136e" category="inline-link-rx"></block> pour plus d'informations.</block>
   <block id="17cdbe368c7c729de5966fefda692ad9" category="summary">Configurez votre réseau Azure de façon à ce que les systèmes Cloud Volumes ONTAP puissent fonctionner correctement. Cela inclut la mise en réseau pour le connecteur et le Cloud Volumes ONTAP.</block>
@@ -588,11 +582,7 @@
   <block id="2963bb3da6cd2f26e6b000d48fda5b9c" category="inline-link-macro">Résoudre les problèmes de configuration AutoSupport</block>
   <block id="c88f764485548292578f2128d1953adc" category="paragraph">Si BlueXP vous informe que les messages AutoSupport ne peuvent pas être envoyés, <block ref="b6432223d87858d9cd4e446578247e88" category="inline-link-macro-rx"></block>.</block>
   <block id="1d9e509ddb93a176b7d369a91ad7deaf" category="section-title">Adresses IP</block>
-  <block id="775c58e7b6f81f9368fe6dab40e681fb" category="paragraph">BlueXP alloue le nombre d'adresses IP suivant à Cloud Volumes ONTAP dans Azure :</block>
-  <block id="cceb8f7ed659db95ecee6b568724f01a" category="list-text">Un seul nœud : 5 adresses IP</block>
-  <block id="e45828fcc0fec03cf9b9115da2bc9766" category="list-text">Paire HA : 16 adresses IP</block>
   <block id="a972bcad179af301a93e1049da5fbbbb" category="paragraph">Notez que BlueXP crée une LIF de gestion SVM sur des paires haute disponibilité, mais pas sur des systèmes à un seul nœud dans Azure.</block>
-  <block id="cf97b7bbcae965edf17dfb032d773d4e" category="admonition">Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.</block>
   <block id="0af87aead9b1478c9d33afc90cbcbf02" category="section-title">Connexion sécurisée aux services Azure</block>
   <block id="577b6951c15b466f5924970deafc3651" category="paragraph">Par défaut, BlueXP active une liaison privée Azure pour les connexions entre les comptes de stockage Cloud Volumes ONTAP et Azure.</block>
   <block id="794331bacb4698d7019a1d66cb1649e3" category="paragraph">Dans la plupart des cas, rien n'est nécessaire : ​BlueXP gère la solution Azure Private Link pour vous. Cependant, si vous utilisez Azure Private DNS, vous devez modifier un fichier de configuration. Vous devez également connaître une exigence pour l'emplacement du connecteur dans Azure.</block>
@@ -922,11 +912,9 @@
   <block id="08408518b6366a9a8bb69802d83d5e3c" category="list-text">Tous les nouveaux comptes de stockage (par exemple, lorsque vous ajoutez des disques ou des agrégats) utilisent également la même clé.^1^</block>
   <block id="2301d2b9fcb3fe6f26482aff37ea2c54" category="inline-link">jeu de cryptage de disques</block>
   <block id="efbd2c7930ae2087a4719eb7c262b95d" category="list-text">À partir de ONTAP 9.10.1P3, pour la NVRAM et le disque principal, BlueXP utilise un<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, qui permet la gestion des clés de cryptage avec des disques gérés. Les versions inférieures utilisent une clé gérée par Microsoft au lieu de la clé gérée par le client.</block>
-  <block id="5aabc9069557be7e4aeff466605cbc75" category="list-text">Un seul nœud</block>
   <block id="9dca67fbd1fac23e7aff5774ec0afa2a" category="list-text">Tous les comptes de stockage Azure pour Cloud Volumes ONTAP sont chiffrés à l'aide d'une clé gérée par le client. ^1^</block>
   <block id="648dd7242e5228e0d91d90eaf1e79ebd" category="list-text">Pour les disques racine, de démarrage et de données, BlueXP utilise un<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, qui permet la gestion des clés de cryptage avec des disques gérés.</block>
   <block id="5dab396463f2f277886102bf78fe661b" category="list-text">Les nouveaux disques de données utilisent également le même jeu de cryptage de disque.</block>
-  <block id="6d69087e8037af0164a0779028792a7b" category="list-text">À partir de ONTAP 9.9.1P7, pour la NVRAM et le disque central, BlueXP utilise un ensemble de cryptage de disque qui permet de gérer les clés de cryptage avec des disques gérés. Les versions inférieures utilisent une clé gérée par Microsoft au lieu de la clé gérée par le client.</block>
   <block id="8b213ded385c637758f8c3705eb6386a" category="list-title">Note de bas de page</block>
   <block id="ab9a6656c154c96464d829868998ba40" category="list-text">Si vous souhaitez chiffrer vos comptes de stockage lors de leur création, vous devez créer et fournir l'ID de la ressource dans la demande de création de Cloud Volumes ONTAP. Cela s'applique à tous les types de déploiements. Si vous ne le fournissez pas, les comptes de stockage seront toujours cryptés, mais BlueXP créera d'abord les comptes de stockage avec cryptage de clé géré par Microsoft, puis mettra à jour les comptes de stockage pour utiliser la clé gérée par le client.</block>
   <block id="8764c9ec9f17252b7df37e1710ec9e5a" category="section-title">Créez un coffre-fort de clés et générez une clé</block>
@@ -938,7 +926,6 @@
   <block id="1be48617ce5825c4bd54ef885eef8a65" category="list-text">Les options suivantes doivent être activées :</block>
   <block id="ba6db2df53167b0fe62e3b5c762cbbf1" category="list-text">*Soft-delete* (cette option est activée par défaut, mais doit _not_ être désactivée)</block>
   <block id="fd08f80d1ec5aa4440248321eace716f" category="list-text">*Protection de purge*</block>
-  <block id="d07f270590b573e1e499b9c9aed87fb4" category="list-text">*Chiffrement de disque Azure pour chiffrement de volume*</block>
   <block id="8079302cfd5fd5ac16a06e331392b172" category="inline-link">Générez une clé dans le coffre-fort de clés</block>
   <block id="08226457c01755d5b1d666bac6bf1add" category="list-text"><block ref="f3e81382631201ff959343d3ba9dea1c" category="inline-link-rx"></block>.</block>
   <block id="4bad1b88b2d24ff3ad1376a54e1bddbd" category="paragraph">Notez les exigences suivantes pour la clé :</block>
@@ -949,7 +936,6 @@
   <block id="2a709f4373163ddbd1d13389c553a2eb" category="paragraph">Si vous souhaitez utiliser une clé gérée par le client avec un système Cloud Volumes ONTAP à un seul nœud, assurez-vous que le connecteur BlueXP dispose des autorisations suivantes :</block>
   <block id="791fab48bebea2a79a35d70b5cc07227" category="inline-link">Affichez la liste des autorisations les plus récentes</block>
   <block id="ba7ae0204894b3edc44a2f0822ad2da8" category="paragraph"><block ref="ba7ae0204894b3edc44a2f0822ad2da8" category="inline-link-rx"></block></block>
-  <block id="0859113bcaa28e16186a08e28441121a" category="admonition">Les trois premières autorisations ne sont pas nécessaires pour les paires haute disponibilité.</block>
   <block id="8be0344d53e72ba6b33ee561546d42ef" category="list-text">Obtenez la liste des coffres-forts de clés dans votre abonnement Azure en utilisant l'appel d'API BlueXP suivant.</block>
   <block id="b5bc96f48f2241c984568df161fa1a37" category="paragraph">Pour une paire haute disponibilité :<block ref="77c22cb91fef3c1e85c041013cec246d" prefix=" " category="inline-code"></block></block>
   <block id="ac20be2c156e351d08e2cd3c7c63b584" category="paragraph">Pour un seul nœud :<block ref="842256d0af833acbb8f3ef6a213881aa" prefix=" " category="inline-code"></block></block>
@@ -1001,7 +987,6 @@
   <block id="943b03ddb77b543ab329dfed996ad4ac" category="paragraph"><block ref="943b03ddb77b543ab329dfed996ad4ac" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b2dfe525c9a6bec7392826fba889fe07" category="section-title">Ajoutez des licences achetées à votre compte</block>
   <block id="e3562c1adf2604137baf3d2df3c68ecd" category="paragraph">Si vous ne voyez pas vos licences achetées dans le porte-monnaie numérique, vous devrez ajouter les licences à BlueXP pour que la capacité soit disponible pour Cloud Volumes ONTAP.</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">Ce dont vous avez besoin, 8217;ll</block>
   <block id="160caa44a14b9421593597c51ec2a7e8" category="list-text">Vous devez fournir à BlueXP le numéro de série de la licence ou du fichier de licence.</block>
   <block id="04b14ae402c3ab4f87916eed6238424b" category="inline-link">Ajoutez votre compte sur le site de support NetApp à BlueXP</block>
   <block id="93902497f86e5fd83c90ceba7ab44f98" category="list-text">Pour saisir le numéro de série, vous devez d'abord le faire<block ref="2db49b408be38f7749cbd1912ff32a1f" category="inline-link-rx"></block>. Il s'agit du compte du site de support NetApp autorisé à accéder au numéro de série.</block>
@@ -1058,7 +1043,6 @@
   <block id="72cd91c0deb59fc4b814e6cafc8ff514" category="paragraph">Il est recommandé d'utiliser un nouveau groupe de ressources dédié pour chaque système Cloud Volumes ONTAP.</block>
   <block id="d52b591d7e9cb6d4f9b9d82ed8a82f94" category="paragraph">Le déploiement d'Cloud Volumes ONTAP dans un groupe de ressources existant et partagées n'est pas recommandé en raison du risque de perte de données. BlueXP peut supprimer les ressources Cloud Volumes ONTAP d'un groupe de ressources partagées en cas d'échec ou de suppression du déploiement. Cependant, un utilisateur Azure peut accidentellement supprimer des ressources Cloud Volumes ONTAP d'un groupe de ressources partagé.</block>
   <block id="f153679ad4c5ae5aeae3a0ca4f337a37" category="list-text">[[Subscribe]]sur la page Canvas, cliquez sur *Ajouter un environnement de travail* et suivez les invites.</block>
-  <block id="6161ef388a32cdaabaede63cd8d044b7" category="list-text">*Choisissez un emplacement* : sélectionnez *Microsoft Azure* et *Cloud Volumes ONTAP nœud unique* ou *Cloud Volumes ONTAP haute disponibilité*.</block>
   <block id="3c19bc1d7cfc3da0dab6310259e4b2c1" category="inline-link">Créer un connecteur</block>
   <block id="1870c86878dd46336ac6bfc08665eab6" category="list-text">Si vous y êtes invité,<block ref="7d165ca08e4106b12a1b93b3149d1a83" category="inline-link-rx"></block>.</block>
   <block id="ceca015ffa0918205a91a8cc0268611c" category="list-text">*Détails et informations d'identification* : modifiez éventuellement les informations d'identification et l'abonnement Azure, spécifiez un nom de cluster, ajoutez des balises si nécessaire, puis spécifiez les informations d'identification.</block>
@@ -3682,7 +3666,6 @@
   <block id="92a186c5aba7b8e6286c41ea529a4b1b" category="list-text">Cochez la case pour activer la fonctionnalité, puis cliquez sur *Enregistrer*.</block>
   <block id="f5c4745b8a5809c2aa248d1297288719" category="summary">Une paire haute disponibilité Cloud Volumes ONTAP offre une fiabilité exceptionnelle et la continuité de l'activité en cas de défaillances dans votre environnement cloud. Dans Azure, le stockage est partagé entre les deux nœuds.</block>
   <block id="ca010532511b0575d0c11648404720a6" category="doc">Paires haute disponibilité dans Azure</block>
-  <block id="b325f48830dbce9dcd4ac249a0901842" category="paragraph">Une configuration Cloud Volumes ONTAP HA dans Azure inclut les composants suivants :</block>
   <block id="2dc9754a4810a682025264bf43c0d4b9" category="inline-image-macro">Image conceptuelle qui affiche un équilibreur de charge gérant le trafic entrant depuis BlueXP et les clients, deux nœuds Cloud Volumes ONTAP dans un jeu de disponibilité, des disques SSD pour les données de démarrage et des blobs de page pour les données client.</block>
   <block id="97a6241a59e8ca0512dcd6412c75ce5b" category="paragraph"><block ref="97a6241a59e8ca0512dcd6412c75ce5b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9d9d5448fe99790931a55c5e19b2bf67" category="paragraph">Notez les éléments suivants concernant les composants Azure que BlueXP déploie pour vous :</block>
@@ -4465,4 +4448,91 @@
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">Recherchez le numéro de série de l'ID de compte sur la page d'inscription au support.</block>
   <block id="50a1dc01b7312307c34a888071586955" category="list-text">Copiez le numéro de série de votre compte à l'étape 2 ci-dessus, vérifiez sa sécurité, puis lisez la Déclaration de confidentialité des données NetApp.</block>
   <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Veillez à copier le numéro de série du compte (960xxxx) utilisé ci-dessus pour le champ Numéro de série. Le traitement du compte sera ainsi accéléré.</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
+  <block id="5ad10cfb674234136c181d096cb59522" category="paragraph-title">Autorisations requises</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Une seule</block>
+  <block id="d39421b26d8f96d6b63ba8583d57f734" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Choisissez une configuration prise en charge</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Deux</block>
+  <block id="793656833776421d4fb1944ba40b1677" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Assurez la connectivité entre le Cloud Volumes ONTAP et le stockage objet</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Trois</block>
+  <block id="a4c1999be8e0538c77be98752e1c50d8" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Assurez-vous que vous disposez d'un agrégat sur lequel le Tiering est activé</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">Quatre</block>
+  <block id="bff3909d9110826666bc292c558abc8c" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Choisissez une règle de Tiering lors de la création, de la modification ou de la réplication d'un volume</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">Et la suite ?</block>
+  <block id="f3d9abb903127694db460aa9c7f4d7be" category="paragraph-title">Restriction</block>
+  <block id="6b2eadbbc64d8760da4136e28da230c2" category="list-text">*Choisissez un emplacement* : sélectionnez *Amazon Web Services* et *Cloud Volumes ONTAP HA*.</block>
+  <block id="7945e794f4dd8b21c15eebff5d67a416" category="section-title">BlueXP ne prend pas en charge les volumes FlexGroup</block>
+  <block id="56fe439ee061f5bc2e940368c1d73fa3" category="section-title">BlueXP ne prend pas en charge S3 avec Cloud Volumes ONTAP</block>
+  <block id="9832e39264a34e4e40dca8449efd019e" category="section-title">BlueXP ne prend pas en charge la reprise après incident pour les machines virtuelles de stockage</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">Ce dont vous avez besoin</block>
+  <block id="86f463a1f0f0879749d1274dc94305d9" category="paragraph-title">Remarque importante</block>
+  <block id="ee7f3ee9c125b9b1f24e5bebb3409605" category="list-text">Un seul nœud ou des paires haute disponibilité sur plusieurs zones</block>
+  <block id="fdee261787c8d28a1d5af5c07b8580d6" category="list-text">À partir de ONTAP 9.9.1P7, pour la NVRAM et le disque central, BlueXP utilise un ensemble de cryptage de disque qui permet de gérer les clés de cryptage avec des disques gérés. Les versions inférieures utilisent une clé gérée par Microsoft au lieu de la clé gérée par le client.</block>
+  <block id="d01b00b7df0dd6620e8ab49fb88f67b9" category="list-text">*Chiffrement de disque Azure pour chiffrement de volume* (pour les systèmes à un seul nœud ou les paires HA dans plusieurs zones)</block>
+  <block id="6337ff9e523cd4d0c21d00ce582cb8ca" category="admonition">Les autorisations ne sont pas nécessaires pour les paires haute disponibilité dans une seule zone.</block>
+  <block id="d1432d772b2382ef2395e1eed551d5bb" category="paragraph-title">Autorisations Google Cloud requises</block>
+  <block id="675d38d552c49bbf67606b2c5f1d5bed" category="section-title">Qu'est-ce que Flash cache ?</block>
+  <block id="78d0efd6b2c71cba47286de0ff16747c" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Créer un connecteur</block>
+  <block id="6edf31dd35d697c82c7b82a3275383c9" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Planification de la configuration</block>
+  <block id="957d6fa40cd2448f616bce2c695e57cf" category="list-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Configurez votre réseau</block>
+  <block id="ce307cd0ec17360c89f4cee135813d3a" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Configurez un compte de service</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">Cinq</block>
+  <block id="91f5721735e87c3888022376ff4ee935" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Activez les API Google Cloud</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">Six</block>
+  <block id="b251b1d8bf96f666a018d6d8517138ae" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> Lancez Cloud Volumes ONTAP avec BlueXP</block>
+  <block id="06e1f23900e79570eee02e1c5acec75a" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Lancez Cloud Volumes ONTAP avec BlueXP</block>
+  <block id="7d1d96e045e46f5da79febed668dfa02" category="section-title">Configuration d'objets blob de page HAUTE DISPONIBILITÉ</block>
+  <block id="113bc9ef3b0433e67708f619cf1903ef" category="paragraph">La configuration d'objets blob de pages Cloud Volumes ONTAP HA dans Azure comprend les composants suivants :</block>
+  <block id="8dc221b1b499606ef0f0ca8c0370189b" category="section-title">Configuration HAUTE DISPONIBILITÉ de plusieurs zones de disponibilité</block>
+  <block id="3d9563c3da13e16d8921ac243a987129" category="paragraph">Une configuration de plusieurs zones de disponibilité Cloud Volumes ONTAP HA dans Azure inclut les composants suivants :</block>
+  <block id="ad6e11a5573fe6579ae1e6dcdce60d8b" category="inline-image-macro">Image conceptuelle qui affiche un équilibreur de charge gérant le trafic entrant de BlueXP et de clients, deux nœuds Cloud Volumes ONTAP dans deux zones de disponibilité, des disques SSD pour les données de démarrage et des disques gérés pour les données client.</block>
+  <block id="af874ecaf1a103d4d596315556c66e56" category="paragraph"><block ref="af874ecaf1a103d4d596315556c66e56" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="77a1f8867dc12013c0da2ead2b6c9ca3" category="inline-link">En savoir plus sur la redondance du stockage Azure dans les documents Azure</block>
+  <block id="2b6a2a78ba6ba0d1bf316591f2c9f89b" category="list-text">Deux nœuds Cloud Volumes ONTAP sont déployés sur différentes zones de disponibilité. Les zones de disponibilité garantissent que les nœuds se trouvent dans différents domaines de défaillance.<block ref="c8912f6a29cb2653305e1189cf1fa38a" category="inline-link-rx"></block>.</block>
+  <block id="0297170537ff589d5fd67ec8db7c4ae4" category="inline-link-macro">données de démarrage, racine, racine partenaire et données principales</block>
+  <block id="419c5f0dee6c475074f478e8aca659fd" category="list-text">Les données clients résident sur des disques gérés ZRS (zone-redondant Storage). Chaque nœud a accès au stockage de l'autre nœud. Du stockage supplémentaire est également requis pour <block ref="21b5d37c4ebe0dabed7cc2a884c8db5a" category="inline-link-macro-rx"></block>.</block>
+  <block id="53ad373b2d895bfe9513a423ed557fe0" category="list-text">Un seul compte de stockage est nécessaire pour les disques gérés. Les comptes de stockage créés par BlueXP pour les paires haute disponibilité sont des comptes de stockage v2 à usage général.</block>
+  <block id="b04fd67a98a3b32956894024aa6fcf4f" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Configuration du KMS AWS</block>
+  <block id="3af67a9dfd37709bb6e502fd7f303262" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Lancez Cloud Volumes ONTAP avec BlueXP</block>
+  <block id="96f4c574f3909d1105768df05940587b" category="paragraph">BlueXP alloue automatiquement le nombre requis d'adresses IP privées à Cloud Volumes ONTAP dans Azure. Vous devez vous assurer que votre réseau dispose de suffisamment d'adresses IP privées.</block>
+  <block id="03739fdb4fd68641a3dd276274b59b91" category="paragraph">Le nombre de LIF attribué par Cloud Manager pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.</block>
+  <block id="99b06d2510cf563a2d5a3bb1e854c0be" category="admonition">Une LIF iSCSI fournit un accès client via le protocole iSCSI et est utilisée par le système pour d'autres flux de travail réseau importants. Ces LIFs sont requises et ne doivent pas être supprimées.</block>
+  <block id="efd5eb8fe39e72876a227a2a5666b829" category="paragraph">BlueXP alloue 5 ou 6 adresses IP à un système à un seul nœud :</block>
+  <block id="40800f2ceb1fadf0fb67562c1b95ca89" category="list-text">IP de gestion du cluster</block>
+  <block id="a3dd4b9ad2ee69945d1ea9864c0769d4" category="list-text">IP de gestion de nœuds</block>
+  <block id="863bdf16cb9d771a0a419b57d8c86dee" category="list-text">IP intercluster pour SnapMirror</block>
+  <block id="93de524930bbe25d386681a6adf96fd8" category="list-text">NFS/CIFS IP</block>
+  <block id="c10bca9e72c1f1277145f5dc68b17eaf" category="list-text">IP iSCSI</block>
+  <block id="95c154df02c50293c8e187a13129c52e" category="admonition">L'IP iSCSI fournit un accès client via le protocole iSCSI. Il est également utilisé par le système pour d'autres flux de travail réseau importants. Cette LIF est requise et ne doit pas être supprimée.</block>
+  <block id="d8d7417bbebf0251ff6676bd41195a47" category="list-text">Gestion des SVM (facultatif - non configuré par défaut)</block>
+  <block id="541fcedb9781d2a648810837511d59e5" category="paragraph">BlueXP alloue des adresses IP à 4 NIC (par nœud) pendant le déploiement.</block>
+  <block id="7967db50e031806cc903e7667990fa6e" category="paragraph">*NIC0*</block>
+  <block id="f78bf4ed8c0f2dd904a8bd30215d4b0d" category="list-text">IP intercluster</block>
+  <block id="f667468015bc083421f7d4ce95ec9f32" category="paragraph">*NIC1*</block>
+  <block id="221bc518f8afb4c6e6c6948e962970b4" category="list-text">IP du réseau de cluster</block>
+  <block id="8e9d3876607f552396e0780f17f85516" category="paragraph">*NIC2*</block>
+  <block id="4c0520ff9efdddb69b34a5b310ccacc4" category="list-text">IP d'interconnexion de cluster (ci haute disponibilité)</block>
+  <block id="8eb6ec3fbc998fa6a60aa567596e9dea" category="paragraph">*NIC3*</block>
+  <block id="1107a77f933d62fe584a3ae3bad83e30" category="list-text">IP de la carte réseau Pageblob (accès au disque)</block>
+  <block id="fd1fdbec8ccbf892f0037009d36357b7" category="admonition">NIC3 ne s'applique qu'aux déploiements haute disponibilité avec des systèmes d'objets blob de pages.</block>
+  <block id="43fb0e8e4573adece08f1409464dfa39" category="paragraph">Les adresses IP ci-dessus ne migrent pas lors des événements de basculement.</block>
+  <block id="9d691acb8ea0fa8f46108113686332d2" category="paragraph">En outre, 4 adresses IP front-end (FIPS) sont configurées pour migrer lors des événements de basculement. Ces IP frontales résident dans l'équilibreur de charge.</block>
+  <block id="19820ca81f74a74546add18da6b58fd8" category="list-text">IP de données NODEA (NFS/CIFS)</block>
+  <block id="04279da7550f624dc2ed3dbcd07f03ba" category="list-text">IP de données du nœud B (NFS/CIFS)</block>
+  <block id="1fa9c43c980d3d603988b83d77f02065" category="list-text">IP de gestion SVM</block>
+  <block id="381055790b65562046260a73d644d222" category="list-text">Un disque persistant standard de 10 Gio pour les données de démarrage médiateur</block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="section-title">Et la suite</block>
+  <block id="5d23d48e0afadebb8bb8d4e3def99de4" category="section-title">Lancement d'un système Cloud Volumes ONTAP à un seul nœud dans Azure</block>
+  <block id="56bdc4ea1c452fac2f0ec7899a4e3d21" category="paragraph">Si vous souhaitez lancer un système Cloud Volumes ONTAP à un seul nœud dans Azure, vous devez créer un environnement de travail à un seul nœud dans BlueXP.</block>
+  <block id="5e65ccaa7b0cffc728e485801bdd8092" category="list-text">*Choisissez un emplacement* : sélectionnez *Microsoft Azure* et *Cloud Volumes ONTAP nœud unique*.</block>
+  <block id="68367d4408e943b9268a7a6d4314fb0a" category="section-title">Lancement d'une paire HA Cloud Volumes ONTAP dans Azure</block>
+  <block id="09848d903bbdcfa49dca87e8854aad0d" category="paragraph">Si vous souhaitez lancer une paire Cloud Volumes ONTAP HA dans Azure, vous devez créer un environnement de travail haute disponibilité dans BlueXP.</block>
+  <block id="dee0e0a28a4db505910f0cae119590db" category="list-text">*Modèles de déploiement haute disponibilité* :</block>
+  <block id="e1ab7b9a326aaddbde429e4c50909456" category="list-text">Sélectionnez *zone de disponibilité unique* ou *zone de disponibilité multiple*.</block>
+  <block id="a5570b501238b74cc41e8229ed3e51cb" category="list-text">*Emplacement et connectivité* (AZ simple) et *région et connectivité* (AZS multiple)</block>
+  <block id="3b57b9c6454667f8a7e141651b4a8068" category="list-text">Pour une zone AZ unique, sélectionnez une région, un réseau VNet et un sous-réseau.</block>
+  <block id="9a0059ade43ab240a0f0e8b3f201237d" category="list-text">Pour plusieurs AZS, sélectionnez une région, un réseau VNet, un sous-réseau, une zone pour le nœud 1 et une zone pour le nœud 2.</block>
+  <block id="8a0f5ea3246704da60c7b1c7557519a1" category="list-text">Cochez la case *J'ai vérifié la connectivité réseau...*.</block>
+  <block id="b6416a070eae245c22afedda3deac1ef" category="list-text">*Packages préconfigurés* : sélectionnez un des packages pour déployer rapidement un système Cloud Volumes ONTAP ou cliquez sur *Modifier la configuration*.</block>
+  <block id="1e8446e8033270b9f2f812d81dfc0ddc" category="paragraph">Pour obtenir de l'aide sur le choix d'une taille de disque, reportez-vous à la section <block ref="e1b3c31cb34daed9344cfbb51e1e4263" category="inline-link-macro-rx"></block>.</block>
 </blocks>

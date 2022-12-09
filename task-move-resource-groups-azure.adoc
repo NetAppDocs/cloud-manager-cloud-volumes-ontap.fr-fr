@@ -31,4 +31,5 @@ Pour terminer le déplacement, reportez-vous à la section link:https://learn.mi
 . Recherchez le nouveau groupe de ressources dans les informations relatives à l'environnement de travail.
 
 
+.Résultat
 L'environnement de travail et ses ressources (machines virtuelles, disques, comptes de stockage, interfaces réseau, snapshots) font partie du nouveau groupe de ressources.

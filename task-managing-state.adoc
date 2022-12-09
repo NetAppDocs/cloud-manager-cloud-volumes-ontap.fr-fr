@@ -57,6 +57,7 @@ image:screenshot_shutdown.gif["Capture d'écran : affiche un programme d'arrêt 
 . Cliquez sur *Enregistrer*.
 
 
+.Résultat
 BlueXP enregistre le planning. L'icône de l'horloge change pour indiquer qu'un programme est défini : image:screenshot_shutdown_icon_scheduled.gif["Capture d'écran : affiche l'icône d'arrêt automatique après qu'un programme a été défini."]
 
 
@@ -68,6 +69,7 @@ L'arrêt de Cloud Volumes ONTAP vous permet d'économiser de l'espace de calcul 
 
 NOTE: Pour réduire les coûts, BlueXP supprime régulièrement les anciens snapshots des disques racine et de démarrage. Seuls les deux instantanés les plus récents sont conservés pour les disques racine et de démarrage.
 
+.Description de la tâche
 Lorsque vous arrêtez une paire haute disponibilité, BlueXP arrête les deux nœuds.
 
 .Étapes

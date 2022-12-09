@@ -16,6 +16,7 @@ summary: 'BlueXP vous permet de consulter les coûts associés à l"exécution d
 [role="lead"]
 BlueXP vous permet de consulter les coûts des ressources associés à l'exécution de Cloud Volumes ONTAP dans AWS. Vous pouvez également voir les économies réalisées grâce aux fonctionnalités NetApp qui permettent de réduire les coûts de stockage.
 
+.Description de la tâche
 BlueXP met à jour les coûts lorsque vous actualisez la page. Vous devez vous référer à AWS pour plus de détails sur le coût final.
 
 .Étape

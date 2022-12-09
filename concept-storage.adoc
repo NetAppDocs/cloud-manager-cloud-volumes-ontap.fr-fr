@@ -87,7 +87,14 @@ Vous pouvez coupler un disque géré avec le stockage Azure Blob à link:concept
 
 
 --
-Paires HA:: Les paires HAUTE DISPONIBILITÉ utilisent des objets blob de pages Premium qui ont une taille de disque maximale de 8 Tio.
+Paires HA:: Les paires HAUTE DISPONIBILITÉ utilisent deux types de disques qui offrent des performances élevées pour les charges de travail exigeantes en E/S à un coût plus élevé :
++
+--
+* _Premium page Blobs_ avec une taille de disque maximale de 8 Tio
+* _Disques gérés_ avec une taille de disque maximale de 32 Tio
+
+
+--
 
 
 * Liens connexes*

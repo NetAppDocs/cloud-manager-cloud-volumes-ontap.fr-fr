@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-client-protocols.html 
 keywords: client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs 
-summary: Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB et S3. 
+summary: Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB, NVMe-TCP et S3. 
 ---
 = Protocoles clients
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, S
 
 
 [role="lead"]
-Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB et S3.
+Cloud Volumes ONTAP prend en charge les protocoles client iSCSI, NFS, SMB, NVMe-TCP et S3.
 
 
 
@@ -43,3 +43,11 @@ endif::aws[]
 ifdef::azure[]
 
 endif::azure[]
+
+
+
+== NVMe-TCP
+
+Le protocole NVMe-TCP est pris en charge par les fournisseurs cloud si vous utilisez Cloud Volumes ONTAP version 9.12.1 ou ultérieure. BlueXP ne propose pas de fonctionnalités de gestion pour NVMe-TCP.
+
+Pour plus d'informations sur la configuration de NVMe via ONTAP, reportez-vous à la section https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html["Configuration d'une VM de stockage pour NVMe"^].

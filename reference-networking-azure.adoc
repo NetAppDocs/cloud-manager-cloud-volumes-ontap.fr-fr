@@ -106,7 +106,7 @@ NOTE: L'IP iSCSI fournit un accès client via le protocole iSCSI. Il est égalem
 
 
 
-NOTE: NIC3 ne s'applique qu'aux déploiements haute disponibilité avec des systèmes d'objets blob de pages.
+NOTE: NIC3 s'applique uniquement aux déploiements haute disponibilité qui utilisent le stockage d'objets blob de page.
 
 Les adresses IP ci-dessus ne migrent pas lors des événements de basculement.
 
@@ -122,9 +122,9 @@ En outre, 4 adresses IP front-end (FIPS) sont configurées pour migrer lors des 
 
 === Connexion sécurisée aux services Azure
 
-Par défaut, BlueXP active une liaison privée Azure pour les connexions entre les comptes de stockage Cloud Volumes ONTAP et Azure.
+Par défaut, BlueXP active une liaison privée Azure pour les connexions entre les comptes de stockage d'objets blob de pages Cloud Volumes ONTAP et Azure.
 
-Dans la plupart des cas, rien n'est nécessaire : ​BlueXP gère la solution Azure Private Link pour vous. Cependant, si vous utilisez Azure Private DNS, vous devez modifier un fichier de configuration. Vous devez également connaître une exigence pour l'emplacement du connecteur dans Azure.
+Dans la plupart des cas, rien n'est nécessaire : BlueXP gère l'Azure Private Link pour vous. Cependant, si vous utilisez Azure Private DNS, vous devez modifier un fichier de configuration. Vous devez également connaître une exigence pour l'emplacement du connecteur dans Azure.
 
 Vous pouvez également désactiver la connexion Private Link, si nécessaire par vos besoins. Si vous désactivez le lien, BlueXP configure Cloud Volumes ONTAP pour qu'il utilise un point de terminaison de service à la place.
 
@@ -460,7 +460,20 @@ Le connecteur nécessite un accès Internet sortant pour gérer les ressources e
 | \https://support.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp. 
 
 
-| \https://*.cloudmanager.cloud.netapp.com \https://cloudmanager.cloud.netapp.com | Pour fournir des fonctions et des services SaaS dans BlueXP. 
+ a| 
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+ a| 
+Pour fournir des fonctions et des services SaaS dans BlueXP.
+
+
+NOTE: Le connecteur est en train de contacter « cloudmanager.cloud.netapp.com", mais il commencera à contacter « api.bluexp.netapp.com" » dans une prochaine version.
+
 
 
 | \https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | Pour mettre à niveau le connecteur et ses composants Docker. 

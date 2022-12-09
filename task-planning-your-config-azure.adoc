@@ -62,20 +62,20 @@ Type de machine virtuelle:: Examinez les types de machines virtuelles prises en 
 
 
 --
-Type de disque Azure:: Lorsque vous créez des volumes pour Cloud Volumes ONTAP, vous devez choisir le stockage cloud sous-jacent utilisé par Cloud Volumes ONTAP comme disque.
+Type de disque Azure avec des systèmes à un seul nœud:: Lorsque vous créez des volumes pour Cloud Volumes ONTAP, vous devez choisir le stockage cloud sous-jacent utilisé par Cloud Volumes ONTAP comme disque.
 +
 --
-Les systèmes HAUTE DISPONIBILITÉ utilisent des objets blob de pages Premium. En parallèle, les systèmes à un seul nœud peuvent utiliser deux types de disques gérés Azure :
+Les systèmes à un seul nœud peuvent utiliser trois types de disques gérés Azure :
 
 * _Des disques gérés SSD de premier choix_ fournir des performances élevées aux charges de travail exigeantes en E/S à un coût plus élevé.
 * _Des disques gérés SSD standard_ assurent des performances prévisibles pour les charges de travail nécessitant un faible niveau d'IOPS.
 * _Les disques gérés HDD standard_ sont un bon choix si vous n'avez pas besoin d'IOPS élevées et souhaitez réduire vos coûts.
-+
+
+
 Pour plus d'informations sur les cas d'utilisation de ces disques, reportez-vous à la section https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types["Documentation Microsoft Azure : quels types de disques sont disponibles dans Azure ?"^].
 
-
-
 --
+Type de disque Azure avec paires haute disponibilité:: Les systèmes HAUTE DISPONIBILITÉ utilisent des disques gérés partagés Premium SSD, qui offrent à la fois des performances élevées pour les charges de travail exigeantes en E/S, à un coût plus élevé. Les déploiements HAUTE DISPONIBILITÉ créés avant la version 9.12.1 utilisent des objets blob de pages Premium.
 Taille des disques Azure:: Lorsque vous lancez des instances Cloud Volumes ONTAP, vous devez choisir la taille de disque par défaut des agrégats. BlueXP utilise cette taille de disque pour l'agrégat initial et pour tous les agrégats supplémentaires qu'il crée lorsque vous utilisez l'option de provisionnement simple. Vous pouvez créer des agrégats qui utilisent une taille de disque différente de la taille par défaut link:task-create-aggregates.html["utilisation de l'option d'allocation avancée"].
 +
 --

@@ -104,9 +104,6 @@ Le tableau suivant décrit les champs pour lesquels vous pouvez avoir besoin de 
 | Champ | Description 
 
 
-| Zone de disponibilité | Pour les systèmes à un seul nœud, vous pouvez choisir la zone de disponibilité dans laquelle vous souhaitez déployer Cloud Volumes ONTAP. Si vous ne sélectionnez pas d'AZ, BlueXP en sélectionne un pour vous. 
-
-
 | Groupe de ressources  a| 
 Créez un nouveau groupe de ressources pour Cloud Volumes ONTAP ou utilisez un groupe de ressources existant. Il est recommandé d'utiliser un nouveau groupe de ressources dédié pour Cloud Volumes ONTAP. S'il est possible de déployer Cloud Volumes ONTAP dans un groupe de ressources existant et partagées, il n'est pas recommandé en raison du risque de perte de données. Voir l'avertissement ci-dessus pour plus de détails.
 
@@ -159,19 +156,12 @@ link:concept-data-tiering.html["En savoir plus sur le Tiering des données"].
 
 
 
-. *Vitesse d'écriture et WORM* (systèmes à un seul nœud uniquement) : choisissez *Normal* ou *vitesse d'écriture élevée* et activez le stockage WORM (Write Once, Read Many), si vous le souhaitez.
+. *Vitesse d'écriture et WORM* : choisissez *Normal* ou *vitesse d'écriture élevée*, et activez le stockage WORM (Write Once, Read Many), si vous le souhaitez.
 +
 link:concept-write-speed.html["En savoir plus sur la vitesse d'écriture"].
 
 +
 IMPOSSIBLE D'activer WORM si le Tiering des données était activé.
-
-+
-link:concept-worm.html["En savoir plus sur le stockage WORM"].
-
-. *Secure communication to Storage & WORM* (HA uniquement) : permet d'activer ou non une connexion HTTPS aux comptes de stockage Azure et d'activer le stockage WORM (Write Once, Read Many), si nécessaire.
-+
-La connexion HTTPS est établie depuis une paire HA Cloud Volumes ONTAP 9.7 vers les comptes de stockage Azure. Notez que l'activation de cette option peut avoir un impact sur les performances d'écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l'environnement de travail.
 
 +
 link:concept-worm.html["En savoir plus sur le stockage WORM"].
@@ -332,9 +322,6 @@ Le tableau suivant décrit les champs pour lesquels vous pouvez avoir besoin de 
 | Champ | Description 
 
 
-| Zone de disponibilité | Pour les systèmes à un seul nœud, vous pouvez choisir la zone de disponibilité dans laquelle vous souhaitez déployer Cloud Volumes ONTAP. Si vous ne sélectionnez pas d'AZ, BlueXP en sélectionne un pour vous. 
-
-
 | Groupe de ressources  a| 
 Créez un nouveau groupe de ressources pour Cloud Volumes ONTAP ou utilisez un groupe de ressources existant. Il est recommandé d'utiliser un nouveau groupe de ressources dédié pour Cloud Volumes ONTAP. S'il est possible de déployer Cloud Volumes ONTAP dans un groupe de ressources existant et partagées, il n'est pas recommandé en raison du risque de perte de données. Voir l'avertissement ci-dessus pour plus de détails.
 
@@ -377,7 +364,6 @@ NOTE: Si une version plus récente, General Availability ou patch est disponible
 Notez ce qui suit :
 
 +
-** Le type de disque correspond au volume initial. Vous pouvez choisir un autre type de disque pour les volumes suivants.
 ** La taille des disques correspond à tous les disques de l'agrégat initial et à tous les agrégats supplémentaires créés par BlueXP lorsque vous utilisez l'option de provisionnement simple. Vous pouvez créer des agrégats qui utilisent une taille de disque différente à l'aide de l'option d'allocation avancée.
 +
 Pour obtenir de l'aide sur le choix d'une taille de disque, reportez-vous à la section link:task-planning-your-config-azure.html#sizing-your-system-in-azure["Dimensionnement du système dans Azure"].
@@ -389,9 +375,12 @@ link:concept-data-tiering.html["En savoir plus sur le Tiering des données"].
 
 
 
-. *Vitesse d'écriture et WORM* (systèmes à un seul nœud uniquement) : choisissez *Normal* ou *vitesse d'écriture élevée* et activez le stockage WORM (Write Once, Read Many), si vous le souhaitez.
+. *Vitesse d'écriture et WORM* : choisissez *Normal* ou *vitesse d'écriture élevée*, et activez le stockage WORM (Write Once, Read Many), si vous le souhaitez.
 +
 link:concept-write-speed.html["En savoir plus sur la vitesse d'écriture"].
+
++
+Cette option n'est disponible que pour certains types de VM. Pour connaître les types de VM pris en charge, reportez-vous à la section link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Configurations prises en charge par licence pour les paires haute disponibilité"].
 
 +
 IMPOSSIBLE D'activer WORM si le Tiering des données était activé.
@@ -399,9 +388,9 @@ IMPOSSIBLE D'activer WORM si le Tiering des données était activé.
 +
 link:concept-worm.html["En savoir plus sur le stockage WORM"].
 
-. *Secure communication to Storage & WORM* (HA uniquement) : permet d'activer ou non une connexion HTTPS aux comptes de stockage Azure et d'activer le stockage WORM (Write Once, Read Many), si nécessaire.
+. *Communication sécurisée au stockage et WORM* : choisissez d'activer ou non une connexion HTTPS aux comptes de stockage Azure et d'activer le stockage WORM (Write Once, Read Many), si vous le souhaitez.
 +
-La connexion HTTPS est établie depuis une paire HA Cloud Volumes ONTAP 9.7 vers les comptes de stockage Azure. Notez que l'activation de cette option peut avoir un impact sur les performances d'écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l'environnement de travail.
+La connexion HTTPS est établie depuis une paire haute disponibilité Cloud Volumes ONTAP 9.7 vers les comptes de stockage d'objets blob de pages Azure. Notez que l'activation de cette option peut avoir un impact sur les performances d'écriture. Vous ne pouvez pas modifier le paramètre après avoir créé l'environnement de travail.
 
 +
 link:concept-worm.html["En savoir plus sur le stockage WORM"].

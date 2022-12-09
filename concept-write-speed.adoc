@@ -114,11 +114,14 @@ Vous pouvez choisir une vitesse d'écriture lorsque vous créez un nouvel enviro
 
 Si une perte de données est due à une vitesse d'écriture élevée, le système de gestion des événements (EMS) signale les deux événements suivants :
 
-* Cloud Volumes ONTAP 9.11.0 ou version ultérieure
+* Cloud Volumes ONTAP 9.12.1 ou version ultérieure
++
+ NOTICE nv.data.loss.possible: An unexpected shutdown occurred while in high write speed mode, which possibly caused a loss of data.
+* Cloud Volumes ONTAP 9.11.0 à 9.11.1
 +
  DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"
 +
- ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect..
 * Cloud Volumes ONTAP 9.8 à 9.10.1
 +
  DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"

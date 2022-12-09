@@ -127,7 +127,7 @@ NOTE: L'administrateur du compte peut modifier cette valeur à partir de la page
 | Autorisations UNIX (NFS uniquement) | 776 
 |===
 +
-Pour plus d'informations sur ces attributs, reportez-vous à la page _volume create_ man.
+Voir la link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html["ONTAP _volume create_ man page"] pour plus d'informations sur ces attributs.
 
 
 
@@ -180,19 +180,29 @@ Si la machine virtuelle que vous choisissez pour Cloud Volumes ONTAP prend en ch
 
 * Un disque dur standard de 1024 Gio pour économiser les cœurs
 * Un snapshot Azure pour chaque disque d'initialisation et disque racine
-* Les disques de démarrage et racine sont chiffrés par défaut.
+* Par défaut, chaque disque dans Azure est chiffré au repos.
 
 
 
 
 === Azure (paire HA)
 
+.Paires HA avec un blob de pages
 * Deux disques SSD Premium de 10 Gio pour le volume de démarrage (un par nœud)
 * Deux blobs de page Premium de stockage de 140 Gio pour le volume racine (un par nœud)
 * Deux disques durs standard de 1024 Gio pour les cœurs économiques (un par nœud)
 * Deux disques SSD Premium de 512 Gio pour la NVRAM (un par nœud)
 * Un snapshot Azure pour chaque disque d'initialisation et disque racine
-* Les disques de démarrage et racine sont chiffrés par défaut.
+* Par défaut, chaque disque dans Azure est chiffré au repos.
+
+
+.Paires HAUTE DISPONIBILITÉ dans plusieurs zones de disponibilité
+* Deux disques SSD Premium de 10 Gio pour le volume de démarrage (un par nœud)
+* Deux blobs de page Premium de stockage de 512 Gio pour le volume racine (un par nœud)
+* Deux disques durs standard de 1024 Gio pour les cœurs économiques (un par nœud)
+* Deux disques SSD Premium de 512 Gio pour la NVRAM (un par nœud)
+* Un snapshot Azure pour chaque disque d'initialisation et disque racine
+* Par défaut, chaque disque dans Azure est chiffré au repos.
 
 
 endif::azure[]

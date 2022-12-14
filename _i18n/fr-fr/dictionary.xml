@@ -1616,44 +1616,30 @@
   <block id="e0bda1591b7559424f02d1adbbd3965d" category="summary">Comme dans une région AWS standard, vous pouvez utiliser BlueXP (anciennement Cloud Manager) dans l'environnement AWS commercial Cloud Services (C2S) pour déployer Cloud Volumes ONTAP, qui fournit des fonctionnalités haute performance pour votre stockage cloud. AWS C2S est une région fermée spécifique aux États-Unis Intelligence Community : les instructions de cette page s'appliquent uniquement aux utilisateurs de la région AWS C2S.</block>
   <block id="ac46f2b5d78e0710ebb1765d7e4ba12a" category="doc">Commencez à utiliser Cloud Volumes ONTAP dans l'environnement AWS C2S</block>
   <block id="5e2af697d363d750a2757a32a4987829" category="inline-link">AWS commercial Cloud Services (C2S)</block>
-  <block id="6ca14d846a91be8fc4a733dd59d26bb0" category="paragraph">À l'instar d'une région AWS standard, vous pouvez utiliser BlueXP (anciennement Cloud Manager) dans le<block ref="5d288b71381e3fb57ca0bda26da6a1f9" category="inline-link-rx"></block> Environnement à déployer Cloud Volumes ONTAP, qui fournit des fonctionnalités de grande qualité pour votre stockage cloud. AWS C2S est une région fermée spécifique aux États-Unis Intelligence Community : les instructions de cette page s'appliquent uniquement aux utilisateurs de la région AWS C2S.</block>
   <block id="55ac98eae564c353eeef8edc0d7097c1" category="section-title">Fonctions prises en charge dans C2S</block>
-  <block id="bda314d4db62f6485dba94ee7b5e958c" category="paragraph">Les fonctionnalités suivantes sont disponibles auprès de BlueXP dans l'environnement C2S :</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="0a9e63106b5735d38d5bf5377346f3ed" category="list-text">Réplication des données</block>
   <block id="d4af1c3d6fd6c6f713f1c42aeefe16e0" category="list-text">Un calendrier pour l'audit</block>
   <block id="a3ba8957c5b6da3f0cea5f6a0560a884" category="paragraph">Pour Cloud Volumes ONTAP, vous pouvez créer un système à un seul nœud ou une paire HA. Ces deux options de licence sont disponibles : paiement à l'utilisation et BYOL (Bring Your Own License).</block>
   <block id="4533efdd4943c354325fa4b9afd6b946" category="paragraph">Le Tiering des données vers S3 est également pris en charge par Cloud Volumes ONTAP dans C2S.</block>
-  <block id="2527c2f14da4d4a76bdcc768e351a161" category="list-text">Aucun service cloud NetApp n'est disponible auprès de BlueXP.</block>
   <block id="bbac84abd1a970b9c0e8d31ed4aa0906" category="list-text">Comme il n'y a pas d'accès à Internet dans l'environnement C2S, les fonctions suivantes ne sont pas disponibles :</block>
-  <block id="59ec8e7ffb59b70829efbb137b9f7f91" category="list-text">Intégration à BlueXP</block>
-  <block id="33054e4c4ec78cdbffe4024718f5be95" category="list-text">Mises à niveau logicielles automatisées depuis BlueXP</block>
   <block id="a4d4a2ce01f92b20030c0f4e601e1469" category="list-text">NetApp AutoSupport</block>
   <block id="c0954cac84549fc6e8eaef628e57836c" category="list-text">Informations sur les coûts AWS pour les ressources Cloud Volumes ONTAP</block>
   <block id="2f88a80d163d0a89ca5ecdf817af1f14" category="list-text">Les licences Freemium ne sont pas prises en charge dans l'environnement C2S.</block>
   <block id="42f8643eb52a942747937327c72c8361" category="section-title">Présentation du déploiement</block>
   <block id="7dbc114b490b3587afece94d9d3cfb10" category="paragraph">La mise en route de Cloud Volumes ONTAP dans C2S comprend quelques étapes.</block>
-  <block id="dadad980953d2a143598b983de397916" category="list-text">Préparation de votre environnement AWS.</block>
   <block id="48779c5be1cd521ff10b7f3bcc805a25" category="paragraph">Vous pouvez notamment configurer la mise en réseau, vous abonner à Cloud Volumes ONTAP, configurer des autorisations et éventuellement configurer le KMS AWS.</block>
-  <block id="45c4ad7dba466646715a91a3183fdfc3" category="list-text">Installation du connecteur et configuration de BlueXP.</block>
-  <block id="fd1e9efd73db6c68ae813a5dcd96dbb2" category="paragraph">Avant de pouvoir utiliser BlueXP pour déployer Cloud Volumes ONTAP, vous devez créer un _Connector_. BlueXP peut ainsi gérer les ressources et les processus au sein de votre environnement de cloud public (y compris Cloud Volumes ONTAP).</block>
-  <block id="3fdc426d6997d4400cf7d2e53ee56a44" category="paragraph">Vous vous connecterez à BlueXP à partir du logiciel installé sur l'instance de connecteur.</block>
-  <block id="559be73d173c7576334007c917f2d2e9" category="list-text">Lancement de Cloud Volumes ONTAP depuis BlueXP.</block>
   <block id="f14f364d88ae94a22fecdfb6080b3c8b" category="paragraph">Chacune de ces étapes est décrite ci-dessous.</block>
-  <block id="aa82b0633ff8ba724f265336515caa95" category="section-title">Préparez votre environnement AWS</block>
   <block id="ab674d97a0dbbc87ca939d68d82e8a08" category="paragraph">Votre environnement AWS doit répondre à quelques exigences.</block>
   <block id="4e85b7aafac6d2da235acd904c8d01ca" category="section-title">Configurez votre réseau</block>
   <block id="7c5d8bf27092bf15632098a9cc75b95e" category="paragraph">Configurez votre réseau AWS pour que Cloud Volumes ONTAP puisse fonctionner correctement.</block>
   <block id="6cc1b87018ec63a72f339fd55542d90f" category="list-text">Choisissez le VPC et les sous-réseaux dans lesquels vous souhaitez lancer l'instance de connecteur et les instances Cloud Volumes ONTAP.</block>
   <block id="cfd6f0ddd1c37132e466969cd29cfd0b" category="section-title">Abonnez-vous à Cloud Volumes ONTAP</block>
-  <block id="e684b73c48d55ad9b15bfb7822aaaf57" category="paragraph">Un abonnement Marketplace est nécessaire pour déployer Cloud Volumes ONTAP depuis BlueXP.</block>
   <block id="d1e73b0111e78833cd168c2cc012483b" category="list-text">Accédez au Marketplace de la communauté AWS Intelligence et recherchez Cloud Volumes ONTAP.</block>
   <block id="93dc1b846256ba5a81d496cecf09af84" category="list-text">Sélectionnez l'offre que vous prévoyez de déployer.</block>
   <block id="50b78843131cd5e7a6b90126141037f5" category="list-text">Vérifiez les termes et cliquez sur *Accept*.</block>
   <block id="bd81a861a9a90abd1e965fde29330091" category="list-text">Répétez ces étapes pour les autres offres si vous prévoyez de les déployer.</block>
-  <block id="bbe002df8ce994abffcdaf271c9726f1" category="paragraph">Vous devez utiliser BlueXP pour lancer des instances Cloud Volumes ONTAP. Vous ne devez pas lancer des instances Cloud Volumes ONTAP à partir de la console EC2.</block>
   <block id="9a11eb5da5d06e3593dc6b41553d97e5" category="section-title">Configurez les autorisations</block>
-  <block id="66d395d7b7513a02ba2e6527b9b995e1" category="paragraph">Définissez des règles et des rôles IAM qui fournissent à BlueXP et Cloud Volumes ONTAP les autorisations nécessaires pour effectuer des actions dans l'environnement des services cloud AWS commerciaux.</block>
   <block id="0dc3bc40ef64f54364ea349a4715e7ef" category="paragraph">Vous avez besoin d'une politique IAM et d'un rôle IAM pour chacun des éléments suivants :</block>
   <block id="c2f8321ff3a236ed24f9e8e5cabfae55" category="list-text">L'instance de connecteur</block>
   <block id="66dbefe706035688123645657da5ccc3" category="list-text">Instances Cloud Volumes ONTAP</block>
@@ -1665,21 +1651,13 @@
   <block id="6a708c2efcfd3fa9aadb11a053154305" category="list-text">Créez des rôles IAM avec le type de rôle Amazon EC2 et associez les règles créées aux étapes précédentes.</block>
   <block id="ef1be41357c30caefe80a1e372159e5d" category="paragraph">De la même manière que les règles, vous devez avoir un rôle IAM pour le connecteur, un pour les nœuds Cloud Volumes ONTAP et un pour le médiateur HA (si vous souhaitez déployer des paires HA).</block>
   <block id="d8274187bd955095cc8d8a796bc54f28" category="paragraph">Vous devez sélectionner le rôle IAM de connecteur lorsque vous lancez l'instance de connecteur.</block>
-  <block id="9aca057db466fd868d2377f6d780fa68" category="paragraph">Vous pouvez sélectionner les rôles IAM pour Cloud Volumes ONTAP et le médiateur HA lorsque vous créez un environnement de travail Cloud Volumes ONTAP à partir de BlueXP.</block>
   <block id="0178b985155f8038a3bb894fe24ece79" category="section-title">Configuration du KMS AWS</block>
   <block id="d7eb931b5b1d4cfe133e4c07eb2379be" category="paragraph">Si vous souhaitez utiliser le chiffrement Amazon avec Cloud Volumes ONTAP, assurez-vous que les exigences du service de gestion des clés AWS sont respectées.</block>
   <block id="b625f1267fdc411389bea37c6c262eae" category="list-text">Assurez-vous qu'une clé maître client (CMK) active existe dans votre compte ou dans un autre compte AWS.</block>
   <block id="3e4f6d7674e40fd3611c1cebec37b725" category="paragraph">La CMK peut être une CMK gérée par AWS ou une CMK gérée par le client.</block>
   <block id="3817567f1a0a9d7b3cf35607b29c79dc" category="list-text">Si le CMK se trouve dans un compte AWS séparé du compte sur lequel vous prévoyez de déployer Cloud Volumes ONTAP, vous devez obtenir l'ARN de cette clé.</block>
-  <block id="3878b10a2a7831177ba0bf3ef76534a1" category="paragraph">Vous devrez fournir l’ARN à BlueXP lorsque vous créez le système Cloud Volumes ONTAP.</block>
-  <block id="a24753bcb03f2891cb8a9941ea3734de" category="list-text">Ajoutez le rôle IAM pour l'instance BlueXP à la liste des utilisateurs clés d'un CMK.</block>
-  <block id="83057eeba50af289c3119322d79424e5" category="paragraph">Cela donne des autorisations BlueXP pour utiliser le CMK avec Cloud Volumes ONTAP.</block>
-  <block id="cdd86305d9cc6338876073837834569f" category="section-title">Installer et configurer BlueXP</block>
-  <block id="0117fe5f98f9bb1fb928ff6f24c0d297" category="paragraph">Avant de lancer des systèmes Cloud Volumes ONTAP dans AWS, vous devez d'abord lancer l'instance de connecteur à partir d'AWS Marketplace, puis vous connecter et configurer BlueXP.</block>
   <block id="9f41c8e380cf0e56fea478a54ffb3e43" category="list-text">Obtenir un certificat racine signé par une autorité de certification (CA) au format X.509 encodé base-64 de Privacy Enhanced Mail (PEM). Consultez les politiques et procédures de votre organisation pour obtenir le certificat.</block>
-  <block id="4f00f71b9f16d5b5de7af5cb24e11347" category="paragraph">Vous devrez télécharger le certificat pendant le processus d'installation. BlueXP utilise le certificat de confiance pour envoyer des demandes vers AWS via HTTPS.</block>
   <block id="e01ba74be9f641ee21c8b73053d51160" category="list-text">Lancez l'instance de connecteur :</block>
-  <block id="00e18132402ce28d7379ed3276cd9288" category="list-text">Accédez à la page AWS Intelligence Community Marketplace pour BlueXP.</block>
   <block id="743e88e44f4ff831837bcda803029d2c" category="list-text">Dans l'onglet Custom Launch, sélectionnez l'option de lancement de l'instance à partir de la console EC2.</block>
   <block id="af50aa0e0fc211eda762b05437319cc7" category="list-text">Suivez les invites pour configurer l'instance.</block>
   <block id="903f980c6b4328fd29befc5ddd7bed7d" category="paragraph">Notez les éléments suivants lors de la configuration de l'instance :</block>
@@ -1687,18 +1665,12 @@
   <block id="2c2063da836fb6a9adbb3a67f0bd1192" category="list-text">Vous devez choisir le rôle IAM que vous avez créé lors de la préparation de votre environnement AWS.</block>
   <block id="47ef31752bdcdd73b07b1fe8976c82a6" category="list-text">Vous devez conserver les options de stockage par défaut.</block>
   <block id="b901bc33967dc36bebafa77250edd08b" category="list-text">Les méthodes de connexion requises pour le connecteur sont les suivantes : SSH, HTTP et HTTPS.</block>
-  <block id="e0352c069670409718cfa65aea1b8233" category="list-text">Configurez BlueXP à partir d'un hôte qui a une connexion à l'instance de connecteur :</block>
   <block id="4df8bb837bc00b990bb9e359a33c532c" category="list-text">Ouvrez un navigateur Web et entrez l'URL suivante :<block ref="484de961b6aa06a7131bf90e9cc3be46" category="inline-link-rx"></block></block>
   <block id="4d0564ff4d1bbd71234a0838722dfc93" category="list-text">Spécifiez un serveur proxy pour la connectivité aux services AWS.</block>
   <block id="c3e84141ad53b58cc86262388ac9e4a6" category="list-text">Téléchargez le certificat que vous avez obtenu à l'étape 1.</block>
-  <block id="75c823904b8a5c65869664dacb62ce46" category="list-text">Suivez les étapes de l'assistant de configuration pour configurer BlueXP.</block>
-  <block id="5f68277f8f52710e172b7a7f44256583" category="list-text">*Détails du système* : saisissez un nom pour cette instance de BlueXP et indiquez le nom de votre entreprise.</block>
-  <block id="5379059ebeaf7deef65b4f49d91a62bf" category="list-text">*Créer utilisateur* : créez l'utilisateur Admin que vous utiliserez pour administrer BlueXP.</block>
   <block id="38bfdffb2647d7fe06154cb0192f2725" category="list-text">*Revue* : passez en revue les détails et approuvez le contrat de licence de l'utilisateur final.</block>
   <block id="ce844b01a8ab7308a739495c52892c79" category="list-text">Pour terminer l'installation du certificat signé par l'autorité de certification, redémarrez l'instance de connecteur à partir de la console EC2.</block>
   <block id="665230f4bd95f60852b6fc1b7f05c103" category="list-text">Une fois le connecteur redémarré, connectez-vous à l'aide du compte utilisateur administrateur que vous avez créé dans l'assistant de configuration.</block>
-  <block id="0439cfd9ea85ab415d89910478b93050" category="section-title">Lancez Cloud Volumes ONTAP</block>
-  <block id="61e54effa4b228c6b5c3964eaeebc3c4" category="paragraph">Vous pouvez lancer des instances Cloud Volumes ONTAP dans l'environnement AWS commercial Cloud Services en créant de nouveaux environnements de travail dans BlueXP.</block>
   <block id="6f177e279944db659b80f0020df93964" category="list-text">Si vous avez acheté une licence, vous devez disposer du fichier de licence que vous avez reçu de NetApp. Le fichier de licence est un fichier .NLF au format JSON.</block>
   <block id="4b91157a6d4a5e01b05a5a74492fcdeb" category="list-text">Une paire de clés est requise pour activer l'authentification SSH basée sur des clés au médiateur HA.</block>
   <block id="41c4defb4c9e45cc91ee861e1c4ca018" category="list-text">Sur la page environnements de travail, cliquez sur *Ajouter un environnement de travail*.</block>
@@ -1719,7 +1691,6 @@
   <block id="0c1d9d3db8eeeb7a62c2e39cb2683df5" category="admonition">Si vous avez besoin d'une taille différente par la suite, vous pouvez utiliser l'option d'allocation avancée pour créer un agrégat qui utilise des disques d'une taille spécifique.</block>
   <block id="2ae63b53bd08da82000580623bac6398" category="list-text">Les fonctionnalités d'efficacité du stockage améliorent l'utilisation du stockage et réduisent la quantité totale de stockage nécessaire.</block>
   <block id="d9bc9104669da346ed2fadb2cb686999" category="paragraph">BlueXP lance l'instance Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.</block>
-  <block id="aacee944a23f52158d9116740999b043" category="paragraph">BlueXP crée des groupes de sécurité qui incluent les règles entrantes et sortantes que BlueXP et Cloud Volumes ONTAP doivent fonctionner correctement dans le cloud. Vous pouvez consulter les ports à des fins de test ou si vous préférez utiliser vos propres groupes de sécurité.</block>
   <block id="ca984063dccc5d90214a5ae0e7e5d3aa" category="section-title">Groupe de sécurité du connecteur</block>
   <block id="3dc508776ae41d76d647e62358d55180" category="section-title">Groupe de sécurité pour Cloud Volumes ONTAP</block>
   <block id="d991e60dbce1c74dc50b148edfc8bbba" category="paragraph">Le groupe de sécurité des nœuds Cloud Volumes ONTAP nécessite à la fois des règles entrantes et sortantes.</block>
@@ -1749,7 +1720,6 @@
   <block id="030bd70df22ed3354f19b1ed2afdeb00" category="cell">Accès à l'API RESTful depuis le connecteur</block>
   <block id="35c1e7571a7c31f32b4caa5a6aee08bb" category="paragraph">Le groupe de sécurité prédéfini du médiateur HA inclut les règles de sortie suivantes.</block>
   <block id="5cfc8e4f1942d56277d59f7dc3d51166" category="section-title">Groupe de sécurité interne du médiateur HA</block>
-  <block id="8ca645485256e03a1b061de11213bb57" category="paragraph">Le groupe de sécurité interne prédéfini pour le médiateur Cloud Volumes ONTAP HA inclut les règles suivantes. BlueXP crée toujours ce groupe de sécurité. Vous n'avez pas la possibilité d'utiliser votre propre.</block>
   <block id="d5e80ceb9cd16e162abee97d3789d829" category="paragraph">Le groupe de sécurité prédéfini inclut les règles entrantes suivantes.</block>
   <block id="c24475390eff056757a0e12aa5fe5e9f" category="cell">Tout le trafic</block>
   <block id="e6929ac62766d022cca32bd1a5705a2a" category="cell">Communication entre le médiateur HA et les nœuds HA</block>
@@ -4576,4 +4546,39 @@
   <block id="75081fb4982f7b843e702079b35f0ed4" category="paragraph"><block ref="3fe75f10a35597997861eca633c30fa7" category="inline-link-rx"></block>.</block>
   <block id="eba1f3287bdc33dfa25c084b5e15a4c5" category="cell">9.12.1</block>
   <block id="708ffc372ba6f36174a7930961b956ab" category="section-title">8 décembre 2022</block>
+  <block id="5e1976febada1fa49b700760dd574954" category="paragraph">À l'instar d'une région AWS standard, vous pouvez utiliser Cloud Manager dans le<block ref="5d288b71381e3fb57ca0bda26da6a1f9" category="inline-link-rx"></block> Environnement à déployer Cloud Volumes ONTAP, qui fournit des fonctionnalités de grande qualité pour votre stockage cloud. AWS C2S est une région fermée spécifique aux États-Unis Intelligence Community : les instructions de cette page s'appliquent uniquement aux utilisateurs de la région AWS C2S.</block>
+  <block id="2d0867b6a9603b07d840b96ca1528053" category="section-title">Versions prises en charge dans C2S</block>
+  <block id="d8c9328d84b7250ac992afdd5368aaa2" category="list-text">Cloud Volumes ONTAP 9.8 est pris en charge</block>
+  <block id="44ea8a993710d0101dfe9031f76256f1" category="list-text">La version 3.9.4 du connecteur est prise en charge</block>
+  <block id="8f5457d70cb41e409f56734c39e0d5d6" category="paragraph">Il s'agit du logiciel requis pour déployer et gérer Cloud Volumes ONTAP dans AWS. Vous allez vous connecter à Cloud Manager à partir du logiciel installé sur l'instance de connecteur. Le site Web SaaS pour Cloud Manager n'est pas pris en charge dans l'environnement C2S.</block>
+  <block id="dae07c7817c5b878613418fce2bc47a4" category="admonition">Cloud Manager a été récemment renommé BlueXP, mais nous continuons à le qualifier de Cloud Manager dans C2S, car l'interface utilisateur incluse dans la version 3.9.4 du connecteur est toujours appelée Cloud Manager.</block>
+  <block id="953b8019e01e302cfda1407c42757ca9" category="paragraph">Cloud Manager inclut les fonctionnalités suivantes dans l'environnement C2S :</block>
+  <block id="92c64f1847bb1326cce66cc7f4bc8454" category="list-text">Aucun des services cloud de NetApp n'est disponible dans Cloud Manager.</block>
+  <block id="a11bc353b91c78f50a85b950845a4b38" category="list-text">Mises à niveau logicielles automatisées depuis Cloud Manager</block>
+  <block id="7668ed26cf424d7f7440ce0f230438e3" category="list-text"><block ref="70354dfe51c75681a6ee1c0148ca26ba" category="inline-xref-macro-rx"></block></block>
+  <block id="3b53f9d6057054fc25b0889239745085" category="list-text"><block ref="438b9fbe00ba2f3369249568b2e0205d" category="inline-xref-macro-rx"></block></block>
+  <block id="2e0e99403b74be7a5455c5f8ff21a2ec" category="paragraph">Avant de pouvoir commencer à utiliser Cloud Manager pour déployer Cloud Volumes ONTAP, vous devez créer un _Connector_. Ce connecteur permet à Cloud Manager de gérer les ressources et les processus au sein de votre environnement de cloud public (y compris Cloud Volumes ONTAP).</block>
+  <block id="26742afe0446e71796a9332243fb3983" category="paragraph">Vous allez vous connecter à Cloud Manager à partir du logiciel installé sur l'instance de connecteur.</block>
+  <block id="25975a6f2b2fb500b1c5ce430865daf2" category="list-text"><block ref="d6d32fe8e125af163f491889e868bcb1" category="inline-xref-macro-rx"></block></block>
+  <block id="40727b40295de6679a15e7ab918b6c93" category="section-title">Préparation de votre environnement AWS</block>
+  <block id="f45971f8804dbe27a85371847149f156" category="paragraph">Un abonnement Marketplace est nécessaire pour déployer Cloud Volumes ONTAP depuis Cloud Manager.</block>
+  <block id="b7a04099516f8430d91ecc6b9df3f486" category="paragraph">Vous devez utiliser Cloud Manager pour lancer les instances Cloud Volumes ONTAP. Vous ne devez pas lancer des instances Cloud Volumes ONTAP à partir de la console EC2.</block>
+  <block id="74800ff1ec3d5552aaa473310f1b4c2c" category="paragraph">Définissez des règles et des rôles IAM qui fournissent au connecteur et à Cloud Volumes ONTAP les autorisations nécessaires pour effectuer des actions dans l'environnement des services cloud AWS commerciaux.</block>
+  <block id="82d76c39afb12299fd89e2b035a2fc70" category="paragraph">Vous pouvez sélectionner les rôles IAM pour Cloud Volumes ONTAP et le médiateur HA lorsque vous créez un environnement de travail Cloud Volumes ONTAP à partir de Cloud Manager.</block>
+  <block id="83de5a123d83fde5dcaaf6811cf06320" category="paragraph">Vous devrez fournir l'ARN dans Cloud Manager lors de la création du système Cloud Volumes ONTAP.</block>
+  <block id="abe7689876592f7424a214b07792ca15" category="list-text">Ajoutez le rôle IAM de l'instance de connecteur à la liste des utilisateurs clés d'un CMK.</block>
+  <block id="ea80d9267d93b8f0dcd057ae999b94ab" category="paragraph">Cela permet à Cloud Manager d'utiliser le CMK avec Cloud Volumes ONTAP.</block>
+  <block id="95b4a625010cf2cf69514209c19dbc3e" category="section-title">Installation du connecteur et configuration de Cloud Manager</block>
+  <block id="4c06b45d24ad980552c52a9cbf857f23" category="paragraph">Avant de lancer des systèmes Cloud Volumes ONTAP dans AWS, vous devez d'abord lancer l'instance de connecteur à partir d'AWS Marketplace, puis vous connecter et configurer Cloud Manager.</block>
+  <block id="0c7a137062facbdd9af5451dcc9caf1c" category="paragraph">Vous devrez télécharger le certificat pendant le processus d'installation. Cloud Manager utilise le certificat de confiance pour l'envoi de demandes vers AWS sur HTTPS.</block>
+  <block id="c419f8d91e9428c13e4b489550591f42" category="list-text">Accédez à la page AWS Intelligence Community Marketplace pour Cloud Manager.</block>
+  <block id="2a74a4ca6ca91fb8d3c6b38fc9233a4f" category="list-text">Configurez Cloud Manager à partir d'un hôte connecté à l'instance de connecteur :</block>
+  <block id="2d354fadd521725ccc56833965bb4440" category="list-text">Suivez les étapes de l'assistant d'installation pour configurer Cloud Manager.</block>
+  <block id="dd6fb2ba019c1dfb48ea66d8189f5b19" category="list-text">*Détails du système* : saisissez un nom pour cette instance de Cloud Manager et indiquez le nom de votre entreprise.</block>
+  <block id="f996b51d4b8d0dffa87f16768fa11b0d" category="list-text">*Créer un utilisateur* : créez l'utilisateur Admin que vous utiliserez pour administrer Cloud Manager.</block>
+  <block id="9e9b668de9a168aa4348af261abcf3d8" category="section-title">Lancement de Cloud Volumes ONTAP à partir de Cloud Manager</block>
+  <block id="da7224d72b7c308843ae6ce07ceaa3d0" category="paragraph">Vous pouvez lancer des instances Cloud Volumes ONTAP dans l'environnement AWS commercial Cloud Services en créant de nouveaux environnements de travail dans Cloud Manager.</block>
+  <block id="8a7f23615316304155b79b66eb77b5b8" category="paragraph">Cloud Manager lance l'instance Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.</block>
+  <block id="579a953172073c3fe33dc907abd6b3f8" category="paragraph">Cloud Manager crée des groupes de sécurité comprenant les règles entrantes et sortantes que Cloud Manager et Cloud Volumes ONTAP doivent fonctionner avec succès dans le cloud. Vous pouvez consulter les ports à des fins de test ou si vous préférez utiliser vos propres groupes de sécurité.</block>
+  <block id="f4b34b24cc464b0154bd81cd6d906233" category="paragraph">Le groupe de sécurité interne prédéfini pour le médiateur Cloud Volumes ONTAP HA inclut les règles suivantes. Cloud Manager crée toujours ce groupe de sécurité. Vous n'avez pas la possibilité d'utiliser votre propre.</block>
 </blocks>

@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 18:57:18 +0000">12/09/2022</time>
+    <time datetime="2022-12-15 21:27:01 +0000">12/15/2022</time>
     
   
 
@@ -2346,27 +2346,15 @@ Si vous utilisez une paire haute disponibilité, le médiateur haute disponibili
 <h2 id="configuration-requise-pour-le-connecteur">Configuration requise pour le connecteur</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Configurez votre réseau afin que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. L&#8217;étape la plus importante consiste à garantir l&#8217;accès Internet sortant à différents terminaux.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Astuce">
-</td>
-<td class="content">
-Si votre réseau utilise un serveur proxy pour toutes les communications vers Internet, vous pouvez spécifier le serveur proxy à partir de la page Paramètres. Reportez-vous à la section <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html" target="_blank" rel="noopener">"Configuration du connecteur pour utiliser un serveur proxy"</a>.
-</td>
-</tr>
-</table>
+<p>Configurez votre réseau de sorte que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. Outre le fait de disposer d&#8217;un réseau virtuel et d&#8217;un sous-réseau pour le connecteur, vous devez vous assurer que les exigences suivantes sont respectées.</p>
 </div>
 <div class="sect2">
 <h3 id="connexion-aux-réseaux-cibles">Connexion aux réseaux cibles</h3>
 <div class="paragraph">
-<p>Un connecteur nécessite une connexion réseau aux VPC dans lesquels vous souhaitez déployer Cloud Volumes ONTAP. Si vous déployez une paire haute disponibilité, le connecteur doit uniquement être connecté à VPC-0.</p>
+<p>Un connecteur nécessite une connexion réseau au type d&#8217;environnement de travail que vous créez et aux services que vous prévoyez d&#8217;activer.</p>
 </div>
 <div class="paragraph">
-<p>Si vous prévoyez de déployer Cloud Volumes ONTAP dans un VPC distinct du connecteur, vous devrez configurer le peering réseau VPC. <a href="https://cloud.google.com/vpc/docs/vpc-peering" target="_blank" rel="noopener">"En savoir plus sur le VPC Network peering"</a></p>
+<p>Par exemple, si vous installez un connecteur dans votre réseau d&#8217;entreprise, vous devez configurer une connexion VPN au réseau virtuel dans lequel vous lancez Cloud Volumes ONTAP.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2425,6 +2413,37 @@ Le connecteur est en train de contacter « cloudmanager.cloud.netapp.com", mais 
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="serveur-proxy">Serveur proxy</h3>
+<div class="paragraph">
+<p>Si votre organisation nécessite le déploiement d&#8217;un proxy HTTP pour tout le trafic Internet sortant, obtenez les informations suivantes concernant votre proxy HTTP :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adresse IP</p>
+</li>
+<li>
+<p>Informations d&#8217;identification</p>
+</li>
+<li>
+<p>Certificat HTTPS</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="groupe-de-sécurité">Groupe de sécurité</h3>
+<div class="paragraph">
+<p>Il n&#8217;y a pas de trafic entrant vers le connecteur, sauf si vous le lancez ou si le connecteur est utilisé comme proxy pour les messages AutoSupport. HTTP et HTTPS permettent l&#8217;accès au <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface">"Interface utilisateur locale"</a>, que vous utiliserez dans de rares circonstances. SSH n&#8217;est nécessaire que si vous devez vous connecter à l&#8217;hôte pour le dépannage.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="limitation-de-ladresse-ip">Limitation de l&#8217;adresse IP</h3>
+<div class="paragraph">
+<p>Il existe un conflit possible avec des adresses IP dans la plage 172. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html">"En savoir plus sur cette limitation"</a>.</p>
+</div>
 </div>
 </div>
 </div>

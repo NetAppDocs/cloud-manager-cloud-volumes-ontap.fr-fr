@@ -49,7 +49,13 @@ La version de Cloud Volumes ONTAP sur laquelle vous pouvez effectuer la mise à 
 | Version actuelle | Versions pouvant être directement mises à niveau vers 
 
 
-| 9.11.1 | 9.12.1 
+| 9.12.0 | 9.12.1 
+
+
+.2+| 9.11.1 | 9.12.1 
+
+
+| 9.12.0 
 
 
 | 9.11.0 | 9.11.1 

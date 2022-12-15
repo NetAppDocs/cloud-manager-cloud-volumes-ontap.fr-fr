@@ -776,12 +776,6 @@
   <block id="74082482ea0cad59170e3d4dce025b4e" category="cell">Serveur Syslog</block>
   <block id="a21848ca8e1b04c74552ca38f4284f2b" category="cell">Messages de transfert syslog</block>
   <block id="a02218676e4b3b1478891bbfdaee427f" category="section-title">Configuration requise pour le connecteur</block>
-  <block id="93fd4230b4afd5ccd3311e78e4c88ac9" category="paragraph">Configurez votre réseau afin que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. L'étape la plus importante consiste à garantir l'accès Internet sortant à différents terminaux.</block>
-  <block id="20f41095471130e3ee55ad0782eeccd0" category="inline-link-macro">Configuration du connecteur pour utiliser un serveur proxy</block>
-  <block id="49b6be736ceeb184c7d4cfd9132cd282" category="admonition">Si votre réseau utilise un serveur proxy pour toutes les communications vers Internet, vous pouvez spécifier le serveur proxy à partir de la page Paramètres. Reportez-vous à la section <block ref="6a702607d02fdf72fc33f667cfb9124d" category="inline-link-macro-rx"></block>.</block>
-  <block id="8f83d4a2626dac354314d5394d1f9d21" category="section-title">Connexions aux réseaux cibles</block>
-  <block id="9c4e8356ff1f50418474478350731782" category="paragraph">Un connecteur nécessite une connexion réseau aux VPC et VNets dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.</block>
-  <block id="c3a5da2edea375289d166ef749b9bd1e" category="paragraph">Par exemple, si vous installez un connecteur sur le réseau de votre entreprise, vous devez configurer une connexion VPN sur le VPC ou le vnet dans lequel vous lancez Cloud Volumes ONTAP.</block>
   <block id="c0dfa216f26874dae52a89e0090a3358" category="paragraph">Le connecteur nécessite un accès Internet sortant pour gérer les ressources et les processus au sein de votre environnement de cloud public.</block>
   <block id="b8724da75fb917e992576b17378e66b3" category="cell">Terminaux</block>
   <block id="8963387394e2ee3e2a5a9ba160566a58" category="cell">\https://support.netapp.com</block>
@@ -1873,11 +1867,7 @@
   <block id="14725afebf967c0c497c447ebcaf1764" category="list-text">Pour répliquer les données entre un système Cloud Volumes ONTAP dans GCP et des systèmes ONTAP d'autres réseaux, vous devez disposer d'une connexion VPN entre le VPC et l'autre réseau, par exemple votre réseau d'entreprise.</block>
   <block id="2fbb401eef4220b4a89cce3e59325dcb" category="inline-link">Documentation Google Cloud : présentation de Cloud VPN</block>
   <block id="6d1472a8434e4945740fa177e609f886" category="paragraph">Pour obtenir des instructions, reportez-vous à la section<block ref="1bc8aad79f56acf8c242cfb981c11ee1" category="inline-link-rx"></block>.</block>
-  <block id="e50f8e178601a7a1b4960a62843eb210" category="admonition">Si votre réseau utilise un serveur proxy pour toutes les communications vers Internet, vous pouvez spécifier le serveur proxy à partir de la page Paramètres. Reportez-vous à la section<block ref="cce1b522253c2a5c153b8d2850e93a7a" category="inline-link-rx"></block>.</block>
   <block id="be541d1f37f2cc0c7ba1cfd7fcfbb4db" category="section-title">Connexion aux réseaux cibles</block>
-  <block id="4b87bb8b88ced4d50758693e3dabd924" category="paragraph">Un connecteur nécessite une connexion réseau aux VPC dans lesquels vous souhaitez déployer Cloud Volumes ONTAP. Si vous déployez une paire haute disponibilité, le connecteur doit uniquement être connecté à VPC-0.</block>
-  <block id="8ad37a38e1be1cd56ba8016e897e15c5" category="inline-link">En savoir plus sur le VPC Network peering</block>
-  <block id="3af417bcb28902bf6e018910cab4b830" category="paragraph">Si vous prévoyez de déployer Cloud Volumes ONTAP dans un VPC distinct du connecteur, vous devrez configurer le peering réseau VPC.<block ref="7da1fe3c3eb485cc3c06acb3359fc320" category="inline-link-rx"></block></block>
   <block id="e0ab516914623c72df4ff708af6cdd54" category="section-title">Règles de pare-feu pour Cloud Volumes ONTAP</block>
   <block id="e468ba21e4a82ddfaf9b8e28f74bb73b" category="paragraph">BlueXP crée des règles de pare-feu GCP qui incluent les règles entrantes et sortantes nécessaires au bon fonctionnement de Cloud Volumes ONTAP. Vous pouvez consulter les ports à des fins de test ou si vous préférez utiliser vos propres règles de pare-feu.</block>
   <block id="4907f0fb8777892173f7e34fa56bfcdb" category="paragraph">Les règles de pare-feu de Cloud Volumes ONTAP requièrent des règles entrantes et sortantes.</block>
@@ -4441,7 +4431,6 @@
   <block id="b04fd67a98a3b32956894024aa6fcf4f" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Configuration du KMS AWS</block>
   <block id="3af67a9dfd37709bb6e502fd7f303262" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Lancez Cloud Volumes ONTAP avec BlueXP</block>
   <block id="96f4c574f3909d1105768df05940587b" category="paragraph">BlueXP alloue automatiquement le nombre requis d'adresses IP privées à Cloud Volumes ONTAP dans Azure. Vous devez vous assurer que votre réseau dispose de suffisamment d'adresses IP privées.</block>
-  <block id="03739fdb4fd68641a3dd276274b59b91" category="paragraph">Le nombre de LIF attribué par Cloud Manager pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.</block>
   <block id="99b06d2510cf563a2d5a3bb1e854c0be" category="admonition">Une LIF iSCSI fournit un accès client via le protocole iSCSI et est utilisée par le système pour d'autres flux de travail réseau importants. Ces LIFs sont requises et ne doivent pas être supprimées.</block>
   <block id="efd5eb8fe39e72876a227a2a5666b829" category="paragraph">BlueXP alloue 5 ou 6 adresses IP à un système à un seul nœud :</block>
   <block id="40800f2ceb1fadf0fb67562c1b95ca89" category="list-text">IP de gestion du cluster</block>
@@ -4498,7 +4487,6 @@
   <block id="115781a0043a85f8707c5c99fd02dc75" category="paragraph">\https://cloudmanager.cloud.netapp.com</block>
   <block id="7eea1027ea51763c57b7b5965f1ba900" category="admonition">Le connecteur est en train de contacter « cloudmanager.cloud.netapp.com", mais il commencera à contacter « api.bluexp.netapp.com" » dans une prochaine version.</block>
   <block id="b9eeb00cda3e979e1efe9bef61f951fc" category="list-text">Zone de disponibilité Azure HA à plusieurs niveaux</block>
-  <block id="bf8536c9790d590866c905e06322f99d" category="list-text">Pour les disques racine, de démarrage, NVRAM, de cœur et de données, Cloud Manager utilise un ensemble de chiffrement de disque qui permet de gérer les clés de chiffrement avec des disques gérés.</block>
   <block id="0f8e1302b6dedb536c0490b7602b0b32" category="list-text">À partir de ONTAP 9.10.1P3, pour la NVRAM et le disque principal, BlueXP utilise un<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, qui permet la gestion des clés de cryptage avec des disques gérés. Les versions inférieures utilisent une clé gérée par Microsoft au lieu de la clé gérée par le client.</block>
   <block id="5aabc9069557be7e4aeff466605cbc75" category="list-text">Un seul nœud</block>
   <block id="41668006fb357f569acf8441fc16a00c" category="list-text">Pour chiffrer vos comptes de stockage pendant leur création, vous devez créer et fournir l'ID de la ressource dans la demande de création CVO. Cela s'applique à tous les types de déploiements. Si vous ne le fournissez pas, les comptes de stockage seront toujours cryptés, mais BlueXP créera d'abord les comptes de stockage avec cryptage de clé géré par Microsoft, puis mettra à jour les comptes de stockage pour utiliser la clé gérée par le client.</block>
@@ -4519,7 +4507,6 @@
   <block id="bdb764a539084c79daf35d5d881ae82c" category="list-text">Les données client résident sur des disques gérés LRS (stockage redondant local). Chaque nœud a accès au stockage de l'autre nœud. Du stockage supplémentaire est également requis pour <block ref="9f11431b4ce0e30551c89e37c48c22cd" category="inline-link-macro-rx"></block>.</block>
   <block id="c69ac98b36cf0e598f3cae6b175a8eec" category="list-text">Les comptes de stockage sont utilisés pour les déploiements sur disques gérés pour la gestion des journaux de diagnostic et le Tiering sur le stockage d'objets blob.</block>
   <block id="dba89da91170934734e847dcfe4ad5d0" category="section-title">Cloud Volumes ONTAP 9.12.1</block>
-  <block id="6cfcf66978702040453f6b0622a89aaa" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.<block ref="0d69949c9de36f8752d49be7f0ec9aed" category="inline-link-rx"></block></block>
   <block id="2dd09f45720a8f94b29c4d048b61ff4e" category="section-title">15 novembre 2022</block>
   <block id="cca494b1b1d22bc8b5c8a8ecd5367bf8" category="section-title">Licence ONTAP S3 dans GCP</block>
   <block id="44f72ae2127b89a470e082ae9f772acf" category="paragraph">Une licence ONTAP S3 est désormais incluse sur les systèmes Cloud Volumes ONTAP nouveaux et existants qui exécutent la version 9.12.1 ou une version ultérieure dans Google Cloud Platform.</block>
@@ -4581,4 +4568,24 @@
   <block id="8a7f23615316304155b79b66eb77b5b8" category="paragraph">Cloud Manager lance l'instance Cloud Volumes ONTAP. Vous pouvez suivre la progression dans la chronologie.</block>
   <block id="579a953172073c3fe33dc907abd6b3f8" category="paragraph">Cloud Manager crée des groupes de sécurité comprenant les règles entrantes et sortantes que Cloud Manager et Cloud Volumes ONTAP doivent fonctionner avec succès dans le cloud. Vous pouvez consulter les ports à des fins de test ou si vous préférez utiliser vos propres groupes de sécurité.</block>
   <block id="f4b34b24cc464b0154bd81cd6d906233" category="paragraph">Le groupe de sécurité interne prédéfini pour le médiateur Cloud Volumes ONTAP HA inclut les règles suivantes. Cloud Manager crée toujours ce groupe de sécurité. Vous n'avez pas la possibilité d'utiliser votre propre.</block>
+  <block id="3f2a41d3e64efd3d137a5132f84eb8b6" category="paragraph">Le nombre de LIF alloués par BlueXP pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.</block>
+  <block id="df290139b26527b2473b1e82a36386d4" category="paragraph">Configurez votre réseau de sorte que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. Outre le fait de disposer d'un réseau virtuel et d'un sous-réseau pour le connecteur, vous devez vous assurer que les exigences suivantes sont respectées.</block>
+  <block id="2f03f8dd45cb031f8f3cce95fd4acefc" category="paragraph">Un connecteur nécessite une connexion réseau au type d'environnement de travail que vous créez et aux services que vous prévoyez d'activer.</block>
+  <block id="3f92e0c134aea90b900c9d9fb8728adc" category="paragraph">Par exemple, si vous installez un connecteur dans votre réseau d'entreprise, vous devez configurer une connexion VPN au réseau virtuel dans lequel vous lancez Cloud Volumes ONTAP.</block>
+  <block id="3ae1b8362f96338c0c28c7652251bc8b" category="paragraph">Si votre organisation nécessite le déploiement d'un proxy HTTP pour tout le trafic Internet sortant, obtenez les informations suivantes concernant votre proxy HTTP :</block>
+  <block id="75ba8d70e3692ba200f0e0df37b4d2ae" category="list-text">Adresse IP</block>
+  <block id="2daf1cb573c2c61422faf64610cf9402" category="list-text">Informations d'identification</block>
+  <block id="6a3f3799bc264d32568bb7169ddd515a" category="list-text">Certificat HTTPS</block>
+  <block id="338578acf7e0dc54ebcd8c3592f0b022" category="section-title">Groupe de sécurité</block>
+  <block id="ae6252cb830dbd695650f78870fe4309" category="inline-link">Interface utilisateur locale</block>
+  <block id="4f85ea1fc2337ca87ea3957b6ed0f523" category="paragraph">Il n'y a pas de trafic entrant vers le connecteur, sauf si vous le lancez ou si le connecteur est utilisé comme proxy pour les messages AutoSupport. HTTP et HTTPS permettent l'accès au<block ref="b66a5441ef03e9f48be36352f5f78769" category="inline-link-rx"></block>, que vous utiliserez dans de rares circonstances. SSH n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.</block>
+  <block id="d72a801b2f49d6a4ed170ebdf3cf0efc" category="section-title">Limitation de l'adresse IP</block>
+  <block id="65d425afa00c3ead65e6a786e55b60bc" category="inline-link">En savoir plus sur cette limitation</block>
+  <block id="9b1f033bcac0595326d8acd1ef89e52c" category="paragraph">Il existe un conflit possible avec des adresses IP dans la plage 172.<block ref="120cc620882c590412757bc531a4f583" category="inline-link-rx"></block>.</block>
+  <block id="236afd214a59ab065a50ccb9cbbbe4c2" category="cell">9.12.0</block>
+  <block id="97145bbcb02af5e728740b1d40bd2046" category="section-title">15 décembre 2022</block>
+  <block id="bf748f930fa11e46773ff6f7b815e480" category="section-title">Cloud Volumes ONTAP 9.12.0</block>
+  <block id="80df4292f7c986dbd0920bb576487060" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.0 dans AWS et Google Cloud.</block>
+  <block id="abd10f7bee2f791a9e8f76bf98163c27" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.</block>
+  <block id="fdfad4872e8eceed069f74f82808d36e" category="list-text">Pour les disques racine, de démarrage, NVRAM, de cœur et de données, BlueXP utilise un ensemble de cryptage de disque, qui permet de gérer les clés de cryptage avec des disques gérés.</block>
 </blocks>

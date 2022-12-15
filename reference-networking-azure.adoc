@@ -48,7 +48,7 @@ Si BlueXP vous informe que les messages AutoSupport ne peuvent pas être envoyé
 
 BlueXP alloue automatiquement le nombre requis d'adresses IP privées à Cloud Volumes ONTAP dans Azure. Vous devez vous assurer que votre réseau dispose de suffisamment d'adresses IP privées.
 
-Le nombre de LIF attribué par Cloud Manager pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.
+Le nombre de LIF alloués par BlueXP pour Cloud Volumes ONTAP dépend du déploiement d'un système à un seul nœud ou d'une paire haute disponibilité. Une LIF est une adresse IP associée à un port physique. Une LIF de gestion SVM est nécessaire pour les outils de gestion tels que SnapCenter.
 
 
 NOTE: Une LIF iSCSI fournit un accès client via le protocole iSCSI et est utilisée par le système pour d'autres flux de travail réseau importants. Ces LIFs sont requises et ne doivent pas être supprimées.
@@ -433,18 +433,15 @@ NOTE: La source est l'interface (adresse IP) du système Cloud Volumes ONTAP.
 
 == Configuration requise pour le connecteur
 
-Configurez votre réseau afin que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. L'étape la plus importante consiste à garantir l'accès Internet sortant à différents terminaux.
-
-
-TIP: Si votre réseau utilise un serveur proxy pour toutes les communications vers Internet, vous pouvez spécifier le serveur proxy à partir de la page Paramètres. Reportez-vous à la section link:task_configuring_proxy.html["Configuration du connecteur pour utiliser un serveur proxy"].
+Configurez votre réseau de sorte que le connecteur puisse gérer les ressources et les processus au sein de votre environnement de cloud public. Outre le fait de disposer d'un réseau virtuel et d'un sous-réseau pour le connecteur, vous devez vous assurer que les exigences suivantes sont respectées.
 
 
 
-=== Connexions aux réseaux cibles
+=== Connexion aux réseaux cibles
 
-Un connecteur nécessite une connexion réseau aux VPC et VNets dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.
+Un connecteur nécessite une connexion réseau au type d'environnement de travail que vous créez et aux services que vous prévoyez d'activer.
 
-Par exemple, si vous installez un connecteur sur le réseau de votre entreprise, vous devez configurer une connexion VPN sur le VPC ou le vnet dans lequel vous lancez Cloud Volumes ONTAP.
+Par exemple, si vous installez un connecteur dans votre réseau d'entreprise, vous devez configurer une connexion VPN au réseau virtuel dans lequel vous lancez Cloud Volumes ONTAP.
 
 
 
@@ -478,6 +475,29 @@ NOTE: Le connecteur est en train de contacter « cloudmanager.cloud.netapp.com",
 
 | \https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | Pour mettre à niveau le connecteur et ses composants Docker. 
 |===
+
+
+=== Serveur proxy
+
+Si votre organisation nécessite le déploiement d'un proxy HTTP pour tout le trafic Internet sortant, obtenez les informations suivantes concernant votre proxy HTTP :
+
+* Adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+
+
+=== Groupe de sécurité
+
+Il n'y a pas de trafic entrant vers le connecteur, sauf si vous le lancez ou si le connecteur est utilisé comme proxy pour les messages AutoSupport. HTTP et HTTPS permettent l'accès au https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface["Interface utilisateur locale"], que vous utiliserez dans de rares circonstances. SSH n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+
+
+
+=== Limitation de l'adresse IP
+
+Il existe un conflit possible avec des adresses IP dans la plage 172. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html["En savoir plus sur cette limitation"].
+
 
 
 === Règles de groupe de sécurité

@@ -20,13 +20,27 @@ Les améliorations décrites sur cette page sont spécifiques aux fonctions Blue
 
 
 
+== 15 décembre 2022
+
+
+
+=== Cloud Volumes ONTAP 9.12.0
+
+BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.0 dans AWS et Google Cloud.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Découvrez les nouvelles fonctionnalités de cette version d'Cloud Volumes ONTAP"^].
+
+
+
 == 8 décembre 2022
 
 
 
 === Cloud Volumes ONTAP 9.12.1
 
-BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Découvrez les nouvelles fonctionnalités de cette version d'Cloud Volumes ONTAP"^]
+BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Découvrez les nouvelles fonctionnalités de cette version d'Cloud Volumes ONTAP"^]
 
 
 

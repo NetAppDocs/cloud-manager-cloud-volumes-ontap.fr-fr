@@ -44,7 +44,7 @@ Zone de disponibilité Azure HA à plusieurs niveaux::
 +
 --
 * Tous les comptes de stockage Azure pour Cloud Volumes ONTAP sont chiffrés à l'aide d'une clé gérée par le client.^1^
-* Pour les disques racine, de démarrage, NVRAM, de cœur et de données, Cloud Manager utilise un ensemble de chiffrement de disque qui permet de gérer les clés de chiffrement avec des disques gérés.
+* Pour les disques racine, de démarrage, NVRAM, de cœur et de données, BlueXP utilise un ensemble de cryptage de disque, qui permet de gérer les clés de cryptage avec des disques gérés.
 * Les nouveaux disques de données utilisent également le même jeu de cryptage de disque.
 
 

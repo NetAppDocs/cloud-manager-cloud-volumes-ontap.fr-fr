@@ -4125,7 +4125,6 @@
   <block id="23b98688a84e3975fec56c5adda952e4" category="paragraph">Sélectionnez le projet dans lequel vous souhaitez que Cloud Volumes ONTAP réside. Le projet par défaut est le projet où réside BlueXP.</block>
   <block id="851527495c0afb57caeba39ab6e50d4f" category="paragraph">Si vous ne voyez pas de projets supplémentaires dans la liste déroulante, alors vous n'avez pas encore associé le compte de service BlueXP à d'autres projets. Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet. Ajoutez le compte de service avec le rôle BlueXP à ce projet. Vous devrez répéter cette étape pour chaque projet.</block>
   <block id="380bfdc134190af310ad2f9812d7569f" category="inline-link-macro">comme décrit sur cette page</block>
-  <block id="f521dfd49dba963e7b19cc773f33be00" category="admonition">Il s'agit du compte de service que vous avez configuré pour BlueXP, <block ref="d1082cc762c3232516ac569780f04ada" category="inline-link-macro-rx"></block>.</block>
   <block id="27d9b3c82bd8da92f73b89a66c20ba04" category="paragraph">Cliquez sur *Ajouter un abonnement* pour associer les informations d'identification sélectionnées à un abonnement.</block>
   <block id="b878d292874b3ab2ea5568d71ba31a73" category="paragraph">Pour créer un système Cloud Volumes ONTAP de paiement basé sur l'utilisation, vous devez sélectionner un projet GCP associé à un abonnement à Cloud Volumes ONTAP depuis GCP Marketplace.</block>
   <block id="0b6a93a12e94b586f0634222ff996760" category="inline-link">Association d'un abonnement Marketplace aux informations d'identification GCP</block>
@@ -4588,4 +4587,5 @@
   <block id="80df4292f7c986dbd0920bb576487060" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.0 dans AWS et Google Cloud.</block>
   <block id="abd10f7bee2f791a9e8f76bf98163c27" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.</block>
   <block id="fdfad4872e8eceed069f74f82808d36e" category="list-text">Pour les disques racine, de démarrage, NVRAM, de cœur et de données, BlueXP utilise un ensemble de cryptage de disque, qui permet de gérer les clés de cryptage avec des disques gérés.</block>
+  <block id="da9740256f1fda9e06aa732d86702abc" category="admonition">Il s'agit du compte de service que vous avez configuré pour BlueXP, <block ref="0f8a0ed359c33dd5dbb02a467fa98093" category="inline-link-macro-rx"></block>.</block>
 </blocks>

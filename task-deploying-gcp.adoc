@@ -88,7 +88,7 @@ Sélectionnez le projet dans lequel vous souhaitez que Cloud Volumes ONTAP rési
 Si vous ne voyez pas de projets supplémentaires dans la liste déroulante, alors vous n'avez pas encore associé le compte de service BlueXP à d'autres projets. Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet. Ajoutez le compte de service avec le rôle BlueXP à ce projet. Vous devrez répéter cette étape pour chaque projet.
 
 
-NOTE: Il s'agit du compte de service que vous avez configuré pour BlueXP, link:task-creating-gcp-service-account.html["comme décrit sur cette page"].
+NOTE: Il s'agit du compte de service que vous avez configuré pour BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["comme décrit sur cette page"^].
 
 Cliquez sur *Ajouter un abonnement* pour associer les informations d'identification sélectionnées à un abonnement.
 
@@ -307,7 +307,7 @@ Sélectionnez le projet dans lequel vous souhaitez que Cloud Volumes ONTAP rési
 Si vous ne voyez pas de projets supplémentaires dans la liste déroulante, alors vous n'avez pas encore associé le compte de service BlueXP à d'autres projets. Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet. Ajoutez le compte de service avec le rôle BlueXP à ce projet. Vous devrez répéter cette étape pour chaque projet.
 
 
-NOTE: Il s'agit du compte de service que vous avez configuré pour BlueXP, link:task-creating-gcp-service-account.html["comme décrit sur cette page"].
+NOTE: Il s'agit du compte de service que vous avez configuré pour BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["comme décrit sur cette page"^].
 
 Cliquez sur *Ajouter un abonnement* pour associer les informations d'identification sélectionnées à un abonnement.
 

@@ -113,7 +113,7 @@ Dans la plupart des cas, BlueXP peut obtenir automatiquement votre fichier de li
 *Exemple*
 
 +
-image:screenshot_license_generator.gif["Capture d'écran : montre un exemple de la page Web du générateur de fichiers de licence NetApp remplie, notamment un mot de passe, un produit (NetApp Cloud Volumes ONTAP BYOL pour AWS) et un numéro de série du produit."]
+image:screenshot-license-generator.png["Capture d'écran : montre un exemple de la page Web du générateur de licences NetApp avec les lignes de produits disponibles."]
 
 . Choisissez si vous souhaitez recevoir le fichier numéro de série.NLF JSON par e-mail ou par téléchargement direct.
 

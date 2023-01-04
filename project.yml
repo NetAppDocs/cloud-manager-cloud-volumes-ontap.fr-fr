@@ -38,6 +38,8 @@ sidebar:
     entries:
     - title: Découvrez Cloud Volumes ONTAP
       url: "/concept-overview-cvo.html"
+    - title: Versions prises en charge pour les nouveaux déploiements
+      url: "/reference-versions.html"
     - title: Lancez-vous dans Amazon Web Services
       flavor: aws
       entries:

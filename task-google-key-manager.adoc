@@ -20,7 +20,6 @@ Lorsque vous utilisez le KMS, notez que, par défaut, une LIF de data SVM est ut
 .Prérequis
 * Cloud Volumes ONTAP doit exécuter la version 9.10.1 ou ultérieure
 * Licence VE (Volume Encryption) installée
-* Licence MTEKM (Multi-tenant Encryption Key Management) installée
 * Vous devez être un administrateur de cluster ou de SVM
 * Un abonnement actif à Google Cloud Platform
 

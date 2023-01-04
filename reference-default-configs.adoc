@@ -30,7 +30,6 @@ Depuis la version BlueXP 3.9.5, le reporting de l'espace logique est activé sur
 ** FlexCache
 ** FlexClone
 ** ISCSI
-** Gestion des clés de chiffrement mutualisée (MTEKM), à partir de Cloud Volumes ONTAP 9.11.1
 ** Chiffrement de volume NetApp (uniquement pour les systèmes BYOL ou enregistrés de PAYGO)
 ** NFS
 

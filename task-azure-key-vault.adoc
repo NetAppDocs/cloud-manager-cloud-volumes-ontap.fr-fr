@@ -22,7 +22,6 @@ Lorsque vous utilisez AKV, notez que par défaut une LIF de SVM de données perm
 .Prérequis
 * Cloud Volumes ONTAP doit exécuter la version 9.10.1 ou ultérieure
 * Licence Volume Encryption (VE) installée (la licence NetApp Volume Encryption est automatiquement installée sur chaque système Cloud Volumes ONTAP enregistré auprès du support NetApp).
-* Licence MTEKM (Multi-tenant Encryption Key Management) installée
 * Vous devez être un administrateur de cluster ou de SVM
 * Un abonnement Active Azure
 

@@ -809,7 +809,6 @@
   <block id="c6546b53840ec8245dd4d4d70fcdbc26" category="list-text">CIFS</block>
   <block id="f24ce81f056d5acd59788df7f5ab36a1" category="list-text">FlexCache</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
-  <block id="37fce366f49fadbb4cd779195ad526fd" category="list-text">Gestion des clés de chiffrement mutualisée (MTEKM), à partir de Cloud Volumes ONTAP 9.11.1</block>
   <block id="1ea97bc51cb5d4c0ad79186aeb4e4775" category="list-text">Chiffrement de volume NetApp (uniquement pour les systèmes BYOL ou enregistrés de PAYGO)</block>
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
   <block id="5bc075cee240a70af54270621d93765c" category="list-text">SnapVault</block>
@@ -2193,8 +2192,6 @@
   <block id="258f58bf86a685fa4951f45a75224c86" category="list-text">Cloud Volumes ONTAP à un seul nœud ou haute disponibilité</block>
   <block id="ac8875b922d75fca71aa495c421855a6" category="list-text">Le chargement repose sur deux facteurs de coûts : le stockage et l'utilisation (E/S)</block>
   <block id="a2e5678d48654234a84ed14a48c17119" category="paragraph">Vous ne serez pas facturé pour les E/S liées à la réplication de données (SnapMirror) ou NDMP.</block>
-  <block id="050a8b75e1382967bf1140508c5b62b6" category="list-text">Disponible uniquement sur Azure Marketplace comme offre de paiement à l'utilisation ou comme contrat annuel</block>
-  <block id="cd709b16b7a535f5ecfcfbe3f849b353" category="list-text">Prise en charge avec certains types de VM : E4S_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, Et E8ds_v4</block>
   <block id="3c5e979087ecb3ead1e8ace0120e5cb6" category="list-text">Ajoutez des services de données cloud de NetApp à vos frais supplémentaires</block>
   <block id="4d55f77f062bf48891bd0f749c36a36d" category="section-title">Points essentiels</block>
   <block id="57050f826fe75d25457ab448568ae53d" category="paragraph">Payez en fonction de la capacité de Cloud Volumes ONTAP dans différentes configurations.</block>
@@ -2361,7 +2358,6 @@
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="list-title">Prérequis</block>
   <block id="0dbc3b305b67f45cc077782f1bde33be" category="list-text">Cloud Volumes ONTAP doit exécuter la version 9.10.1 ou ultérieure</block>
   <block id="3db7729c3f93b51e237e9f64f77736ce" category="list-text">Licence VE (Volume Encryption) installée</block>
-  <block id="1343117a59836c5996c8be9e9914ce4b" category="list-text">Licence MTEKM (Multi-tenant Encryption Key Management) installée</block>
   <block id="941d09f50e1c95a1d21454ff759fc757" category="list-text">Vous devez être un administrateur de cluster ou de SVM</block>
   <block id="105e3d12938c631bc5d8ab6f6b628e1c" category="list-text">Un abonnement actif à Google Cloud Platform</block>
   <block id="41a2c826f6f02a44a93533524c99b84e" category="list-text">Cloud KMS peut uniquement être configuré sur un SVM de données</block>
@@ -4588,4 +4584,17 @@
   <block id="abd10f7bee2f791a9e8f76bf98163c27" category="paragraph">BlueXP peut désormais déployer et gérer Cloud Volumes ONTAP 9.12.1, qui inclut également la prise en charge de nouvelles fonctionnalités et de régions de fournisseurs de cloud supplémentaires.</block>
   <block id="fdfad4872e8eceed069f74f82808d36e" category="list-text">Pour les disques racine, de démarrage, NVRAM, de cœur et de données, BlueXP utilise un ensemble de cryptage de disque, qui permet de gérer les clés de cryptage avec des disques gérés.</block>
   <block id="da9740256f1fda9e06aa732d86702abc" category="admonition">Il s'agit du compte de service que vous avez configuré pour BlueXP, <block ref="0f8a0ed359c33dd5dbb02a467fa98093" category="inline-link-macro-rx"></block>.</block>
+  <block id="f85c96fab0937fb6abf38c354668c165" category="section-title">3 janvier 2023</block>
+  <block id="3c757e219167079b631dfcb5b1d0c339" category="paragraph">Les modifications suivantes ont été introduites avec la version 3.9.25 du connecteur.</block>
+  <block id="234213185a1ffd45429411672de5d3e7" category="section-title">Packages de licences disponibles dans Google Cloud</block>
+  <block id="54aeb573897a8b2a0c9627ff7030c996" category="paragraph">Des packages de licence optimisés et Edge cache basés sur la capacité sont disponibles pour Cloud Volumes ONTAP dans Google Cloud Marketplace, à la demande ou en tant que contrat annuel.</block>
+  <block id="d1f7ea60f001f689d734c007e925b17e" category="paragraph">Voir <block ref="0fb2e984675bc2d20107c292ded47d43" category="inline-link-macro-rx"></block>.</block>
+  <block id="fced3090ff990434831b838f07c6a3a7" category="paragraph">La licence MTEKM (Multi-tenant Encryption Key Management) n'est plus incluse dans les nouveaux déploiements Cloud Volumes ONTAP.</block>
+  <block id="a1299d36f8821164c4414c1a5ab986dd" category="inline-link-macro">Configuration par défaut pour Cloud Volumes ONTAP</block>
+  <block id="a8e8ca53febeb9bd58edbc0647eb9a34" category="paragraph">Pour plus d'informations sur les licences de fonction ONTAP installées automatiquement avec Cloud Volumes ONTAP, reportez-vous à la section <block ref="79578e78303d1a240e8fa9c178a9de63" category="inline-link-macro-rx"></block>.</block>
+  <block id="d4a6e54c4d6405336cdeb07c50490008" category="list-text">Disponible sur Azure Marketplace comme offre de paiement à l'utilisation ou comme contrat annuel</block>
+  <block id="18daf9881514241d393343911b3c6b0d" category="list-text">Disponible dans Google Cloud Marketplace comme offre de paiement à l'utilisation ou comme contrat annuel</block>
+  <block id="0fbc0a0fa746d19ef30c136beb33ee6e" category="list-text">Prise en charge avec certains types de VM :</block>
+  <block id="e2bb4238e5d918b51d049ce1e69dc93c" category="list-text">Pour Azure : E4S_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, Et E8ds_v4</block>
+  <block id="2efd0683ed3ad3ba3a383a25bc466303" category="list-text">Pour Google Cloud : n2-standard-4, n2-standard-8</block>
 </blocks>

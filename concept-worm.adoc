@@ -26,6 +26,38 @@ Une fois la période de conservation écoulée, vous êtes responsable de la sup
 
 
 
+== Activation du stockage WORM
+
+La façon dont vous activez le stockage WORM dépend de la version de Cloud Volumes ONTAP que vous utilisez.
+
+
+
+=== Version 9.10.1 et ultérieure
+
+Depuis Cloud Volumes ONTAP 9.10.1, vous pouvez activer ou désactiver WORM au niveau du volume. La manière dont vous choisissez d'activer WORM dépend de vos besoins.
+
+Lorsque vous créez un environnement de travail Cloud Volumes ONTAP, vous êtes invité à activer ou désactiver le stockage WORM :
+
+* Si vous activez le stockage WORM lors de la création d'un environnement de travail, le mode WORM est activé pour chaque volume créé à partir de BlueXP. Toutefois, vous pouvez utiliser System Manager ou l'interface de ligne de commandes pour créer des volumes dont le protocole WORM est désactivé.
++
+Cette option est un bon choix pour créer un système dédié pour le stockage WORM.
+
+* Si vous désactivez le stockage WORM lors de la création d'un environnement de travail, WORM est désactivé pour chaque volume créé à partir de BlueXP. Mais vous pouvez utiliser System Manager ou l'interface de ligne de commandes pour créer des volumes sur lesquels WORM est activé.
++
+Cette option est une bonne option pour mélanger différents types de volumes sur le même système.
+
+
+
+Quelle que soit l'option choisie, vous devez <<Chargement,comprendre le fonctionnement de la charge>>.
+
+
+
+=== Version 9.10.0 et antérieure
+
+Vous pouvez activer le stockage WORM sur un système Cloud Volumes ONTAP lorsque vous créez un nouvel environnement de travail. Vous ne pouvez pas activer le stockage WORM sur des volumes individuels :-WORM doit être activé au niveau du système. Elle ne peut être activée que lorsque vous créez l'environnement de travail.
+
+
+
 == Chargement
 
 La charge du stockage WORM est horaire, selon la capacité totale provisionnée des volumes WORM.
@@ -38,19 +70,6 @@ Vous devez comprendre le comportement de charge suivant avec Cloud Volumes ONTAP
 
 
 https://cloud.netapp.com/pricing["En savoir plus sur la tarification pour le stockage WORM"^]
-
-
-
-== Activation du stockage WORM
-
-Vous pouvez activer le stockage WORM sur un système Cloud Volumes ONTAP lorsque vous créez un nouvel environnement de travail. Cela inclut la définition de la période de conservation par défaut pour les fichiers.
-
-
-NOTE: Vous ne pouvez pas activer le stockage WORM sur des volumes individuels :-WORM doit être activé au niveau du système.
-
-L'image suivante montre comment activer le stockage WORM lors de la création d'un environnement de travail :
-
-image:screenshot_enable_worm.png["Affiche l'option WORM disponible lors de la création d'un nouvel environnement de travail."]
 
 
 
